@@ -1,0 +1,11 @@
+# Este subdirectorio contiene snapshots históricos de artefactos compilados (binarios).
+# Se versionan explícitamente en Git para preservar archivos de proyecto (diagramas, backups).
+# Los archivos .zip aquí son solo-lectura (histórico).
+
+# Permitir .zip en este directorio
+!*.zip
+
+# Ignorar todo lo demás
+*
+!.gitignore
+!*.zip
