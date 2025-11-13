@@ -1,0 +1,33 @@
+Mercury.lpi Note: Añadidos defines -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL en opciones personalizadas
+ Progress: Encontrar todos los ficheros unidad
+Mercury.lpr(1,17) Note: Se agregó el modificador de sintaxis MODE Delphi después del nombre de la unidad.
+ : 
+ : *** Convirtiendo ficheros de unidad pertenecientes al proyecto/paquete ***
+Uprincipal.pas Note: Cambiada la codificación para cp1252 a UTF-8
+Uprincipal.pas Note: Cambiada la codificación para cp1252 a UTF-8
+UEquipo.pas Note: Cambiada la codificación para cp1252 a UTF-8
+UEquipo.pas Note: Reemplazada unidad "Windows" con "LCLIntf, LCLType, LMessages" en sección 'uses'.
+UEquipo.pas(1,14) Note: Se agregó el modificador de sintaxis MODE Delphi después del nombre de la unidad.
+PuertoSerie.pas Note: Cambiada la codificación para cp1252 a UTF-8
+PuertoSerie.pas Note: Reemplazada unidad "Windows" con "LCLIntf, LCLType, LMessages" en sección 'uses'.
+PuertoSerie.pas(1,18) Note: Se agregó el modificador de sintaxis MODE Delphi después del nombre de la unidad.
+PuertoSerie.pas(330,22) Note: Reemplazada llamada CloseHandle(ComFile); con FileClose(ComFile); { *Convertido desde CloseHandle* }
+UUtiles.pas Note: Cambiada la codificación para cp1252 a UTF-8
+UUtiles.pas Note: Reemplazada unidad "Windows" con "LCLIntf, LCLType, LMessages" en sección 'uses'.
+UUtiles.pas(1,14) Note: Se agregó el modificador de sintaxis MODE Delphi después del nombre de la unidad.
+UPresentacion.pas Note: Reemplazada unidad "Windows" con "LCLIntf, LCLType, LMessages" en sección 'uses'.
+UPresentacion.pas(1,20) Note: Se agregó el modificador de sintaxis MODE Delphi después del nombre de la unidad.
+USensor.pas Note: Cambiada la codificación para cp1252 a UTF-8
+USensor.pas Note: Reemplazada unidad "Windows" con "LCLIntf, LCLType, LMessages" en sección 'uses'.
+USensor.pas(1,14) Note: Se agregó el modificador de sintaxis MODE Delphi después del nombre de la unidad.
+UPreferencias.pas Note: Cambiada la codificación para cp1252 a UTF-8
+UPreferencias.pas Note: Cambiada la codificación para cp1252 a UTF-8
+UPreferencias.pas Note: Reemplazada unidad "Mask" con "Masks" en sección 'uses'.
+UPreferencias.pas Note: Unit "shellapi" removida desde la sección uses.
+UPreferencias.pas Note: Unit "QDialogs" removida desde la sección uses.
+UPreferencias.pas Note: Reemplazada unidad "Windows" con "LCLIntf, LCLType, LMessages" en sección 'uses'.
+UPreferencias.pas(1,20) Note: Se agregó el modificador de sintaxis MODE Delphi después del nombre de la unidad.
+UPreferencias.pas(164,3) Note: Reemplazada llamada ShellExecute(handle,'open',Pchar(EPaginaWeb.Text),nil,nil,SW_SHOWNORMAL); con  OpenDocument(Pchar(EPaginaWeb.Text)); { *Convertido desde ShellExecute* }
+UGrafico.pas Note: Cambiada la codificación para cp1252 a UTF-8
+UGrafico.pas Note: Cambiada la codificación para cp1252 a UTF-8
+ Fatal: Conversión Abortada.

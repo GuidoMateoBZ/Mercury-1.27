@@ -1,0 +1,2 @@
+En este directorio se encuentra la configuración
+de todos sus equipos. No modifique ninguno de estos archivos.

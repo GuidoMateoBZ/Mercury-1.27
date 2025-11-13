@@ -7,10 +7,18 @@
 # Diagramas / IDE (Delphi Diagram Portfolio)
 *.ddp
 
+# Opciones del proyecto Delphi
+*.dof
+
+# Archivos de definición de formulario 
+*.dfm
+
 # Backups temporales / autoguardados del IDE
 *~
 *.~pas
 *.~dfm
+*.~ddp
+*.~dpr
 
 # Carpetas de build/compilación
 Output/

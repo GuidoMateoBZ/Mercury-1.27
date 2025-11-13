@@ -1,10 +1,10 @@
 # Archivos innecesarios / artefactos (Mercury)
 
-Este documento lista los archivos que se consideran artefactos, históricos o temporales y que no son necesarios para compilar/ejecutar el proyecto con Lazarus. Se sugiere ignorarlos en VCS (`.gitignore`) o archivarlos si deseás conservar un snapshot.
+Este documento lista los archivos que se consideran artefactos, históricos o temporales y que no son necesarios para compilar/ejecutar el proyecto con Lazarus.
 
 ## Resumen
 - Conservá en el repo sólo el código fuente necesario: `*.pas`, `*.lpr`, `*.lpi`, `*.lps`, `*.lfm`, `*.inc`.
-- Podés ignorar/archivar los siguientes archivos (generados por compilación o IDE):
+- Ignorar/archivar los siguientes archivos (generados por compilación o IDE):
 
 ## Archivos detectados (lista concreta)
 
@@ -66,7 +66,7 @@ Este documento lista los archivos que se consideran artefactos, históricos o te
 
 > Nota: los `.ddp` en este repo son archivos binarios de diagramas/diagram portfolio de Delphi. No afectan la compilación en Lazarus; son históricos.
 
-### 4) Backups / autoguardados (`.~pas`, `.~dfm`, `*~`)
+### 4) Backups / autoguardados (`.~pas`, `.~dfm`, `.~ddp`,`*.~dpr`, `*~`)
 #### `*.~pas`
 - UCalculoParam.~pas
 - Uprincipal.~pas
@@ -100,6 +100,21 @@ Este documento lista los archivos que se consideran artefactos, históricos o te
 - UConexionAuto.~dfm
 - UCalculoParam.~dfm
 
+#### `*.~ddp`
+- UCalculoParam.~ddp
+- UConexionAuto.~ddp
+- UConexionesRemotas.~ddp
+- UConfiguracionInternet.~ddp
+- UDataModule.~ddp
+- UGrafico.~ddp
+- UOpciones3D.~ddp
+- UPreferencias.~ddp
+- UPresentacion.~ddp
+- Uprincipal.~ddp
+
+#### `*.~dpr` (eliminado)
+- Uprincipal.~dpr
+
 ### 5) Archivos objeto (.o)
 - UUtiles.o
 - USensor.o
@@ -119,16 +134,27 @@ Este documento lista los archivos que se consideran artefactos, históricos o te
 - Mercury.o
 - (además muchos `.o` en `lib\x86_64-win64\`)
 
-### 6) Ejecutables (.exe)
+### 6) Archivos de definición de formulario (.dfm)
+- UAnemometro.dfm
+- UCalculoParam.dfm
+- UColor.dfm
+- UConexionAuto.dfm
+- UConexionesRemotas.dfm
+- UConfiguracionInternet.dfm
+- UDataModule.dfm
+- UOpciones3D.dfm
+
+### 7) Archivo de opciones del proyecto de Delphi (.dof)
+- Mercury.dof
+
+### 8) Ejecutables (.exe)
 - Mercury.exe
 - Mercury_new.exe
 - Mercury_9k6.exe
 - Copias en `Output\` y `lib\x86_64-win64\` (p. ej. `Output\Mercury.exe`)
 
-## Recomendación para `.gitignore`
-Agregar estas líneas al `.gitignore` en la raíz del proyecto:
+## Archivo `.gitignore`
 
-```
 # Artefactos de compilación
 *.dcu
 *.ppu
@@ -138,10 +164,18 @@ Agregar estas líneas al `.gitignore` en la raíz del proyecto:
 # Diagramas / IDE
 *.ddp
 
+# Opciones del proyecto Delphi
+*.dof
+
+# Archivos de definición de formulario 
+*.dfm
+
 # Backups temporales
 *~
 *.~pas
 *.~dfm
+*.~ddp
+*.~dpr
 
 # Carpetas de build
 Output/
@@ -149,11 +183,8 @@ lib/
 
 # Otros
 *.stackdump
-```
-
-## Nota sobre archivado histórico
-Si querés conservar los `.ddp` por historial (snapshot único), crear un zip y guardarlo en `_historico/` es razonable: por ejemplo `_historico/Mercury-diagramas-backup-2025-11-11.zip`. Si planeás actualizar ese zip frecuentemente, considerar `git-lfs` o usar Releases/almacenamiento externo.
+*.res
 
 ---
 
-Archivo generado automáticamente por el asistente el 2025-11-11 para documentación interna.
+Archivo generado automáticamente por el asistente el 2025-11-11 para documentación interna. Modificado

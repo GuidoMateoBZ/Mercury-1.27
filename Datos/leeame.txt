@@ -1,0 +1,2 @@
+En este directorio se encuentran archivos de uso temporal por el software. 
+No modifique ninguno de estos archivos.

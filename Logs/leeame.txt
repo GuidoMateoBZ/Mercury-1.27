@@ -1,0 +1,2 @@
+En este directorio se encuentra los logs del modo servidor.
+No modifique ninguno de estos archivos.
