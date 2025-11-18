@@ -253,14 +253,20 @@ end;
 // TMercury
 ////////////////////////////////////////////////////////////////////////////////
 constructor TMercury.Crear;
+var
+  BaseDir : string;
 begin
   NombreExe          := 'Mercury';
   DirMercury         := ExtractFilePath(ParamStr(0));
-  DirSensores        := ExtractFilePath(ParamStr(0)) + 'Sensores\';
-  DirEquipos         := ExtractFilePath(ParamStr(0)) + 'Equipos\';
-  Dirdatos           := ExtractFilePath(ParamStr(0)) + 'Datos\';
-  DirDatosInternet   := ExtractFilePath(ParamStr(0)) + 'Datos\';  
-  Dirtemp            := ExtractFilePath(ParamStr(0)) + 'temp\';
+  
+  // Base directory with repository name
+  BaseDir            := ExtractFilePath(ParamStr(0)) + 'Mercury-1.27\';
+  
+  DirSensores        := BaseDir + 'Sensores\';
+  DirEquipos         := BaseDir + 'Equipos\';
+  Dirdatos           := BaseDir + 'Datos\';
+  DirDatosInternet   := BaseDir + 'Datos\';  
+  Dirtemp            := BaseDir + 'temp\';
   NombreINIEquipos   := DirEquipos;
 
   // Creo el objeto de las comunicaciones telefonicas
@@ -350,8 +356,8 @@ begin
     ArchivoINI.ReadSections(SeccionesINI);
 
     // Cargo los datos desde el Archivo INI
-    Dirdatos           := ArchivoINI.ReadString(NombreExe, 'Datos'             ,DirMercury+'Datos\');
-    DirdatosInternet   := ArchivoINI.ReadString(NombreExe, 'DatosInternet'     ,DirMercury+'Datos\');    
+    Dirdatos           := ArchivoINI.ReadString(NombreExe, 'Datos'             ,DirMercury+'Mercury-1.27\Datos\');
+    DirdatosInternet   := ArchivoINI.ReadString(NombreExe, 'DatosInternet'     ,DirMercury+'Mercury-1.27\Datos\');    
     PuertoSerie        := ArchivoINI.ReadString(NombreExe, 'PuertoSerie'       ,'COM1');
     AutoDescargarDatos := ArchivoINI.ReadString(NombreExe, 'AutoDescargarDatos','N')[1];
     AutoConfigurar     := ArchivoINI.ReadString(NombreExe, 'AutoConfigurar'    ,'N')[1];
@@ -375,7 +381,7 @@ begin
     // Monitoreo en Linea
     ReporteSel         := ArchivoINI.ReadString(NombreExe, 'ReporteSel'       ,'S')[1];
     ReporteWebSel      := ArchivoINI.ReadString(NombreExe, 'ReporteWebSel'    ,'N')[1];
-    DirReporte         := ArchivoINI.ReadString(NombreExe, 'DirReporte'       ,DirMercury+'Datos\');
+    DirReporte         := ArchivoINI.ReadString(NombreExe, 'DirReporte'       ,DirMercury+'Mercury-1.27\Datos\');
     NombrePaginaWeb    := ArchivoINI.ReadString(NombreExe, 'NombrePaginaWeb'  ,'');
     NombreNuevaWeb     := ArchivoINI.ReadString(NombreExe, 'NombreNuevaWeb'   ,'');
     FormatoReporte     := StrToInt(ArchivoINI.ReadString(NombreExe, 'FormatoReporte'    ,'0'));
