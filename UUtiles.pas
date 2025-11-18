@@ -262,12 +262,21 @@ begin
   // Base directory with repository name
   BaseDir            := ExtractFilePath(ParamStr(0)) + 'Mercury-1.27\';
   
+  // Create base directory if it doesn't exist
+  if not DirectoryExists(BaseDir) then MkDir(BaseDir);
+  
   DirSensores        := BaseDir + 'Sensores\';
   DirEquipos         := BaseDir + 'Equipos\';
   Dirdatos           := BaseDir + 'Datos\';
   DirDatosInternet   := BaseDir + 'Datos\';  
   Dirtemp            := BaseDir + 'temp\';
   NombreINIEquipos   := DirEquipos;
+  
+  // Create subdirectories if they don't exist
+  if not DirectoryExists(DirSensores) then MkDir(DirSensores);
+  if not DirectoryExists(DirEquipos) then MkDir(DirEquipos);
+  if not DirectoryExists(Dirdatos) then MkDir(Dirdatos);
+  if not DirectoryExists(Dirtemp) then MkDir(Dirtemp);
 
   // Creo el objeto de las comunicaciones telefonicas
   ConexTelefon           := TConexionesTelef.Crear;
