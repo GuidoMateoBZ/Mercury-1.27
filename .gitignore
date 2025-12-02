@@ -10,9 +10,6 @@
 # Opciones del proyecto Delphi
 *.dof
 
-# Archivos de definición de formulario 
-*.dfm
-
 # Backups temporales / autoguardados del IDE
 *~
 *.~pas

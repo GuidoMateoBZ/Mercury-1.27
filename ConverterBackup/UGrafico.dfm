@@ -1,0 +1,288 @@
+object FGraficoSensor: TFGraficoSensor
+  Left = 302
+  Top = 284
+  Width = 620
+  Height = 370
+  Caption = 'Grafico'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CoolBar1: TCoolBar
+    Left = 568
+    Top = 0
+    Width = 44
+    Height = 343
+    Align = alRight
+    Bands = <
+      item
+        Control = ToolBar1
+        ImageIndex = -1
+        MinHeight = 39
+        Width = 339
+      end>
+    Vertical = True
+    object ToolBar1: TToolBar
+      Left = 0
+      Top = 9
+      Width = 39
+      Height = 330
+      ButtonHeight = 38
+      ButtonWidth = 39
+      Caption = 'ToolBar1'
+      Flat = True
+      Images = DataModule1.ImageList32x32
+      TabOrder = 0
+      object tbGuardar: TToolButton
+        Left = 0
+        Top = 0
+        Hint = 'Guardar el gr'#225'fico como imagen'
+        Caption = 'tbGuardar'
+        ImageIndex = 10
+        ParentShowHint = False
+        Wrap = True
+        ShowHint = True
+        OnClick = GuardarImg
+      end
+      object tbCopiarCLB: TToolButton
+        Left = 0
+        Top = 38
+        Hint = 'Copiar el gr'#225'fico al portapapeles'
+        Caption = 'tbCopiarCLB'
+        ImageIndex = 16
+        ParentShowHint = False
+        Wrap = True
+        ShowHint = True
+        OnClick = CopiarClipBoard
+      end
+      object tbReporteWeb: TToolButton
+        Left = 0
+        Top = 76
+        Hint = 'Generar un reporte del gr'#225'fico en una pagina web'
+        Caption = 'tbReporteWeb'
+        ImageIndex = 17
+        ParentShowHint = False
+        Wrap = True
+        ShowHint = True
+        OnClick = ReporteWeb
+      end
+      object tbImprimirTabla: TToolButton
+        Left = 0
+        Top = 114
+        Hint = 'Imprimir el gr'#225'fico'
+        ImageIndex = 18
+        ParentShowHint = False
+        Wrap = True
+        ShowHint = True
+        OnClick = Imprimir
+      end
+      object tbColor: TToolButton
+        Left = 0
+        Top = 152
+        Hint = 'Cambiar el color de las series'
+        ImageIndex = 15
+        ParentShowHint = False
+        Wrap = True
+        ShowHint = True
+        OnClick = CambiarColor
+      end
+      object tbOpciones3D: TToolButton
+        Left = 0
+        Top = 190
+        Hint = 'Vista en 3D del gr'#225'fico'
+        ImageIndex = 14
+        ParentShowHint = False
+        ShowHint = True
+        OnClick = Opciones3D
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 568
+    Height = 343
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    object DBGrafico: TChart
+      Left = 0
+      Top = 0
+      Width = 568
+      Height = 343
+      AllowZoom = False
+      BackWall.Brush.Color = clWhite
+      BackWall.Brush.Style = bsClear
+      MarginBottom = 10
+      MarginTop = 5
+      Title.Font.Charset = ANSI_CHARSET
+      Title.Font.Color = clBlack
+      Title.Font.Height = -13
+      Title.Font.Name = 'Tahoma'
+      Title.Font.Style = [fsBold]
+      Title.Text.Strings = (
+        'TChart')
+      BottomAxis.Title.Font.Charset = ANSI_CHARSET
+      BottomAxis.Title.Font.Color = clBlack
+      BottomAxis.Title.Font.Height = -11
+      BottomAxis.Title.Font.Name = 'Tahoma'
+      BottomAxis.Title.Font.Style = [fsBold]
+      LeftAxis.Title.Font.Charset = ANSI_CHARSET
+      LeftAxis.Title.Font.Color = clBlack
+      LeftAxis.Title.Font.Height = -11
+      LeftAxis.Title.Font.Name = 'Tahoma'
+      LeftAxis.Title.Font.Style = [fsBold]
+      Legend.Font.Charset = ANSI_CHARSET
+      Legend.Font.Color = clBlack
+      Legend.Font.Height = -11
+      Legend.Font.Name = 'Tahoma'
+      Legend.Font.Style = []
+      Legend.LegendStyle = lsSeries
+      View3D = False
+      OnAfterDraw = DBGraficoAfterDraw
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      OnMouseDown = DBGraficoMouseDown
+      OnMouseMove = DBGraficoMouseMove
+      object sbZoom: TSpeedButton
+        Left = 21
+        Top = 315
+        Width = 100
+        Height = 22
+        Caption = 'Zoom x'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = sbZoomClick
+      end
+      object sbSeries: TSpeedButton
+        Left = 482
+        Top = 315
+        Width = 65
+        Height = 22
+        Caption = 'Canales'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = sbSeriesClick
+      end
+      object sbZoomYmenos: TSpeedButton
+        Left = 136
+        Top = 316
+        Width = 29
+        Height = 22
+        Caption = '-'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = ZoomYmas
+      end
+      object sbZoomYmas: TSpeedButton
+        Left = 171
+        Top = 316
+        Width = 29
+        Height = 22
+        Caption = '+'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnClick = ZoomYmenos
+      end
+      object cbEscalaAuto: TCheckBox
+        Left = 207
+        Top = 320
+        Width = 115
+        Height = 17
+        Caption = 'Escala Autom'#225'tica'
+        TabOrder = 0
+        OnClick = cbEscalaAutoClick
+      end
+    end
+  end
+  object PopupMenuPaso: TPopupMenu
+    AutoHotkeys = maManual
+    AutoLineReduction = maManual
+    Left = 40
+    Top = 280
+    object mN1Hora: TMenuItem
+      AutoHotkeys = maManual
+      AutoLineReduction = maManual
+      Caption = '10 segundos'
+      Checked = True
+      OnClick = PopupMenuPasoClick
+    end
+    object mN4Horas: TMenuItem
+      Caption = '30 segundos'
+      OnClick = PopupMenuPasoClick
+    end
+    object mN8Horas: TMenuItem
+      Caption = '1 minuto'
+      OnClick = PopupMenuPasoClick
+    end
+    object mN12Horas: TMenuItem
+      Caption = '5 minutos'
+      OnClick = PopupMenuPasoClick
+    end
+    object mDia: TMenuItem
+      Caption = '10 minutos'
+      OnClick = PopupMenuPasoClick
+    end
+    object mN3Dias: TMenuItem
+      Caption = '30 minutos'
+      OnClick = PopupMenuPasoClick
+    end
+    object mSemana: TMenuItem
+      Caption = '1 hora'
+      OnClick = PopupMenuPasoClick
+    end
+    object N12horas1: TMenuItem
+      Caption = '12 horas'
+      OnClick = PopupMenuPasoClick
+    end
+    object N1dia1: TMenuItem
+      Caption = '1 d'#237'a'
+      OnClick = PopupMenuPasoClick
+    end
+  end
+  object PopupMenuSeries: TPopupMenu
+    Left = 499
+    Top = 280
+  end
+  object SavePictureDialog: TSavePictureDialog
+    Left = 89
+    Top = 5
+  end
+  object PrinterSetupDialog: TPrinterSetupDialog
+    Left = 56
+    Top = 5
+  end
+  object TimerActualizarSeries: TTimer
+    Interval = 500
+    OnTimer = TimerActualizarSeriesTimer
+    Left = 123
+    Top = 5
+  end
+end

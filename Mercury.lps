@@ -12,43 +12,38 @@
         <CursorPos X="22" Y="13"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="Uprincipal.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="4"/>
         <CursorPos X="96" Y="26"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UEquipo.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="5"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="PuertoSerie.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="25"/>
         <CursorPos X="3" Y="43"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UUtiles.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="8"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UPresentacion.pas"/>
@@ -56,18 +51,16 @@
         <ComponentName Value="FPresentacion"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="9"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="USensor.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="10"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UPreferencias.pas"/>
@@ -75,21 +68,19 @@
         <ComponentName Value="FPreferencias"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="11"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UGrafico.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="13"/>
         <TopLine Value="10"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UOpciones3D.pas"/>
@@ -116,13 +107,14 @@
       <Unit>
         <Filename Value="UDataModule.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="10" Y="25"/>
         <UsageCount Value="20"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="UFormulas.pas"/>
@@ -220,14 +212,14 @@
       </Unit>
       <Unit>
         <Filename Value="UGrafico.lfm"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="12"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\win\wininc\redef.inc"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="443"/>
         <CursorPos X="10" Y="462"/>
         <UsageCount Value="10"/>
@@ -235,14 +227,23 @@
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="3991"/>
         <CursorPos Y="4010"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Uprincipal.lfm"/>
+        <HasResources Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="145"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="8">
+    <JumpHistory HistoryIndex="9">
       <Position>
         <Filename Value="Mercury.lpr"/>
       </Position>
@@ -274,11 +275,14 @@
         <Filename Value="Mercury.lpr"/>
         <Caret Line="10" Column="152"/>
       </Position>
+      <Position>
+        <Filename Value="Mercury.lpr"/>
+        <Caret Line="13" Column="22"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
-  <SkipCheckLCLInterfaces Value="True"/>
 </CONFIG>
