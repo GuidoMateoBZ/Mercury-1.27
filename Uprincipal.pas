@@ -3,11 +3,14 @@ unit Uprincipal;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, ComCtrls, ShellAPI, LCLIntf, PuertoSerie,
-  ImgList, StdCtrls, Buttons, UUtiles, UEquipo, MaskEdit, UPresentacion,
-  USensor, UPreferencias, ExtCtrls, UDataModule, UCalculoParam,
-  UConexionesRemotas, UConexionAuto, UConfiguracionInternet;
+  {$IFDEF UNIX}
+  cthreads,
+  {$ENDIF}
+  SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, ComCtrls, LCLIntf, LCLType, StdCtrls, Grids, Buttons, 
+  UUtiles, UEquipo, MaskEdit, UPresentacion, USensor, UPreferencias, 
+  ExtCtrls, UDataModule, UCalculoParam, UConexionesRemotas, UConexionAuto, 
+  UConfiguracionInternet, UServerSocket, PuertoSerie;
 
 const
   WM_ICONTRAY = WM_USER + 1;   
@@ -67,7 +70,7 @@ type
     LNbytesEquipo: TLabel;
     LIniMuesEquipo: TLabel;
     Bevel1: TBevel;
-    Gauge: TProgressBar;
+    Gauge: TGauge;
     GroupBox2: TGroupBox;
     Label4: TLabel;
     eNombre: TEdit;
@@ -381,7 +384,7 @@ var
   Creando       : boolean;
   ActualizarCHs : boolean;                  // Carga los sensores al Equipo
   Equipo        : TEquipo;                  // Objeto que realiza toda la intefaze con el equipo fisico
-  //Server        : TServer;                  // Objeto que administra la conexi�n por Internet
+  Server        : TServer;                  // Objeto que administra la conexi�n por Internet
   NCanal        : integer;                  // Numero del Canal Activo por el ComboBox de Config
   TagOLD        : integer;
   OnCambio      : boolean;
@@ -389,9 +392,9 @@ var
 
 implementation
 
-uses UFormulas, UConexiones;
+uses UGrafico, UFormulas, UConexiones;
 
-{$R *.lfm}
+{$R *.dfm}
 
 ////////////////////////////////////////////////////////////////////////////////
 procedure TFprincipal.FormCreate(Sender: TObject);
@@ -408,10 +411,10 @@ begin
   FPresentacion.Repaint;
 
   // Configuro las variables globales
-  DefaultFormatSettings.DateSeparator      := '/';
-  DefaultFormatSettings.DecimalSeparator   := '.';
-  DefaultFormatSettings.ShortDateFormat    := 'dd/mm/yyyy';
-  DefaultFormatSettings.LongDateFormat     := 'dd/mm/yyyy';
+  DateSeparator                    := '/';
+  DecimalSeparator                 := '.';
+  ShortDateFormat                  := 'dd/mm/yyyy';
+  LongDateFormat	           := 'dd/mm/yyyy';
   PageControl.ActivePageIndex      := 0;
   ScrollBox.VertScrollBar.Position := 0;
   TagOLD                           := 0;
@@ -424,7 +427,7 @@ begin
   ActualizarCHs                    := true;
   Mercury                          := TMercury.Crear;
   Equipo                           := nil;
-  //Server                           := nil;
+  Server                           := nil;
 
   // Cargo la configuraci�n del programa guardada en el Archivo INI
   FPresentacion.LMensaje.Caption := 'Cargando Configuraci�n...';
@@ -510,7 +513,7 @@ begin
   end;
 
   // Creo y configuro el Socket si es necesario para porder comunicarme por internet
-  //if (Mercury.TipoDeComm = 2) then Server := TServer.Crear(Mercury.Puerto,@mHistorialInternet.Lines);
+  if (Mercury.TipoDeComm = 2) then Server := TServer.Crear(Mercury.Puerto,@mHistorialInternet.Lines);
 
   // Creo la lista de los sensores que se encuentran el  DirSensores
   FPresentacion.LMensaje.Caption := 'Generando lista de Sensores...';
@@ -556,24 +559,22 @@ begin
 
   // Borro todos los archivos del Directorio Temporal
   if DirectoryExists(Mercury.DirTemp) then begin
-    SetLength(AFiles, 0); // Inicializar el array
     ExtractFilesOfDir(Mercury.DirTemp + '*.*', AFiles);
-    for i:=0 to length(AFiles)-1 do DeleteFile(PChar(Mercury.DirTemp + AFiles[i].Name));
+    for i:=0 to length(AFiles)-1 do DeleteFile(Mercury.DirTemp + AFiles[i].Name);
   end;
 
   // Borro el icono de la barra de tareas
-  Shell_NotifyIcon(NIM_DELETE, PNOTIFYICONDATAA(@TrayIconData));
+  Shell_NotifyIcon(NIM_DELETE, @TrayIconData);
   if (Equipo <> nil) then Equipo.Destruir;
-  //if (Server <> nil) then Server.Destroy;
+  if (Server <> nil) then Server.Destroy;
   Mercury.GuardarConfig;
   Mercury.Destruir;
 
   // Libero la lista de Sensores
   for i:=length(ListaSensores)-1 downto 0 do begin
-    if Assigned(ListaSensores[i]) then
-      ListaSensores[i].Destruir;
+    ListaSensores[i].Destruir;
+    SetLength(ListaSensores,i);
   end;
-  SetLength(ListaSensores, 0);
 
   // Libero los Objetos Creados
   PSerie.Destruir;
@@ -602,10 +603,7 @@ begin
   case Msg.lParam of
     WM_LBUTTONDOWN:
     begin
-      // Restore window on left click
-      WindowState := wsNormal;
-      Show;
-      Shell_NotifyIcon(NIM_DELETE, PNOTIFYICONDATAA(@TrayIconData));
+      //
     end;
 
     WM_RBUTTONDOWN:
@@ -621,7 +619,7 @@ procedure TFprincipal.IraSystemTray;
 begin
   with TrayIconData do begin
     cbSize           := SizeOf(TrayIconData);
-    hWnd             := Handle;
+    Wnd              := Handle;
     uID              := 0;
     uFlags           := NIF_MESSAGE + NIF_ICON + NIF_TIP;
     uCallbackMessage := WM_ICONTRAY;
@@ -629,7 +627,7 @@ begin
     StrPCopy(szTip, Caption);
   end;
 
-  Shell_NotifyIcon(NIM_ADD, PNOTIFYICONDATAA(@TrayIconData));
+  Shell_NotifyIcon(NIM_ADD, @TrayIconData);
   Hide;
 end;
 
@@ -644,7 +642,7 @@ procedure TFprincipal.RestaurarClick(Sender: TObject);
 begin
   WindowState := wsNormal;
   show;
-  Shell_NotifyIcon(NIM_DELETE, PNOTIFYICONDATAA(@TrayIconData));
+  Shell_NotifyIcon(NIM_DELETE, @TrayIconData);
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -692,7 +690,7 @@ begin
     tsMonitorOnLine.Enabled     := false;
 
     // Activo el Server para que se ponga a escuchar en el puerto predeterminado
-    //Server.SrvSocket.Active     := true;
+    Server.SrvSocket.Active     := true;
   end;
 end;
 
@@ -790,7 +788,7 @@ begin
   LNombreEquipo.Caption  := Equipo.Nombre;
   LHoraEquipo.Caption    := FormatDateTime('dd/mm/yyyy hh:nn:ss am/pm',Equipo.Hora);
   LNbytesEquipo.Caption  := IntToStr(Equipo.Memoria)+' bytes';
-  Gauge.Position         := (Equipo.Memoria*100) div Equipo.CantMemory;
+  Gauge.Progress         := (Equipo.Memoria*100) div Equipo.CantMemory;
   LIniMuesEquipo.Caption := FormatDateTime('dd/mm/yyyy hh:nn:ss am/pm',Equipo.iniMuestr)
                             + ' - (int '+ Mercury.GenerarStrTmuest(Equipo.Tmuestreo) +')';
 
@@ -947,7 +945,7 @@ begin
   LNombreEquipo.Caption  := '';
   LHoraEquipo.Caption    := '';
   LNbytesEquipo.Caption  := '';
-  Gauge.Position         := 0;
+  Gauge.Progress         := 0;
   LIniMuesEquipo.Caption := '';
 
   // Limpio la info de los canales
@@ -1712,8 +1710,7 @@ var
   Canal : byte;
 
 begin
-  // Charting functionality temporarily disabled for Lazarus compatibility
-  {FGraficoSensor := TFGraficoSensor.Create(self);
+  FGraficoSensor := TFGraficoSensor.Create(self);
   Canal          := (sender as TSpeedButton).Tag;
   // Solo cuando uso el canal 9 
   if (Canal=8) and Equipo.UsarCH9 then Canal:=9;
@@ -1727,7 +1724,7 @@ begin
   FGraficoSensor.CrearSerie;
   FGraficoSensor.Show;
 
-  inc(GraficosOpen,1);}
+  inc(GraficosOpen,1);
 end;
 
 ////////////////////////////////////////////////////////////////////////////////

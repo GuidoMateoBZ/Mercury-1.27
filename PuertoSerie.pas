@@ -1,46 +1,14 @@
 unit PuertoSerie;
 
-{$MODE Delphi}
-
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Registry, Classes, SysUtils, Dialogs, StdCtrls, SyncObjs, Math,
-  Windows, USensor, UUtiles, UFormulas;
-
-const
-  // Constantes para funciones de archivo Win32
-  GENERIC_READ = $80000000;
-  GENERIC_WRITE = $40000000;
-  OPEN_EXISTING = 3;
-  FILE_ATTRIBUTE_NORMAL = $80;
-  INVALID_HANDLE_VALUE = THandle(-1);
-  
-  // Constantes para DCB
-  NOPARITY = 0;
-  ODDPARITY = 1;
-  EVENPARITY = 2;
-  MARKPARITY = 3;
-  SPACEPARITY = 4;
-  
-  ONESTOPBIT = 0;
-  ONE5STOPBITS = 1;
-  TWOSTOPBITS = 2;
+  Windows, Registry, Classes, SysUtils, Dialogs, StdCtrls, SyncObjs, Math,
+  USensor, UUtiles, UFormulas, ScktComp;
 
 type
-  TAbytes = array [0..3] of byte;
+  TAbytes = array [0..3] of byte;  
 
-// Declaraciones de funciones de la API de Windows para comunicaciÃ³n serial
-function CreateFile(lpFileName: PChar; dwDesiredAccess, dwShareMode: DWORD;
-  lpSecurityAttributes: Pointer; dwCreationDisposition, dwFlagsAndAttributes: DWORD;
-  hTemplateFile: THandle): THandle; stdcall; external 'kernel32.dll' name 'CreateFileA';
-function SetupComm(hFile: THandle; dwInQueue, dwOutQueue: DWORD): BOOL; stdcall; external 'kernel32.dll';
-function GetCommState(hFile: THandle; var lpDCB: Windows.TDCB): BOOL; stdcall; external 'kernel32.dll';
-function SetCommState(hFile: THandle; const lpDCB: Windows.TDCB): BOOL; stdcall; external 'kernel32.dll';
-function SetCommTimeouts(hFile: THandle; const lpCommTimeouts: Windows.TCOMMTIMEOUTS): BOOL; stdcall; external 'kernel32.dll';
-function BuildCommDCB(lpDef: PChar; var lpDCB: Windows.TDCB): BOOL; stdcall; external 'kernel32.dll' name 'BuildCommDCBA';
-
-type
   TPuertoSerie = class(Tobject)
     private
       DeviceName   : array[0..80] of Char;
@@ -128,27 +96,27 @@ type
       CantCanales     : byte;
       Archivo         : string;            // Path y nombre del archivo en que guardo los datos
       sep             : string;            // Caracter que uso para separar las columas cuando bajo datos
-      Datos           : Tstrings;          // InformaciÃ³n recopilada por el equipo
-      FormatoDescarga : byte;              // ElecciÃ³n del Formato en que descargo los datos
-      //FormatoFecha    : string;            // ElecciÃ³n del Formato de las fechas los datos
-      IndiceFormatoFe : byte;              // SelecciÃ³n del Formato de las fechas
+      Datos           : Tstrings;          // Información recopilada por el equipo
+      FormatoDescarga : byte;              // Elección del Formato en que descargo los datos
+      //FormatoFecha    : string;            // Elección del Formato de las fechas los datos
+      IndiceFormatoFe : byte;              // Selección del Formato de las fechas
       pActualizar     : TNotifyEvent;      // Actualiza los datos del equipo
       pActualProgres  : TNotifyEvent;      // Actualiza la barra de progreso para la descarga
-      POnConectRemoto : TNotifyEvent;      // Realiza algÃºn proceso cuando se CONECTA en forma remoto
-      POnDesConRemoto : TNotifyEvent;      // Realiza algÃºn proceso cuando se DESCONECTA en forma remoto
+      POnConectRemoto : TNotifyEvent;      // Realiza algún proceso cuando se CONECTA en forma remoto
+      POnDesConRemoto : TNotifyEvent;      // Realiza algún proceso cuando se DESCONECTA en forma remoto
 
-      // ComunicaciÃ³n remota
-      ConexOK         : boolean;           // Me indica si establecÃ­ alguna conexiÃ³n remota
+      // Comunicación remota
+      ConexOK         : boolean;           // Me indica si establecí alguna conexión remota
       ThTipoCom       : byte;
 
-      // ComunicaciÃ³n Telefonica (Puerto Serie)
+      // Comunicación Telefonica (Puerto Serie)
       ConecTelef       : boolean;
       DesConecTelef    : boolean;
       IniConecTelef    : boolean; 
       AutoDesconecDesc : boolean;          // Una vez terminadas la descarga se desconecta automaticamente
       AutoDesconecConf : boolean;          // Una vez terminadas la config se desconecta automaticamente
-      Ntelefono        : string;           // NÃºmero de telefono al cual llama para conectarse
-      NombreConex      : string;           // Nombre de la conexiÃ³n remota      
+      Ntelefono        : string;           // Número de telefono al cual llama para conectarse
+      NombreConex      : string;           // Nombre de la conexión remota      
 
       constructor crear(CreateSuspended: Boolean; NCanales:byte);
       destructor  Destruir;
@@ -157,9 +125,9 @@ type
       procedure   EscribirConfigInternet;
       procedure   DescargarLosDatos;      
       procedure   LeerDatos;
-      procedure   ConectarTelefon;        // Inicia el protocolo de ConecciÃ³n
-      procedure   DesConectarTelefon;     // Corta la comunicaciÃ³n telefonica
-      procedure   IniComTelefon;          // Inicializa el Hardware de la comunicaciÃ³n telefonica
+      procedure   ConectarTelefon;        // Inicia el protocolo de Conección
+      procedure   DesConectarTelefon;     // Corta la comunicación telefonica
+      procedure   IniComTelefon;          // Inicializa el Hardware de la comunicación telefonica
       function    CalcPeriodoConect(index: byte):integer;
   end;
 
@@ -241,8 +209,8 @@ end;
 ////////////////////////////////////////////////////////////////////////////////
 function TPuertoSerie.ConfigPuertoSerie():boolean;
 var
-  DCB          : Windows.TDCB;
-  CommTimeouts : Windows.TCOMMTIMEOUTS;
+  DCB          : TDCB;
+  CommTimeouts : TCommTimeouts;
   Config       : string;
 //  ConfigCom    : TCOMMCONFIG;
 
@@ -359,7 +327,7 @@ end;
 ////////////////////////////////////////////////////////////////////////////////
 procedure TPuertoSerie.CerrarPuerto;
 begin
-  if PSerieOpen then FileClose(ComFile); { *Convertido desde CloseHandle* }
+  if PSerieOpen then CloseHandle(ComFile);
   PSerieOpen := false;
 end;
 
@@ -389,23 +357,23 @@ begin
   SetLength(pCH_conf ,NCanales);
   SetLength(ConfigCHs,NCanales);
 
-  // Tipo de comunicaciÃ³n
+  // Tipo de comunicación
   ThTipoCom        := 0;             // Directa por cable serie
 
-  // ComunicaciÃ³n Telefonica
+  // Comunicación Telefonica
   ConecTelef       := false;
   DesConecTelef    := false;
   IniConecTelef    := false;
   AutoDesconecDesc := false;         // Una vez terminadas la descarga se desconecta automaticamente
   AutoDesconecConf := false;         // Una vez terminadas la config se desconecta automaticamente
-  Ntelefono        := '';            // NÃºmero de telefono al cual llama para conectarse
-  NombreConex      := '';            // Nombre de la conexiÃ³n remota
+  Ntelefono        := '';            // Número de telefono al cual llama para conectarse
+  NombreConex      := '';            // Nombre de la conexión remota
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
 destructor TThreadComm.destruir;
 begin
-  // Me aseguro que no entre a ninguna funciÃ³n
+  // Me aseguro que no entre a ninguna función
   ConfigEquipo    := false;
   DescargarDatos  := false;
 
@@ -413,7 +381,7 @@ begin
   Pserie.Destruir;
   Datos.Destroy;
 
-  // Libero la memoria de los arreglos dinÃ¡micos
+  // Libero la memoria de los arreglos dinámicos
   SetLength(pvalorCH ,0);
   SetLength(pCH_conf ,0);
   SetLength(ConfigCHs,0);
@@ -427,7 +395,7 @@ var
 begin
   ConexOK := false;
 
-  // Inicializo el sistema de trandmisiÃ³n por Telefonia Celular
+  // Inicializo el sistema de trandmisión por Telefonia Celular
   if (ThTipoCom = 1) then begin
     IniComTelefon;
     retardo(500);   // Espero 1/2seg hasta que se inicialize
@@ -435,7 +403,7 @@ begin
 
   while not Terminated do begin
     try
-      // ConexiÃ³n por TelefÃ³nica (Puerto Serie)
+      // Conexión por Telefónica (Puerto Serie)
       if (ThTipoCom = 1) then begin
         if ConecTelef then begin
           // Ejecuto el procedure que realiza cosas cuando me conecto
@@ -444,17 +412,17 @@ begin
           ConecTelef    := false;
           DesConecTelef := false;
 
-          // Me indica si establecÃ­ alguna conexiÃ³n remota
+          // Me indica si establecí alguna conexión remota
           ConexOK       := true;
 
-          // Inicia la conecciÃ³n telefÃ³nica
+          // Inicia la conección telefónica
           ConectarTelefon;
 
           // Espero 15seg hasta que se conecte
           retardo(15000);
         end;
 
-        // Termina la conecciÃ³n telefÃ³nica
+        // Termina la conección telefónica
         if DesConecTelef  and ConexOK then begin
           // Ejecuto el procedure que realiza cosas cuando me desconecto
           POnDesConRemoto(nil);
@@ -462,7 +430,7 @@ begin
           // Acutalizo el flag
           DesConecTelef := false;
 
-          // Inicia la DesconecciÃ³n telefÃ³nica
+          // Inicia la Desconección telefónica
           DesConectarTelefon;
 
           // Espero 1seg hasta que se Desconecte
@@ -477,16 +445,16 @@ begin
           ConexOK          := false;
         end;
 
-        // Resetea el hardware de la conecciÃ³n telefÃ³nica
+        // Resetea el hardware de la conección telefónica
         if IniConecTelef  then begin
-          // Resetea el hardware de la conecciÃ³n telefÃ³nica
+          // Resetea el hardware de la conección telefónica
           IniComTelefon;
           // Me aseguro que no entre mas al ciclo
           IniConecTelef := false;
         end;
       end;
 
-      // ConexiÃ³n por Internet (TCP/IP)
+      // Conexión por Internet (TCP/IP)
       if (ThTipoCom = 2) then begin
         //
       end;
@@ -502,12 +470,12 @@ begin
         end
         else begin
           ONLine        := false;
-          DesConecTelef := true;              // Si se pierde la comunicaciÃ³n me desconecto
+          DesConecTelef := true;              // Si se pierde la comunicación me desconecto
         end;
       end;
       pActualizar(Self);                      // Actualizo la info en pantalla
 
-      // Configuro las variables bÃ¡sicas del Equipo
+      // Configuro las variables básicas del Equipo
       if ConfigEquipo  and ONLine then begin
         EscribirConfig;
         ConfigEquipo := false;
@@ -556,21 +524,21 @@ begin
 
   // Leeo la Hora del Equipo
   i := 21;
-        // Formo el nÃºmero de la fecha a partir de los 4 Bytes (32 bits)
+        // Formo el número de la fecha a partir de los 4 Bytes (32 bits)
   numDate := Byte(auxStr[i])+Byte(auxStr[i+1])+ Byte(auxStr[i+2])+Byte(auxStr[i+3])+
              Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535+Byte(auxStr[i+3])*16777215;
 
-        //Paso a DÃ­as la fecha de numDate que esta en segundos
+        //Paso a Días la fecha de numDate que esta en segundos
   numDate := numDate/86400 + StrToDateTime(Hora_Base);
   pHoraEquipo^ := numDate;
   pHoraActual^ := now;
 
   // Leo la fecha inicial del muestreo
   i := 25;
-        // Formo el nÃºmero de la fecha a partir de los 4 Bytes (32 bits)
+        // Formo el número de la fecha a partir de los 4 Bytes (32 bits)
   numDate  := Byte(auxStr[i])+Byte(auxStr[i+1])+ Byte(auxStr[i+2])+Byte(auxStr[i+3])+
               Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535+Byte(auxStr[i+3])*16777215;
-        //Paso a DÃ­as la fecha de numDate que esta en segundos
+        //Paso a Días la fecha de numDate que esta en segundos
   FechaINI      := numDate/86400 + StrToDateTime(Hora_Base);
   pIniMuestreo^ := FechaINI;
 
@@ -579,7 +547,7 @@ begin
   pTmuestreo^ := (Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+1])*255);
 
 
-  // Leeo la configuraciÃ³n de los Canales
+  // Leeo la configuración de los Canales
   i := 33;
   for NCanal:=0 to length(pvalorCH)-1 do
     pCH_conf[NCanal]^ := Byte(auxStr[i+NCanal]);
@@ -615,7 +583,7 @@ var
   Tt      : integer;   // Periodo auxiliar de muestreo
 
 begin
-  // Calculos de los Valores Nuevos de ConfiguraciÃ³n //
+  // Calculos de los Valores Nuevos de Configuración //
 
   // Nueva hora del Equipo la paso a un formato de 4 bytes
   hora   := round((now-StrToDateTime(Hora_Base))*86400);
@@ -625,11 +593,11 @@ begin
   Hora02 := Abytes[2];
   Hora03 := Abytes[3];
 
-  // CÃ¡lculo la hora del inicio de muestreo
+  // Cálculo la hora del inicio de muestreo
   if (T<60) then Tt := 60 else Tt := T;
   HoraAux := trunc(now*24)/24;
   while (HoraAux <= (now + 2/86400)) do begin
-    HoraAux := HoraAux + Tt/86400; // Paso el T a DÃ­as para poder Sumar con la Fecha Actual
+    HoraAux := HoraAux + Tt/86400; // Paso el T a Días para poder Sumar con la Fecha Actual
   end;
   ABytes := NumToAbytes( round((HoraAux-StrToDateTime(Hora_Base))*86400) );
   IniMuest00 := Abytes[0];
@@ -637,7 +605,7 @@ begin
   IniMuest02 := Abytes[2];
   IniMuest03 := Abytes[3];
 
-  // CÃ¡lculo del nuevo periodo de muestreo
+  // Cálculo del nuevo periodo de muestreo
   ABytes := NumToAbytes(T);
   T00    := ABytes[0];
   T01    := ABytes[1];
@@ -652,11 +620,11 @@ begin
   // Escribo el codigo para que entre a la subrrutina
   if not PSerie.EscribirAlPuertoSerie('CE') then exit;
 
-{  // Espero la seÃ±al que indica que esta listo para recibir la nueva config
+{  // Espero la señal que indica que esta listo para recibir la nueva config
   if not PSerie.LeerDelPuertoSerie(auxStr,2) then exit;
   Retardo(20);}
 
-  // Espero la seÃ±al ("OK") que indica que esta listo para recibir la nueva config
+  // Espero la señal ("OK") que indica que esta listo para recibir la nueva config
   i      := 0;
   auxStr := '';
   while ((auxStr <> 'OK') and (i<=200)) do begin
@@ -687,7 +655,7 @@ begin
   PSerie.EscribirAlPuertoSerie(chr(Tregre00));
   PSerie.EscribirAlPuertoSerie(chr(Tregre01));
 
-  // Escribo la nueva configuraciÃ³n de cada canal
+  // Escribo la nueva configuración de cada canal
   for i:=0 to length(ConfigCHs)-1 do
     PSerie.EscribirAlPuertoSerie(chr(ConfigCHs[i]));
 
@@ -715,17 +683,17 @@ begin
           Archivo    := Archivo +'.txt';
         end;
 
-    1 : begin //CSV - Planilla de cÃ¡lculo (formato en espaÃ±ol)
+    1 : begin //CSV - Planilla de cálculo (formato en español)
           sep        := ';';
           Archivo    := Archivo +'.csv';
         end;
 
-    2 : begin //CSV - Planilla de cÃ¡lculo (formato en ingles)
+    2 : begin //CSV - Planilla de cálculo (formato en ingles)
           sep        := ',';
           Archivo    := Archivo +'.csv';
         end;
 
-    3 : begin //PÃ¡gina Web
+    3 : begin //Página Web
           sep        := #9;
           Archivo    := Archivo +'.txt';
         end;
@@ -734,7 +702,7 @@ begin
   // Configuro las varable para adaptar la fecha con el formato elegido
   //FormatoFecha := Mercury.ObtenerFormatoFecha(IndiceFormatoFe);
   
-  // Me aseguro que no alla ningÃºn dato previo
+  // Me aseguro que no alla ningún dato previo
   Datos.Clear;
 
   // Incorporo la info en el archivo de texto y los titulos
@@ -748,8 +716,8 @@ begin
     Add('');
     Add('');
 
-    // DescripciÃ³n de los canales
-    Add('DescripciÃ³n de los Canales');
+    // Descripción de los canales
+    Add('Descripción de los Canales');
     Add('--------------------------');
 
     for i:=0 to length(pCH_conf)-1 do begin
@@ -762,7 +730,7 @@ begin
     Add('');
 
 
-    // DescripciÃ³n de los valores calculados
+    // Descripción de los valores calculados
     Add('Valores Calculados');
     Add('--------------------------');
 
@@ -802,7 +770,7 @@ begin
   // Leo los datos del equipo
   LeerDatos;
 
-  // Me desconecto de la conexiÃ³n remota
+  // Me desconecto de la conexión remota
   if AutoDesconecDesc then DesConecTelef := true;
 end;
 
@@ -891,7 +859,7 @@ begin
                 else AParam[k].valor := 0;
               end;
 
-              // Calculo los parÃ¡metros salinidad, densidad.....
+              // Calculo los parámetros salinidad, densidad.....
               pCalcParam^.CalcularValorParam(j);
 
               // Incorporo la info del parametro calculado a la linea
@@ -915,7 +883,7 @@ begin
 
     try
         if not FileExists(Archivo) then Datos.SaveToFile(Archivo)
-        else if DeleteFile(PChar(Archivo)) then Datos.SaveToFile(Archivo);
+        else if DeleteFile(Archivo) then Datos.SaveToFile(Archivo);
     except
         MessageBox(Handle,PChar('No se puede escribir en "'+ Archivo + '".'+
                    #13+'La carpeta no existe o no tiene permiso de escritura.') ,
@@ -931,30 +899,30 @@ begin
   SetLength(CanalesAct,0);
 end;
 
-// ComunicaciÃ³n Telefonica (Puerto Serie) 
+// Comunicación Telefonica (Puerto Serie) 
 ////////////////////////////////////////////////////////////////////////////////
-procedure TThreadComm.ConectarTelefon;     // Inicia el protocolo de ConecciÃ³n
+procedure TThreadComm.ConectarTelefon;     // Inicia el protocolo de Conección
 begin
   // Escribo el codigo para conectar al equipo
   if not PSerie.EscribirAlPuertoSerie('atd'+Ntelefono+#13) then exit;
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-procedure TThreadComm.DesConectarTelefon;  // Corta la comunicaciÃ³n telefonica
+procedure TThreadComm.DesConectarTelefon;  // Corta la comunicación telefonica
 begin
   // Escribo el codigo para conectar al equipo
   if not PSerie.EscribirAlPuertoSerie('ath'+#13) then exit;
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-procedure TThreadComm.IniComTelefon; // Inicializa el hardware de la comunicaciÃ³n telefÃ³nica
+procedure TThreadComm.IniComTelefon; // Inicializa el hardware de la comunicación telefónica
 begin
-  // Escribo el codigo para resetear el hardware de la comunicaciÃ³n telefÃ³nica 
+  // Escribo el codigo para resetear el hardware de la comunicación telefónica 
   if not PSerie.EscribirAlPuertoSerie('atz'+#13) then exit;
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-// ComunicaciÃ³n por Internet (TCP/IP)
+// Comunicación por Internet (TCP/IP)
 procedure TThreadComm.EscribirConfigInternet;
 var
   strIni     : string;
@@ -966,7 +934,7 @@ var
   i          : byte;
 
 begin
-  // Genero el String de InicializaciÃ³n del modem
+  // Genero el String de Inicialización del modem
   strIni := 'ATE0'+#13+'ATE0'+#13+'AT+CMGF=1'+#13+'AT+CNMI=3,2,2,0,0'+#13+'AT+CMGD=1,4'+#13
              +'AT+CREG=1'+#13;
 
@@ -976,7 +944,7 @@ begin
   // Genero el String del server    40000,"168.96.131.146",40000,0
   strServer := 'AT+MIPOPEN=1,'+port+',"'+server+'",'+port+',0'+#13+'/';
 
-  // Genero el String de finalizaciÃ³n del modem
+  // Genero el String de finalización del modem
   ABytes := NumToAbytes(CalcPeriodoConect(IndexTConect));
   strFin := chr(Abytes[1])+chr(Abytes[0])+'AT+MIPCLOSE=1'+#13+'/'+'AT+MIPCALL=0'+#13+'/';
   //strFin := chr(CalcPeriodoConect(IndexTConect))+'AT+MIPCLOSE=1'+#13+'/'+'AT+MIPCALL=0'+#13+'/';
@@ -1028,7 +996,7 @@ begin
     8 : P := round(12*60/(T/60))-1;
     // Conectar cada 24 horas
     9 : P := round(24*60/(T/60))-1;
-    // Ã“ptima, minimo costo de comunicaciÃ³n
+    // Óptima, minimo costo de comunicación
     10: P := round(980/(N*2)); // 980 son los bytes maximos que meto en un paquete
   else
     P :=0;
@@ -1087,4 +1055,7 @@ begin
   result := Abytes;
 end;
 
+////////////////////////////////////////////////////////////////////////////////
 end.
+
+

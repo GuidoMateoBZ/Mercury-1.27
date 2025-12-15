@@ -1,13 +1,11 @@
 unit UPreferencias;
 
-{$MODE Delphi}
-
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, ComCtrls, Buttons, UUtiles, StdCtrls,
-  UDataModule, MaskEdit;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, ComCtrls, Buttons, UUtiles, StdCtrls, QDialogs,
+  UDataModule, shellapi, Mask;
 
 type
   TFPreferencias = class(TForm)
@@ -69,7 +67,7 @@ var
 
 implementation
 
-{$R *.lfm}
+{$R *.dfm}
 ////////////////////////////////////////////////////////////////////////////////
 procedure TFPreferencias.FormCreate(Sender: TObject);
 begin
@@ -106,14 +104,14 @@ end;
 ////////////////////////////////////////////////////////////////////////////////
 procedure TFPreferencias.sbAceptarClick(Sender: TObject);
 begin
-  // Chequeo los parÃ¡metros, para asegurarme que sean correctos
+  // Chequeo los parámetros, para asegurarme que sean correctos
   if not ((StrToInt(mePort.Text)>20) and (StrToInt(mePort.Text)<65536)) then begin
-    // Cartel de InformacÃ­on
+    // Cartel de Informacíon
     MessageBox(Handle,'El puerto debe ser mayor a 20 y menor a 65536' , PChar(Caption), MB_OK	or MB_ICONERROR );
     exit;
   end;
 
-  // Cargo los paramÃ©tros de ConfiguraciÃ³n
+  // Cargo los paramétros de Configuración
   Mercury.DirDatos         := EDirDatos.Text;
   Mercury.DirDatosInternet := eDirDatosInternet.Text;
   Mercury.Puerto           := StrToInt(mePort.Text);
@@ -163,7 +161,7 @@ procedure TFPreferencias.sbMuestraWebClick(Sender: TObject);
 begin
   if not FileExists(EPaginaWeb.Text) then exit;
 
-   OpenDocument(Pchar(EPaginaWeb.Text)); { *Convertido desde ShellExecute* }
+  ShellExecute(handle,'open',Pchar(EPaginaWeb.Text),nil,nil,SW_SHOWNORMAL);
 end;
 
 ////////////////////////////////////////////////////////////////////////////////

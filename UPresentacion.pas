@@ -1,11 +1,9 @@
 unit UPresentacion;
 
-{$MODE Delphi}
-
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, StdCtrls;
 
 type
@@ -27,7 +25,7 @@ var
 
 implementation
 
-{$R *.lfm}
+{$R *.dfm}
 
 ////////////////////////////////////////////////////////////////////////////////
 procedure TFPresentacion.FormClose(Sender: TObject;
