@@ -1,8 +1,10 @@
 unit UUtiles;
 
+{$MODE Delphi}
+
 interface
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, IniFiles, UConexiones, USensor, UDiaJuliano;
 
 type
@@ -55,16 +57,16 @@ type
       Salir              : boolean;
       Grabando           : boolean;
 
-      // Variable que para el tipo de Comunicaci髇 (Serie o Telefonica)
+      // Variable que para el tipo de Comunicaci贸n (Serie o Telefonica)
       TipoDeComm         : byte; //0:CABLE SERIE; 1:TELEFONIA
 
       // Variables que utilizo en general
       HoraMuestreoLinea  : real;
 
-      // Objeto que administra las comunicaciones telef髇icas
+      // Objeto que administra las comunicaciones telef贸nicas
       ConexTelefon       : TConexionesTelef;
 
-      // Info de la conexi髇 autom醫ica
+      // Info de la conexi贸n autom谩tica
       ConexAuto          : TConexAuto;
 
       constructor Crear;
@@ -265,10 +267,10 @@ begin
   ConexTelefon           := TConexionesTelef.Crear;
   ConexTelefon.NombreINI := ExtractFilePath(ParamStr(0)) + 'ConexTelefon.ini';
 
-  // Creo el objeto de la conexi髇 autom醫ica
+  // Creo el objeto de la conexi贸n autom谩tica
   ConexAuto := TConexAuto.Crear;
 
-  // Direcci髇 de los distintos puertos de comunicaci髇
+  // Direcci贸n de los distintos puertos de comunicaci贸n
   PuertoSerie        := 'COM1';
   Puerto             := 40000;
 
@@ -311,7 +313,7 @@ begin
   GuardarRegistro    := 'N';
   IndexTConect       := 1; 
 
-  // Variables que para el tipo de Comunicaci髇 (Serie o Telefonica)
+  // Variables que para el tipo de Comunicaci贸n (Serie o Telefonica)
   TipoDeComm         := 0; // CABLE SERIE
 
   // Variables que utilizo en general
@@ -321,10 +323,10 @@ end;
 ////////////////////////////////////////////////////////////////////////////////
 destructor TMercury.Destruir;
 begin
-  // Destruyo el objeto de las comunicaciones telef髇icas
+  // Destruyo el objeto de las comunicaciones telef贸nicas
   ConexTelefon.Destruir;
 
-  // Destruyo el objeto de la conexi髇 autom醫ica
+  // Destruyo el objeto de la conexi贸n autom谩tica
   ConexAuto.Destruir;
 end;
 
@@ -380,10 +382,10 @@ begin
     IntervaloCaptura   := StrToInt(ArchivoINI.ReadString(NombreExe, 'IntervaloCaptura'  ,'0'));
     TipoArchivoReporte := StrToInt(ArchivoINI.ReadString(NombreExe, 'TipoArchivoReporte','1'));
 
-    // Tipo de Comunicaci髇
+    // Tipo de Comunicaci贸n
     TipoDeComm         := StrToInt(ArchivoINI.ReadString(NombreExe, 'TipoDeComm','0'));
 
-    // Info de la conexi髇 autom醫ica
+    // Info de la conexi贸n autom谩tica
     ConexAuto.intervalo    := StrToInt(ArchivoINI.ReadString(NombreExe, 'intervalo_Auto'   , '0'));
     ConexAuto.CritDesconec := StrToInt(ArchivoINI.ReadString(NombreExe, 'CritDesconec_Auto', '1'));
     ConexAuto.fecha        := ArchivoINI.ReadString(NombreExe,          'fecha_Auto'       , FormatDateTime('dd/mm/yy',now));
@@ -442,10 +444,10 @@ begin
     ArchivoINI.WriteString(NombreExe, 'IntervaloCaptura'  , IntToStr(IntervaloCaptura));
     ArchivoINI.WriteString(NombreExe, 'TipoArchivoReporte', IntToStr(TipoArchivoReporte));
 
-    // Tipo de Comunicaci髇
+    // Tipo de Comunicaci贸n
     ArchivoINI.WriteString(NombreExe, 'TipoDeComm'        , IntToStr(TipoDeComm));
 
-    // Info de la conexi髇 autom醫ica
+    // Info de la conexi贸n autom谩tica
     ArchivoINI.WriteString(NombreExe, 'intervalo_Auto'    , IntToStr(ConexAuto.intervalo));
     ArchivoINI.WriteString(NombreExe, 'CritDesconec_Auto' , IntToStr(ConexAuto.CritDesconec));
     ArchivoINI.WriteString(NombreExe, 'fecha_Auto'        , ConexAuto.fecha);

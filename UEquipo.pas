@@ -1,8 +1,10 @@
 unit UEquipo;
 
+{$MODE Delphi}
+
 interface
 uses
-  Windows, Registry, Classes, SysUtils, Dialogs, StdCtrls, SyncObjs, Math,
+  LCLIntf, LCLType, LMessages, Registry, Classes, SysUtils, Dialogs, StdCtrls, SyncObjs, Math,
   UUtiles, PuertoSerie, IniFiles, USensor, UFormulas;
 
 type
@@ -26,11 +28,11 @@ type
       PuertoSerie : string;                  // Puerto serie al que esta conectado el Equipo
       Hora_Base   : string;                  // Hora que tomo como referencia para calcular las fechas del equipo
       NumCanales  : byte;                    // Cantidad de canales que tiene el Equipo
-      Vref        : real;                    // TensiÛn de referencia usada por el A/D
-      BitsAD      : integer;                 // Bytes de ResulociÛn del A/D (8,10,..16)
+      Vref        : real;                    // Tensi√≥n de referencia usada por el A/D
+      BitsAD      : integer;                 // Bytes de Resuloci√≥n del A/D (8,10,..16)
       CantMemory  : integer;                 // Capacidad de Almacenamiento en Bytes
       Escala      : real;                    // Escala para comvertir los numeros en Volts   
-      ThreadComm  : TThreadComm;             // Thread de comunicaciÛn con el equipo.  
+      ThreadComm  : TThreadComm;             // Thread de comunicaci√≥n con el equipo.  
 
       constructor Crear(NCanales:byte; COMM:string; TipoCom: byte);
       destructor  Destruir;
@@ -70,7 +72,7 @@ begin
   SetLength(Canales,NumCanales);
   for i:=0 to NumCanales-1 do Canales[i] := TSensor.Crear;
 
-  // Me aseguro que la lista estÈ v·cia
+  // Me aseguro que la lista est√© v√°cia
   SetLength(ListaSenDir,0);
 
   // Creo el objeto TCalcParam
@@ -105,7 +107,7 @@ begin
     // Baurate por defecto (Cable Serie)
     PSerie.Baud := '19200';
 
-    // Seteo los par·metros para el tipo de ComunicaciÛn
+    // Seteo los par√°metros para el tipo de Comunicaci√≥n
     case TipoCom of
       0 : PSerie.Baud := '19200'; // CABLE SERIE
       //0 : PSerie.Baud := '9600'; // CABLE SERIE
@@ -122,7 +124,7 @@ begin
     PSerie.AbrirPuertoSerie(PuertoSerie);
     if not PSerie.ConfigPuertoSerie then exit;
 
-    Resume; // Arranco el thread para la comunicaciÛn con el equipo
+    Resume; // Arranco el thread para la comunicaci√≥n con el equipo
   end;
 end;
 
@@ -188,7 +190,7 @@ begin
       ArchivoINI.WriteString(Nombre, 'CH'+intToStr(i)+'_conf', IntToStr(Canales[i].Config));
     end;
 
-    // Guardo la config del los calculos de los par·metros
+    // Guardo la config del los calculos de los par√°metros
     CalcParam.GuardarParametros(DirINI+'\'+Nombre+'\'+Nombre+'.ini', Nombre);
 
     // Pongo el separador de las distintas secciones
@@ -249,7 +251,7 @@ begin
       Canales[i].ConfigINI := StrToInt(ArchivoINI.ReadString(Nombre, 'CH'+intToStr(i)+'_conf', '0'));
     end;
 
-    // Cargo  la config del los calculos de los par·metros
+    // Cargo  la config del los calculos de los par√°metros
     CalcParam.CargarParametros(DirINI+'\'+Nombre+'\'+Nombre+'.ini', Nombre);
 
     // Obtengo una lista de los archivos de sensores en el dir del equipo
@@ -305,7 +307,7 @@ begin
     exit;
   end;
 
-  // Borro la ConfiguraciÛn del Equipo en el Archivo INI
+  // Borro la Configuraci√≥n del Equipo en el Archivo INI
   ArchivoINI.EraseSection(Nombre);
 
 {  // Borro toda la info en el dir del equipo

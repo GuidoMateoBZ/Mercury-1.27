@@ -3,7 +3,7 @@ unit UServerSocket;
 interface
 uses
   Windows, Registry, Classes, SysUtils, Dialogs, StdCtrls, SyncObjs, Math,
-  UUtiles, ScktComp, UEquipoInternet;
+  UUtiles, Sockets, UEquipoInternet;
 
 type
   TServer = class(Tobject)
@@ -67,7 +67,7 @@ begin
   if (pTStrings = nil) then exit;
 
   strHora := FormatDateTime(FormatFecha, now);
-  pTStrings^.Add(strHora + ' -> El servidor está escuchando en el puerto ' + IntToStr(SrvSocket.Port) +'...');
+  pTStrings^.Add(strHora + ' -> El servidor estï¿½ escuchando en el puerto ' + IntToStr(SrvSocket.Port) +'...');
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -101,14 +101,14 @@ begin
   if (pTStrings = nil) then exit;
 
   case ErrorEvent of
-    eeGeneral    : pTStrings^.Add('Ocurrio un error general en la conexión');
-    eeSend       : pTStrings^.Add('Ocurrio un error al escribir en la conexión');
-    eeReceive    : pTStrings^.Add('Ocurrio un error al leer de la conexión');
-    eeConnect    : pTStrings^.Add('Un pedido de conexión fue aceptado pero no completado');
-    eeDisconnect : pTStrings^.Add('Un error ocurrio cuando se trataba de cerrar la conexión');
-    eeAccept     : pTStrings^.Add('Un error ocurrio cuando se trataba de aceptar un pedido de conexión');
+    eeGeneral    : pTStrings^.Add('Ocurrio un error general en la conexiï¿½n');
+    eeSend       : pTStrings^.Add('Ocurrio un error al escribir en la conexiï¿½n');
+    eeReceive    : pTStrings^.Add('Ocurrio un error al leer de la conexiï¿½n');
+    eeConnect    : pTStrings^.Add('Un pedido de conexiï¿½n fue aceptado pero no completado');
+    eeDisconnect : pTStrings^.Add('Un error ocurrio cuando se trataba de cerrar la conexiï¿½n');
+    eeAccept     : pTStrings^.Add('Un error ocurrio cuando se trataba de aceptar un pedido de conexiï¿½n');
   else
-    pTStrings^.Add('Ocurrio un error general en la conexión');
+    pTStrings^.Add('Ocurrio un error general en la conexiï¿½n');
   end;
 end;
 

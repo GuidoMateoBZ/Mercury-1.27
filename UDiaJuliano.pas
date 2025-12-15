@@ -2,8 +2,7 @@ unit UDiaJuliano;
 
 interface
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls;
+  SysUtils;
 
   function  DiaJuliano(fecha:TDateTime):Double;            {Monday, January 1, 4713 BC}
   function  DiaJulianoModificado(fecha:TDateTime):Double;  {midnight at the beginning of Wednesday November 17, 1858}

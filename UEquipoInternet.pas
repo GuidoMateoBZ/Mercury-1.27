@@ -3,7 +3,7 @@ unit UEquipoInternet;
 interface
 uses
   Windows, Registry, Classes, SysUtils, Dialogs, StdCtrls, SyncObjs, Math,
-  UUtiles, IniFiles, USensor, UFormulas, ScktComp, ExtCtrls, DateUtils;
+  UUtiles, IniFiles, USensor, UFormulas, Sockets, ExtCtrls, DateUtils;
 
 const
     BlockSize = 1024;
@@ -37,8 +37,8 @@ type
 
       Hora_Base   : string;                // Hora que tomo como referencia para calcular las fechas del equipo
       NumCanales  : byte;                  // Cantidad de canales que tiene el Equipo
-      Vref        : real;                  // Tensión de referencia usada por el A/D
-      BitsAD      : integer;               // Bytes de Resuloción del A/D (8,10,..16)
+      Vref        : real;                  // Tensiï¿½n de referencia usada por el A/D
+      BitsAD      : integer;               // Bytes de Resulociï¿½n del A/D (8,10,..16)
       CantMemory  : integer;               // Capacidad de Almacenamiento en Bytes
       Escala      : real;                  // Escala para comvertir los numeros en Volts
 
@@ -79,11 +79,11 @@ type
       ArchivoDesc     : string;            // Path y nombre del archivo en que guardo las descripciones de los canales   
       path            : string;            // Path del directorio en que guardo los datos
       sep             : string;            // Caracter que uso para separar las columas cuando bajo datos
-      Datos           : Tstrings;          // Información recopilada por el equipo
-      FormatoDescarga : byte;              // Elección del Formato en que descargo los datos
-      PeriodoDescarga : byte;              // Elección del periodo de acumulación de datos un archivo por dia o por mes
-      //FormatoFecha    : string;            // Elección del Formato de las fechas los datos
-      IndiceFormatoFe : byte;              // Selección del Formato de las fechas
+      Datos           : Tstrings;          // Informaciï¿½n recopilada por el equipo
+      FormatoDescarga : byte;              // Elecciï¿½n del Formato en que descargo los datos
+      PeriodoDescarga : byte;              // Elecciï¿½n del periodo de acumulaciï¿½n de datos un archivo por dia o por mes
+      //FormatoFecha    : string;            // Elecciï¿½n del Formato de las fechas los datos
+      IndiceFormatoFe : byte;              // Selecciï¿½n del Formato de las fechas
       BytesOcupados   : byte;              // Almacena la cantidad de bytes ocupados de la memoria para otra cosa
       ForzarVaLInsta  : char;              // Char que indica si uso modalidad de valores instantaneos por errores en memoria
 
@@ -109,7 +109,7 @@ type
       function    CalcPeriodoConect(index: byte):integer;
       procedure   ConfigEntorno;
 
-      // Funciones propias de la comunicación y descarga de datos
+      // Funciones propias de la comunicaciï¿½n y descarga de datos
       function    EscribirAlSocket(chs :string): boolean;
       function    LeerDelSocket(var chs :string; TamBuffer: integer):boolean;
       procedure   LeerConfig;
@@ -164,13 +164,13 @@ begin
   SetLength(Canales,NumCanales);
   for i:=0 to NumCanales-1 do Canales[i] := TSensor.Crear;
 
-  // Me aseguro que la lista esté vácia
+  // Me aseguro que la lista estï¿½ vï¿½cia
   SetLength(ListaSenDir,0);
 
   // Creo el objeto TCalcParam
   CalcParam := TCalculoParam.Crear;
 
-  // Varaibles de uso exclusivo de la comunicación y descarga de datos
+  // Varaibles de uso exclusivo de la comunicaciï¿½n y descarga de datos
   Datos                := TStringList.Create;
   ConfigEquipo         := false;
   ConfigInternetEquipo := false;
@@ -192,7 +192,7 @@ var
   i : integer;
 
 begin
-  // Me aseguro que no entre a ninguna función
+  // Me aseguro que no entre a ninguna funciï¿½n
   ConfigEquipo    := false;
   DescargarDatos  := false;
 
@@ -207,7 +207,7 @@ begin
   Datos.Destroy;
   CalcParam.Destruir;
 
-  // Libero la memoria de los arreglos dinámicos
+  // Libero la memoria de los arreglos dinï¿½micos
   SetLength(ConfigCHs,0);
 
   inherited Destroy;
@@ -240,7 +240,7 @@ var
 begin
   SockStream := TWinSocketStream.Create( ClientSocket, FClientTimeOut );
 
-  // Me aseguro que no quede ninguna información recidente  
+  // Me aseguro que no quede ninguna informaciï¿½n recidente  
   Limpiar;
 
   // Descargo los datos 
@@ -295,14 +295,14 @@ begin
         Retardo(2000);                      // Espero 5 seg por las dudas que el equipo siga mandando algo mas...
       end;
 
-      // Configuro las variables básicas del Equipo
+      // Configuro las variables bï¿½sicas del Equipo
       if ConfigEquipo  and ONLine then begin
         EscribirConfig;
         ConfigEquipo := false;
         Retardo(2000);
       end;
 
-      // Configuro el nuevo intervalo de conexión
+      // Configuro el nuevo intervalo de conexiï¿½n
       if ConfigTConect  and ONLine then begin
         EscribirConfigTConect;
         ConfigTConect := false;
@@ -328,7 +328,7 @@ begin
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-// Funciones de uso Exclusivo de la administración del equipo
+// Funciones de uso Exclusivo de la administraciï¿½n del equipo
 ////////////////////////////////////////////////////////////////////////////////
 procedure TServEquipoThread.Limpiar;
 var
@@ -365,7 +365,7 @@ begin
       ArchivoINI.WriteString(Nombre, 'CH'+intToStr(i)+'_conf', IntToStr(Canales[i].Config));
     end;
 
-    // Guardo la config del los calculos de los parámetros
+    // Guardo la config del los calculos de los parï¿½metros
     CalcParam.GuardarParametros(DirINI+Nombre+'\conf\'+Nombre+'.ini', Nombre);
 
     // Pongo el separador de las distintas secciones
@@ -426,7 +426,7 @@ begin
       Canales[i].ConfigINI := StrToInt(ArchivoINI.ReadString(Nombre, 'CH'+intToStr(i)+'_conf', '0'));
     end;
 
-    // Cargo  la config del los calculos de los parámetros
+    // Cargo  la config del los calculos de los parï¿½metros
     CalcParam.CargarParametros(DirINI+Nombre+'\conf\'+Nombre+'.ini', Nombre);
 
     // Obtengo una lista de los archivos de sensores en el dir del equipo
@@ -474,7 +474,7 @@ begin
     end;
 
     if CambiarConf='S' then begin
-      // Cargo los parametros básicos del equipo desde el archivo para re-configurarlo
+      // Cargo los parametros bï¿½sicos del equipo desde el archivo para re-configurarlo
       NombreEquipo := ArchivoINI.ReadString(Nombre,'Nombre'   , Nombre);
 
       T            := GetValorTablaT(StrToint(ArchivoINI.ReadString(Nombre,'Tmuestreo', intToStr(GetIndexTablaT(Tmuestreo)))));
@@ -485,10 +485,10 @@ begin
       if (T <> Tmuestreo) then CambiarTConect:='S';
 
       //
-      MensajeLog('Nueva configuración leida.');
+      MensajeLog('Nueva configuraciï¿½n leida.');
     end
     else begin
-      // Cargo los parametros básicos del equipo para re-configurarlo
+      // Cargo los parametros bï¿½sicos del equipo para re-configurarlo
       NombreEquipo := Nombre;
       T            := Tmuestreo;
 
@@ -507,26 +507,26 @@ begin
       server  := ArchivoINI.ReadString(Nombre,'server' , server);
       port    := ArchivoINI.ReadString(Nombre,'port'   , port);
 
-      // Si está todo bien mando a transmitir la nueva config
+      // Si estï¿½ todo bien mando a transmitir la nueva config
       ConfigInternetEquipo := true;
 
       //
-      MensajeLog('Nueva configuración de internet leida.');
+      MensajeLog('Nueva configuraciï¿½n de internet leida.');
     end;
 
     // Cargo la nueva config de internet para el equipo desde el archivo
     if CambiarTConect='S' then begin
       IndexTConect := StrToint(ArchivoINI.ReadString(Nombre,'IndexTConect', intToStr(IndexTConect)));
 
-      // Si está todo bien mando a transmitir la nueva config
+      // Si estï¿½ todo bien mando a transmitir la nueva config
       ConfigTConect := true;
 
       //
-      MensajeLog('Nuevo periódo de conexión leido.');
+      MensajeLog('Nuevo periï¿½do de conexiï¿½n leido.');
     end;
 
   except
-    // Cargo los parametros básicos del equipo para re-configurarlo
+    // Cargo los parametros bï¿½sicos del equipo para re-configurarlo
     NombreEquipo := Nombre;
     T            := Tmuestreo;
 
@@ -561,7 +561,7 @@ begin
       ForzarConfig   := ArchivoINI.ReadString(Nombre,'ForzarConfig' , 'N')[1];
     end;
 
-    // Fuerzo la reconfiguración del Equipo
+    // Fuerzo la reconfiguraciï¿½n del Equipo
     if ForzarConfig ='S' then begin
       // Aborto la descarga de datos
       DescargarDatos := false;
@@ -570,7 +570,7 @@ begin
       ConfigEquipo := true;
 
       //
-      MensajeLog('Reconfiguración forzada ejecutada.');
+      MensajeLog('Reconfiguraciï¿½n forzada ejecutada.');
     end;
 
     Result := true;
@@ -600,7 +600,7 @@ begin
       ForzarDescarga   := ArchivoINI.ReadString(Nombre,'ForzarDescarga', 'N')[1];
     end;
 
-    // Fuerzo la reconfiguración del Equipo
+    // Fuerzo la reconfiguraciï¿½n del Equipo
     if ForzarDescarga ='S' then begin
       //
       MensajeLog('Descarga forzada ejecutada.');
@@ -632,7 +632,7 @@ begin
       ForzarVaLInsta   := ArchivoINI.ReadString(Nombre,'ForzarValoresInstantaneos', 'N')[1];
     end;
 
-    // Fuerzo la reconfiguración del Equipo
+    // Fuerzo la reconfiguraciï¿½n del Equipo
     if ForzarVaLInsta ='S' then begin
       DescargarDatos     := True; // Aborto la descarga de datos
       DescargarDatosInst := True;
@@ -669,7 +669,7 @@ begin
     if not DirectoryExists(DirINI + Nombre) then MkDir(DirINI +Nombre);
     if not DirectoryExists(PathDir) then MkDir(PathDir);
 
-    // Guardo los paráametros básicos del equipo
+    // Guardo los parï¿½ametros bï¿½sicos del equipo
     ArchivoINI.WriteString(Nombre, 'CambiarConf', 'N');
     ArchivoINI.WriteString(Nombre, 'Nombre'     , Nombre);
     ArchivoINI.WriteString(Nombre, 'Tmuestreo'  , intToStr(GetIndexTablaT(Tmuestreo)));
@@ -679,7 +679,7 @@ begin
     // Pongo el separador de las distintas secciones
     ArchivoINI.WriteString(Nombre, '--','--');
 
-    // Configuración de Internet del Equipo
+    // Configuraciï¿½n de Internet del Equipo
     ArchivoINI.WriteString(Nombre, 'CambiarConfInternet', 'N');
     ArchivoINI.WriteString(Nombre, 'gateway'      , gateway);
     ArchivoINI.WriteString(Nombre, 'user'         , user);
@@ -690,14 +690,14 @@ begin
     // Pongo el separador de las distintas secciones
     ArchivoINI.WriteString(Nombre, '-','-');
 
-    // Configuración del periodo de conexión
+    // Configuraciï¿½n del periodo de conexiï¿½n
     ArchivoINI.WriteString(Nombre, 'CambiarTConect', 'N');
     ArchivoINI.WriteString(Nombre, 'IndexTConect'  , IntToStr(IndexTConect));
 
     // Pongo el separador de las distintas secciones
     ArchivoINI.WriteString(Nombre, '-.','.-');
 
-    // Reconfiguración Forzada
+    // Reconfiguraciï¿½n Forzada
     ArchivoINI.WriteString(Nombre, 'ForzarConfig', 'N');
     ArchivoINI.WriteString(Nombre, 'ForzarDescarga', 'N');
     ArchivoINI.WriteString(Nombre, 'ForzarValoresInstantaneos', ForzarVaLInsta);
@@ -737,8 +737,8 @@ begin
     result := true;
   except
     // Mensaje para indicar la tarea
-    MensajeLog('No se pudo guardar la información en "'+NombreDesc+'"');
-    MensajeLog('cerciórese de tener permiso de escritura en "'+ExtractFilePath(NombreDesc)+'".');
+    MensajeLog('No se pudo guardar la informaciï¿½n en "'+NombreDesc+'"');
+    MensajeLog('cerciï¿½rese de tener permiso de escritura en "'+ExtractFilePath(NombreDesc)+'".');
   end;
 
   DescSensores.Destroy;
@@ -773,7 +773,7 @@ begin
     exit;
   end;
 
-  // Borro la Configuración del Equipo en el Archivo INI
+  // Borro la Configuraciï¿½n del Equipo en el Archivo INI
   ArchivoINI.EraseSection(Nombre);
 
   // Libero los objetos creados
@@ -808,10 +808,10 @@ begin
             end;
           end;
 
-          // Me aseguro de no perder la posición en la lista
+          // Me aseguro de no perder la posiciï¿½n en la lista
           Canales[i].PosLista := ListaSensores[j].PosLista;
 
-          // Levanto la descripción de cada canal del archivo
+          // Levanto la descripciï¿½n de cada canal del archivo
           if (Canales[i].Config = Canales[i].ConfigINI) and
              (length(Canales[i].DescrINI)>0) then
             Canales[i].Descripcion := Canales[i].DescrINI;
@@ -826,7 +826,7 @@ begin
         // Asigno el sensor al canal
         Canales[i].Asignar(ListaSensores[1]);
 
-        // Me aseguro de no perder la posición en la lista
+        // Me aseguro de no perder la posiciï¿½n en la lista
         Canales[i].PosLista := ListaSensores[1].PosLista;
       end;
     end;
@@ -847,7 +847,7 @@ end;
 ////////////////////////////////////////////////////////////////////////////////
 procedure TServEquipoThread.ConfigEntorno;
 begin
-  // Configuro las variables de configuración
+  // Configuro las variables de configuraciï¿½n
   // Config de Internet
   gateway      := Mercury.Gateway;
   user         := Mercury.User;
@@ -866,7 +866,7 @@ begin
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-// Funciones de uso Exclusivo de la comunicación
+// Funciones de uso Exclusivo de la comunicaciï¿½n
 ////////////////////////////////////////////////////////////////////////////////
 function TServEquipoThread.EscribirAlSocket(chs :string): boolean;
 begin
@@ -876,7 +876,7 @@ begin
     // Me aseguro que trasmita todos los bytes
     if SockStream.Write( chs[1], Length(chs)) < length(chs) then result := false;
   except
-    // Desconexión inesperada
+    // Desconexiï¿½n inesperada
     result := false;
   end;
 end;
@@ -894,12 +894,12 @@ begin
     try
       SetLength( RequestBuf, TamBuffer );
       if (SockStream.Read( RequestBuf[1], TamBuffer) >= TamBuffer) then chs := RequestBuf
-      else result := false;   // El cliente envió menos datos datos de lo esperado
+      else result := false;   // El cliente enviï¿½ menos datos datos de lo esperado
     except
-      result := false;        // Desconexión inesperada
+      result := false;        // Desconexiï¿½n inesperada
     end;
   end
-  else result := false;       // El cliente no envió datos dentro del tiempo limite
+  else result := false;       // El cliente no enviï¿½ datos dentro del tiempo limite
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -914,7 +914,7 @@ var
 
 begin
   // Mensaje para indicar la tarea
-  MensajeLog('Leyendo la configuración...');
+  MensajeLog('Leyendo la configuraciï¿½n...');
 
   auxStr := '';
   if not LeerDelSocket(auxStr,50) then exit;
@@ -930,21 +930,21 @@ begin
 
   // Leeo la Hora del Equipo
   i := 21;
-  // Formo el número de la fecha a partir de los 4 Bytes (32 bits)
+  // Formo el nï¿½mero de la fecha a partir de los 4 Bytes (32 bits)
   numDate := Byte(auxStr[i])+Byte(auxStr[i+1])+ Byte(auxStr[i+2])+Byte(auxStr[i+3])+
              Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535+Byte(auxStr[i+3])*16777215;
 
-  //Paso a Días la fecha de numDate que esta en segundos
+  //Paso a Dï¿½as la fecha de numDate que esta en segundos
   numDate := numDate/86400 + StrToDateTime(Hora_Base);
   Hora    := numDate;
   HoraPC  := now;
 
   // Leo la fecha inicial del muestreo
   i := 25;
-        // Formo el número de la fecha a partir de los 4 Bytes (32 bits)
+        // Formo el nï¿½mero de la fecha a partir de los 4 Bytes (32 bits)
   numDate   := Byte(auxStr[i])+Byte(auxStr[i+1])+ Byte(auxStr[i+2])+Byte(auxStr[i+3])+
                Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535+Byte(auxStr[i+3])*16777215;
-        //Paso a Días la fecha de numDate que esta en segundos
+        //Paso a Dï¿½as la fecha de numDate que esta en segundos
   FechaINI  := numDate/86400 + StrToDateTime(Hora_Base);
   iniMuestr := FechaINI;
 
@@ -952,7 +952,7 @@ begin
   i         := 29;
   Tmuestreo := (Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+1])*255);
 
-  // Leeo la configuración de los Canales
+  // Leeo la configuraciï¿½n de los Canales
   i := 33;
   for NCanal:=0 to length(Canales)-1 do
     Canales[NCanal].Config := Byte(auxStr[i+NCanal]); //    pCH_conf[NCanal]^ := Byte(auxStr[i+NCanal]);
@@ -981,11 +981,11 @@ begin
   end;
 
   // Mensaje para indicar la tarea
-  MensajeLog('Configuración recibida correctamente.');
+  MensajeLog('Configuraciï¿½n recibida correctamente.');
 
   // Mensaje de advertencia por equipo fuera de Linea
   if ( YearOf(Hora) = YearOf( StrToDateTime(Hora_Base) ) ) then begin
-    MensajeLog('¡¡Advertencia!! - Equipo Fuera de Linea.');
+    MensajeLog('ï¿½ï¿½Advertencia!! - Equipo Fuera de Linea.');
   end;
 end;
 
@@ -1011,13 +1011,13 @@ begin
   // Por caracteres invalidos en el Nombre
   if ( BadChrsName ) then begin
     NombreEquipo := NombreRaw;
-    MensajeLog('¡¡Advertencia!! - Usando "RAW Name" !!!');
+    MensajeLog('ï¿½ï¿½Advertencia!! - Usando "RAW Name" !!!');
   end;
 
   // Mensaje para indicar la tarea
-  MensajeLog('Transmitiendo la nueva configuración...');
+  MensajeLog('Transmitiendo la nueva configuraciï¿½n...');
 
-  // Calculos de los Valores Nuevos de Configuración //
+  // Calculos de los Valores Nuevos de Configuraciï¿½n //
   // Nueva hora del Equipo la paso a un formato de 4 bytes
   hora   := round((now-StrToDateTime(Hora_Base))*86400)+ DelayCom; //+Delay para compensar los delays
   ABytes := NumToAbytes(hora);
@@ -1026,11 +1026,11 @@ begin
   Hora02 := Abytes[2];
   Hora03 := Abytes[3];
 
-  // Cálculo la hora del inicio de muestreo
+  // Cï¿½lculo la hora del inicio de muestreo
   if (T<60) then Tt := 60 else Tt := T;
   HoraAux := trunc(now*24)/24;
   while (HoraAux <= (now + 2/86400)) do begin
-    HoraAux := HoraAux + Tt/86400; // Paso el T a Días para poder Sumar con la Fecha Actual
+    HoraAux := HoraAux + Tt/86400; // Paso el T a Dï¿½as para poder Sumar con la Fecha Actual
   end;
   ABytes := NumToAbytes( round((HoraAux-StrToDateTime(Hora_Base))*86400)); 
   IniMuest00 := Abytes[0];
@@ -1038,7 +1038,7 @@ begin
   IniMuest02 := Abytes[2];
   IniMuest03 := Abytes[3];
 
-  // Cálculo del nuevo periodo de muestreo
+  // Cï¿½lculo del nuevo periodo de muestreo
   ABytes := NumToAbytes(T);
   T00    := ABytes[0];
   T01    := ABytes[1];
@@ -1052,11 +1052,11 @@ begin
   // Escribo el codigo para que entre a la subrrutina
 {  if not EscribirAlSocket('CE') then exit;
 
-  // Espero la señal que indica que esta listo para recibir la nueva config
+  // Espero la seï¿½al que indica que esta listo para recibir la nueva config
   if not PSerie.LeerDelPuertoSerie(auxStr,2) then exit;
   Retardo(500);
 
-  // Espero la señal ("OK") que indica que esta listo para recibir la nueva config
+  // Espero la seï¿½al ("OK") que indica que esta listo para recibir la nueva config
   i      := 0;
   auxStr := '';
   while ((auxStr <> 'OK') and (i<=200)) do begin
@@ -1067,7 +1067,7 @@ begin
   // Me aseguro que si hay problemas aborto
   if (i>200) then exit;}
 
-  // Inicializo la nueva configuración
+  // Inicializo la nueva configuraciï¿½n
   NewConf := 'CE';
 
   // Escribo la nueva hora al equipo
@@ -1090,7 +1090,7 @@ begin
   NewConf := NewConf + chr(Tregre00);
   NewConf := NewConf + chr(Tregre01);
 
-  // Escribo la nueva configuración de cada canal
+  // Escribo la nueva configuraciï¿½n de cada canal
   for i:=0 to length(ConfigCHs)-1 do
     NewConf := NewConf + chr(ConfigCHs[i]);
 
@@ -1100,19 +1100,19 @@ begin
   NewConf := NewConf + NombreEquipo[3];
   NewConf := NewConf + NombreEquipo[4];
 
-  // Trasmito la nueva configuración
+  // Trasmito la nueva configuraciï¿½n
   if EscribirAlSocket(NewConf) then begin
-    // Guardo la config básica en archivo para poder re-configurar el equipo
+    // Guardo la config bï¿½sica en archivo para poder re-configurar el equipo
     GuardarNuevaConf(path);
     // Guardo la lista de sensores disponibles
     GuardarSensoresDisp(path);
     // Mensaje para indicar la tarea
-    MensajeLog('Nueva configuración transmitida correctamente.');
+    MensajeLog('Nueva configuraciï¿½n transmitida correctamente.');
   end;
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-// Comunicación por Internet (TCP/IP)
+// Comunicaciï¿½n por Internet (TCP/IP)
 procedure TServEquipoThread.EscribirConfigInternet;
 var
   strIni     : string;
@@ -1124,9 +1124,9 @@ var
 
 begin
   //
-  MensajeLog('Transmitiendo la nueva configuración de internet...');
+  MensajeLog('Transmitiendo la nueva configuraciï¿½n de internet...');
 
-  // Genero el String de Inicialización del modem
+  // Genero el String de Inicializaciï¿½n del modem
   strIni := 'ATE0'+#13+'ATE0'+#13+'AT+CMGF=1'+#13+'AT+CNMI=3,2,2,0,0'+#13+'AT+CMGD=1,4'+#13
              +'AT+CREG=1'+#13;
 
@@ -1136,7 +1136,7 @@ begin
   // Genero el String del server    40000,"168.96.131.146",40000,0
   strServer := 'AT+MIPOPEN=1,'+port+',"'+server+'",'+port+',0'+#13+'/';
 
-  // Genero el String de finalización del modem
+  // Genero el String de finalizaciï¿½n del modem
   ABytes := NumToAbytes(CalcPeriodoConect(IndexTConect));
   strFin := chr(Abytes[1])+chr(Abytes[0])+'AT+MIPCLOSE=1'+#13+'/'+'AT+MIPCALL=0'+#13+'/';
   //strFin := chr(CalcPeriodoConect(IndexTConect))+'AT+MIPCLOSE=1'+#13+'/'+'AT+MIPCALL=0'+#13+'/';
@@ -1146,9 +1146,9 @@ begin
 
   // Escribo toda la config de internet
   if not EscribirAlSocket('GA' + auxStr) then
-    MensajeLog('No se pudo transmitir los nuevos parámetros de internet.')
+    MensajeLog('No se pudo transmitir los nuevos parï¿½metros de internet.')
   else
-    MensajeLog('Nueva configuración de internet enviada.');
+    MensajeLog('Nueva configuraciï¿½n de internet enviada.');
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1162,9 +1162,9 @@ begin
   n      := (Abytes[1]*255 + Abytes[0]); // * T;
 
   if not EscribirAlSocket('TX'+chr(Abytes[1])+chr(Abytes[0])) then
-    MensajeLog('No se pudo transmitir el nuevo periódo.')
+    MensajeLog('No se pudo transmitir el nuevo periï¿½do.')
   else
-    MensajeLog('Nuevo periódo de conexión transmitido. - (Periodo = '+IntToStr(IndexTConect)+ '; ' + intToStr(n) +' muestras)');
+    MensajeLog('Nuevo periï¿½do de conexiï¿½n transmitido. - (Periodo = '+IntToStr(IndexTConect)+ '; ' + intToStr(n) +' muestras)');
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1192,19 +1192,19 @@ begin
           ArchivoBckDly := ArchivoBckDly + '.txt';
         end;
 
-    1 : begin //CSV - Planilla de cálculo (formato en español)
+    1 : begin //CSV - Planilla de cï¿½lculo (formato en espaï¿½ol)
           sep           := ';';
           Archivo       := Archivo +'.csv';
           ArchivoBckDly := ArchivoBckDly + '.csv';
         end;
 
-    2 : begin //CSV - Planilla de cálculo (formato en ingles)
+    2 : begin //CSV - Planilla de cï¿½lculo (formato en ingles)
           sep           := ',';
           Archivo       := Archivo +'.csv';
           ArchivoBckDly := ArchivoBckDly + '.csv';
         end;
 
-    3 : begin //Página Web
+    3 : begin //Pï¿½gina Web
           sep           := #9;
           Archivo       := Archivo +'.txt';
           ArchivoBckDly := ArchivoBckDly + '.txt';
@@ -1216,7 +1216,7 @@ begin
     ArchivoBckDly := ArchivoBckDly + '.txt';
   end;
 
-  // Me aseguro que no halla ningún dato previo
+  // Me aseguro que no halla ningï¿½n dato previo
   Datos.Clear;
 
   // Incorporo la info en el archivo de texto y los titulos
@@ -1230,8 +1230,8 @@ begin
     Add('');
     Add('');
 
-    // Descripción de los canales
-    Add('Descripción de los Canales');
+    // Descripciï¿½n de los canales
+    Add('Descripciï¿½n de los Canales');
     Add('--------------------------');
     for i:=0 to length(Canales)-1 do begin
       if (Canales[i].Config > 0) then begin //
@@ -1242,7 +1242,7 @@ begin
     Add('');
     Add('');
 
-    // Descripción de los valores calculados
+    // Descripciï¿½n de los valores calculados
     Add('Valores Calculados');
     Add('--------------------------');
     for i:=0 to CalcParam.CantParm-1 do begin
@@ -1259,17 +1259,17 @@ begin
   try
     if not FileExists(ArchivoDesc) then Datos.SaveToFile(ArchivoDesc)
     else if DeleteFile(ArchivoDesc) then Datos.SaveToFile(ArchivoDesc);
-    MensajeLog('Descripción de los canales guardada en "'+ArchivoDesc+'".');
+    MensajeLog('Descripciï¿½n de los canales guardada en "'+ArchivoDesc+'".');
   except
     // Mensaje para indicar la tarea
-    MensajeLog('No se pudo guardar la información en "'+ArchivoDesc+'"');
-    MensajeLog('cerciórese de tener permiso de escritura en "'+ExtractFilePath(ArchivoDesc)+'".');
+    MensajeLog('No se pudo guardar la informaciï¿½n en "'+ArchivoDesc+'"');
+    MensajeLog('cerciï¿½rese de tener permiso de escritura en "'+ExtractFilePath(ArchivoDesc)+'".');
   end;
 
   // Si no tengo problemas en la memoria trabajo de forma normal como logger
   //DescargarDatosInst := false;
   if not DescargarDatosInst then begin
-    // Me aseguro que no hubo una discontinuidad en la transmisión de datos
+    // Me aseguro que no hubo una discontinuidad en la transmisiï¿½n de datos
     // si es asi tengo que bajar los datos de la memoria del equipo
     if not RupturaTransmision then GuardarValoresInstantaneos(0) // Guardo los valores de cada canal
     else LeerDatos; // Leo los datos del equipo alacenados en su memoria y guardo en el disco
@@ -1287,11 +1287,11 @@ var
 begin
   // Devuelve falso si no hay ruptura y verdadero si hay un hueco en los datos
  
-  // me fijo cuantos canales están activos
+  // me fijo cuantos canales estï¿½n activos
   NActivos := 0;
   for i:=0 to NumCanales-1 do if (Canales[i].Config>0) then inc(NActivos,1);
 
-  // calculo cuanto seria la memoria ocupada si solo tiene almacenado los últimos valores
+  // calculo cuanto seria la memoria ocupada si solo tiene almacenado los ï¿½ltimos valores
   mem := NActivos*2 + BytesOcupados;
 
   // Me fijo si huvo ruptura
@@ -1323,7 +1323,7 @@ begin
     end;
   end;
 
-  // Me aseguro que no halla ningún dato previo
+  // Me aseguro que no halla ningï¿½n dato previo
   Datos.Clear;
 
   // Guardo la info en el archivo
@@ -1362,8 +1362,8 @@ begin
     end;
   except
     // Mensaje para indicar la tarea
-    MensajeLog('No se pudo guardar la información en "'+Archivo+'"');
-    MensajeLog('cerciórese de tener permiso de escritura en "'+ExtractFilePath(Archivo)+'".');
+    MensajeLog('No se pudo guardar la informaciï¿½n en "'+Archivo+'"');
+    MensajeLog('cerciï¿½rese de tener permiso de escritura en "'+ExtractFilePath(Archivo)+'".');
   end;
 
   // Me aseguro de liberar memoria
@@ -1454,7 +1454,7 @@ begin
     else begin
       MensajeLog('--- Integridad DUDOSA. ---');
       if not ForzarDescarga(path) then begin
-        MensajeLog('--- Comunicación abortada con el equipo. ---');
+        MensajeLog('--- Comunicaciï¿½n abortada con el equipo. ---');
         ConfigEquipo := False;
         GuardarValoresInstantaneos(0);
         exit;
@@ -1484,7 +1484,7 @@ begin
                 else AParam[k].valor := 0;
               end;
 
-              // Calculo los parámetros salinidad, densidad.....
+              // Calculo los parï¿½metros salinidad, densidad.....
               CalcParam.CalcularValorParam(j);
 
               // Incorporo la info del parametro calculado a la linea
@@ -1539,7 +1539,7 @@ begin
       if (i-1)=(Nbytes div 2) then MensajeLog(intToStr((i-1)*2)+' bytes recibidos y guardados')
       else begin
         MensajeLog('No se pudo descargar los ' +intToStr(Nbytes)+' bytes desde el equipo.');
-        MensajeLog('Comunicación abortada con el equipo.');
+        MensajeLog('Comunicaciï¿½n abortada con el equipo.');
         ConfigEquipo := False;
       end;
 
@@ -1554,7 +1554,7 @@ begin
           else
             begin
               MensajeLog('No se pudo descargar los ' +intToStr(Nbytes)+' bytes desde el equipo.');
-              MensajeLog('Comunicación abortada con el equipo.');
+              MensajeLog('Comunicaciï¿½n abortada con el equipo.');
               ConfigEquipo := False;
             end;
         end
@@ -1577,11 +1577,11 @@ begin
       end;
 
       // Mensaje para indicar el problema
-      MensajeLog('No se pudo guardar la información en "'+Archivo+'"');
-      MensajeLog('cerciórese de tener permiso de escritura en "'+ExtractFilePath(Archivo)+'".');
+      MensajeLog('No se pudo guardar la informaciï¿½n en "'+Archivo+'"');
+      MensajeLog('cerciï¿½rese de tener permiso de escritura en "'+ExtractFilePath(Archivo)+'".');
     end;
   end
-  else MensajeLog('No habia información para ser guardada');
+  else MensajeLog('No habia informaciï¿½n para ser guardada');
 
   // Me aseguro de liberar memoria
   SetLength(CanalesAct,0);
@@ -1626,7 +1626,7 @@ begin
     8 : P := round(12*60/(Tp/60))-1;
     // Conectar cada 24 horas
     9 : P := round(24*60/(Tp/60))-1;
-    // Óptima, minimo costo de comunicación
+    // ï¿½ptima, minimo costo de comunicaciï¿½n
     10: P := round(980/(N*2)); // 980 son los bytes maximos que meto en un paquete
   else
     P :=0;

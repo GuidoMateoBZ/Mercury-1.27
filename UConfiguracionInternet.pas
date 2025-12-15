@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, UUtiles, Buttons, ExtCtrls, StdCtrls, UEquipo, Mask;
+  Dialogs, UUtiles, Buttons, ExtCtrls, StdCtrls, UEquipo, MaskEdit;
 
 type
   TFConfiguracionInternet = class(TForm)
@@ -70,7 +70,7 @@ end;
 procedure TFConfiguracionInternet.sbConfigEquipoClick(Sender: TObject);
 begin
   if not pEquipo^.ThreadComm.ONLine then begin
-    // Cartel de Informacíon
+    // Cartel de Informacï¿½on
     MessageBox(Handle,'El equipo no se encuentra conectado.', PChar(Caption), MB_OK	or MB_ICONERROR );
     exit;
   end;
@@ -78,19 +78,19 @@ begin
   // Chequeo la integridad de los valores antes de aceptarlos
   // Chequeo el puerto
   if not ((StrToInt(mePort.Text)>20) and (StrToInt(mePort.Text)<65536)) then begin
-    // Cartel de Informacíon
+    // Cartel de Informacï¿½on
     MessageBox(Handle,'El puerto debe ser mayor a 20 y menor a 65536' , PChar(Caption), MB_OK	or MB_ICONERROR );
     exit;
   end;
 
-  // Chequeo el periodo de Conexión
+  // Chequeo el periodo de Conexiï¿½n
   if (pEquipo^.ThreadComm.CalcPeriodoConect(cbIntervaloConect.ItemIndex)=65535) then begin
-    // Cartel de Informacíon
+    // Cartel de Informacï¿½on
     MessageBox(Handle,'No se puede conectar con ese intervalo debido al periodo de muestreo actual.', PChar(Caption), MB_OK	or MB_ICONERROR );
     exit;
   end;
 
-  // Cargo los nuevos parámetros al thread para que configure el equipo
+  // Cargo los nuevos parï¿½metros al thread para que configure el equipo
   pEquipo^.ThreadComm.gateway      := eGateway.Text;
   pEquipo^.ThreadComm.user         := eUser.Text;
   pEquipo^.ThreadComm.pass         := ePass.Text;
@@ -106,7 +106,7 @@ begin
   Mercury.Puerto       := StrToInt(mePort.Text);
   Mercury.IndexTConect := cbIntervaloConect.ItemIndex;
 
-  // Activo el flag para que transmita la configuración
+  // Activo el flag para que transmita la configuraciï¿½n
   pEquipo^.ThreadComm.ConfigInternetEquipo := true;
   close;
 end;

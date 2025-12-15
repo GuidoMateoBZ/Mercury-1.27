@@ -1,9 +1,10 @@
 unit USensor;
 
+{$MODE Delphi}
+
 interface
 uses
-  Windows, Registry, Classes, SysUtils, Dialogs, StdCtrls, SyncObjs, Math,
-  IniFiles;
+  Classes, SysUtils, Dialogs, Math, IniFiles;
 
 type
 
@@ -215,7 +216,7 @@ end;
 ////////////////////////////////////////////////////////////////////////////////
 function TSensor.ObtenerDesc:string;
 begin
-  // Genero la linea que contine una descripción básica del Sensor
+  // Genero la linea que contine una descripciÃ³n bÃ¡sica del Sensor
   result := '('+intToStr(Config)+')'+#9+ Descripcion+'; ['+Unidad+']; '+Entrada+'; '+Modo+'; '+Salida+'.';
 end;
 
@@ -226,14 +227,14 @@ var
   i            : byte;
 
 begin
-  // Formato de salida en función de la cantidad de decimales requeridos   
+  // Formato de salida en funciÃ³n de la cantidad de decimales requeridos   
   auxDecimales :='0';
   if Decimales>0 then begin
     auxDecimales :='0.';
     for i:=1 to Decimales do auxDecimales := auxDecimales + '0';
   end;
 
-  // Corrección por la escala.
+  // CorrecciÃ³n por la escala.
   if UpperCase(Entrada)= 'TENSION'then x := x*escala;
 
   // Calculo el valor real del sensor

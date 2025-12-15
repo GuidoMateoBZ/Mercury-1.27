@@ -3,23 +3,23 @@ unit UConexiones;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, Buttons, ComCtrls, ImgList, IniFiles;
+  Windows, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, Buttons, ComCtrls, ImgList, IniFiles;
 
 type
-  TConexAuto  = class(Tobject)               // Objeto que administra la conexión automática
+  TConexAuto  = class(Tobject)               // Objeto que administra la conexiï¿½n automï¿½tica
     private
     //
     public
-      intervalo   : byte;                    // Intervalo entre las conexiones automáticas 
+      intervalo   : byte;                    // Intervalo entre las conexiones automï¿½ticas 
       CritDesconec: byte;                    // Criterio que utilizo para desconectarme auto
-      MomentoConx : TDateTime;               // Momento en que se debe realizar la conexión
+      MomentoConx : TDateTime;               // Momento en que se debe realizar la conexiï¿½n
       fecha       : string;
       hora        : string;
-      pEnHora     : TNotifyEvent;            // Ejecuta la conexión automática con los equipos
+      pEnHora     : TNotifyEvent;            // Ejecuta la conexiï¿½n automï¿½tica con los equipos
       Timer       : TTimer;
-      indexConex  : integer;                 // Me indica cual es la conexión activa
-      Conectado   : boolean;                 // Flag que indica si estoy conectado con algún equipo 
+      indexConex  : integer;                 // Me indica cual es la conexiï¿½n activa
+      Conectado   : boolean;                 // Flag que indica si estoy conectado con algï¿½n equipo 
       tablaInter  : array [1..6] of real;
 
       constructor Crear;
@@ -32,14 +32,14 @@ type
       function    ChequearParam:boolean;
   end;
 
-  TConexTelef = record                       // Registro que almacena las config de la com telefónica
+  TConexTelef = record                       // Registro que almacena las config de la com telefï¿½nica
                   Nombre    : string;
                   Ntelefono : string;
                   NLlamadas : integer;
                   Select    : char;
                 end;
 
-  TConexionesTelef = class(Tobject)          // Objeto que administra las comunicaciones telefónicas
+  TConexionesTelef = class(Tobject)          // Objeto que administra las comunicaciones telefï¿½nicas
     private
       //
     public
@@ -93,13 +93,13 @@ begin
   Timer.Interval := 1000;         // Un seg;
   Timer.Enabled  := true;
 
-  // Realizo la conexión en el momento prefijado
+  // Realizo la conexiï¿½n en el momento prefijado
   if (not (Conectado)) and (MomentoConx < now) and (intervalo > 0) then begin
     // Paro el timer
     Timer.Enabled := false;
 
-    CalcularFecha;                      // Calculo la nueva fecha de conexión
-    CalcularMomentoConx;                // Calculo el momento (datetime) en que se debe realizar la nueva conexión
+    CalcularFecha;                      // Calculo la nueva fecha de conexiï¿½n
+    CalcularMomentoConx;                // Calculo el momento (datetime) en que se debe realizar la nueva conexiï¿½n
     pEnHora(nil);                       // Ejecuto el codigo cuando se cumple el tiempo
 
     // Espero un tiempo mayor ya que no es necesario que siga chequeando
@@ -112,7 +112,7 @@ begin
   if (indexConex > 0) and (intervalo > 0) then begin
     // Paro el timer
     Timer.Enabled := false;
-    // Ejecuto el procedimiento de conexión
+    // Ejecuto el procedimiento de conexiï¿½n
     pEnHora(nil);
     // Espero un tiempo mayor ya que no es necesario que siga chequeando
     Timer.Interval := 2000;             // Dos seg;
@@ -163,10 +163,10 @@ function TConexAuto.ChequearParam:boolean;
 begin
   result := true;
 
-  // Me aseguro que si el intervalo está mal no haga nada
+  // Me aseguro que si el intervalo estï¿½ mal no haga nada
   if not (intervalo<=6) then  intervalo := 0;
 
-  // Me aseguro que si el criterio está mal lo pongo por defecto
+  // Me aseguro que si el criterio estï¿½ mal lo pongo por defecto
   if not (CritDesconec<=1) then  CritDesconec := 1;
 
   try
@@ -174,7 +174,7 @@ begin
     StrToDateTime(fecha +' '+ hora);
     
   except
-    // Me aseguro que no este habilitada la conexión automática
+    // Me aseguro que no este habilitada la conexiï¿½n automï¿½tica
     intervalo := 0;
 
     // Le asigno una nueva fecha
@@ -182,7 +182,7 @@ begin
     hora   := FormatDateTime('hh:nn',now);
     result := false;
 
-    // Cartel de Informacíon
+    // Cartel de Informacï¿½on
     MessageBox(0,'Hay un error en la fecha o en la hora.', PChar('Mercury'), MB_OK	or MB_ICONERROR );
   end;
 end;
@@ -302,13 +302,13 @@ begin
   // Obtengo la cantidad de conexiones existentes
   NumConex := length(AConexiones);
 
-  // Creo el espacio para la nueva conexión
+  // Creo el espacio para la nueva conexiï¿½n
   SetLength(AConexiones, NumConex+1);
 
   // Obtengo la cantidad de conexiones existentes
   NumConex := length(AConexiones);
 
-  // Cargo la info de la nueva conexión
+  // Cargo la info de la nueva conexiï¿½n
   AConexiones[NumConex-1].Nombre    := NuevaConex.Nombre;
   AConexiones[NumConex-1].Ntelefono := NuevaConex.Ntelefono;
   AConexiones[NumConex-1].NLlamadas := NuevaConex.NLlamadas;
@@ -330,7 +330,7 @@ begin
     AConexiones[i].Select    := AConexiones[i+1].Select;    
   end;
 
-  // Borro el último lugar
+  // Borro el ï¿½ltimo lugar
   SetLength(AConexiones, NumConex-1);
 
   // Obtengo la cantidad de conexiones existentes

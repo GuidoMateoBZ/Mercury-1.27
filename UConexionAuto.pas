@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, CheckLst, Buttons, Mask, UUtiles;
+  Dialogs, ExtCtrls, StdCtrls, CheckLst, Buttons, MaskEdit, UUtiles;
 
 type
   TFConexionAuto = class(TForm)
@@ -74,34 +74,34 @@ var
   i :integer;
 
 begin
-  // Asigno el nuevo intervalo de conexión
+  // Asigno el nuevo intervalo de conexiï¿½n
   pMercury^.ConexAuto.intervalo := cbIntervalo.ItemIndex;
 
-  // Asigno el nuevo criterio de desconección
+  // Asigno el nuevo criterio de desconecciï¿½n
   pMercury^.ConexAuto.CritDesconec := cbDeconectar.ItemIndex;
 
-  // Asigno la nueva fecha de conexión
+  // Asigno la nueva fecha de conexiï¿½n
   pMercury^.ConexAuto.fecha := meFecha.Text;
 
-  // Asigno la nueva hora de conexión
+  // Asigno la nueva hora de conexiï¿½n
   pMercury^.ConexAuto.hora := meHora.Text;
 
-  // Chequeo los parámetros de la conexión automática
+  // Chequeo los parï¿½metros de la conexiï¿½n automï¿½tica
   if  not pMercury^.ConexAuto.ChequearParam then exit;
 
   // Me aseguro que la fecha este el en futuro
   if (StrToDateTime(pMercury^.ConexAuto.fecha +' '+ pMercury^.ConexAuto.hora) < now) then begin
-    MessageBox(handle,'Error en la fecha, el momento elegido ya pasó.', PChar('Mercury'), MB_OK	or MB_ICONERROR );
+    MessageBox(handle,'Error en la fecha, el momento elegido ya pasï¿½.', PChar('Mercury'), MB_OK	or MB_ICONERROR );
     exit;
   end;
 
-  // Asigno la nueva configuración de las conexiones
+  // Asigno la nueva configuraciï¿½n de las conexiones
   for i:=0 to pMercury^.ConexTelefon.NumConex-1 do begin
     if clbListaConexiones.Checked[i] then pMercury^.ConexTelefon.AConexiones[i].Select := 'S'
     else pMercury^.ConexTelefon.AConexiones[i].Select := 'N';
   end;
 
-  // habilito la timer para la conexión
+  // habilito la timer para la conexiï¿½n
   pMercury^.ConexAuto.CalcularFecha;
   pMercury^.ConexAuto.CalcularMomentoConx;
 
@@ -158,19 +158,19 @@ begin
     if pMercury^.ConexTelefon.AConexiones[i].Select = 'S' then clbListaConexiones.Checked[i] := true;
   end;
 
-  // Cargo el intervalo de conexión
+  // Cargo el intervalo de conexiï¿½n
   cbIntervalo.ItemIndex := pMercury^.ConexAuto.intervalo;
   oldIntervalo          := pMercury^.ConexAuto.intervalo;
 
-  // Cargo el Criterio de desconección
+  // Cargo el Criterio de desconecciï¿½n
   cbDeconectar.ItemIndex := pMercury^.ConexAuto.CritDesconec;
   oldCritDesconec        := pMercury^.ConexAuto.CritDesconec;
 
-  // Cargo la fecha de la conexión
+  // Cargo la fecha de la conexiï¿½n
   meFecha.Text := pMercury^.ConexAuto.fecha;
   oldFecha     := pMercury^.ConexAuto.fecha;
 
-  // Cargo la hora de la conexión
+  // Cargo la hora de la conexiï¿½n
   meHora.Text := pMercury^.ConexAuto.hora;
   oldHora     := pMercury^.ConexAuto.hora;
 
