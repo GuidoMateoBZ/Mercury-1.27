@@ -32,7 +32,9 @@
       <Unit>
         <Filename Value="Uprincipal.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="Fprincipal"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit>
       <Unit>
         <Filename Value="UEquipo.pas"/>
@@ -82,7 +84,9 @@
       <Unit>
         <Filename Value="UDataModule.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
       </Unit>
       <Unit>
         <Filename Value="UFormulas.pas"/>
@@ -123,6 +127,13 @@
       <Unit>
         <Filename Value="UDiaJuliano.pas"/>
         <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="UExpansion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>
   </ProjectOptions>

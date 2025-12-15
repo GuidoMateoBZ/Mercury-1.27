@@ -17,7 +17,6 @@ type
   { TFprincipal }
 
   TFprincipal = class(TForm)
-    Bevel10: TBevel;
     Bevel102: TBevel;
     Bevel103: TBevel;
     Bevel104: TBevel;
@@ -26,7 +25,6 @@ type
     Bevel107: TBevel;
     Bevel108: TBevel;
     Bevel109: TBevel;
-    Bevel11: TBevel;
     Bevel110: TBevel;
     Bevel111: TBevel;
     Bevel112: TBevel;
@@ -34,86 +32,12 @@ type
     Bevel114: TBevel;
     Bevel115: TBevel;
     Bevel116: TBevel;
-    Bevel12: TBevel;
     Bevel126: TBevel;
-    Bevel127: TBevel;
-    Bevel128: TBevel;
-    Bevel129: TBevel;
-    Bevel13: TBevel;
-    Bevel130: TBevel;
-    Bevel131: TBevel;
-    Bevel132: TBevel;
-    Bevel133: TBevel;
-    Bevel134: TBevel;
-    Bevel135: TBevel;
-    Bevel136: TBevel;
-    Bevel137: TBevel;
-    Bevel138: TBevel;
-    Bevel139: TBevel;
-    Bevel14: TBevel;
-    Bevel140: TBevel;
-    Bevel141: TBevel;
-    Bevel142: TBevel;
-    Bevel143: TBevel;
-    Bevel144: TBevel;
-    Bevel145: TBevel;
-    Bevel146: TBevel;
-    Bevel147: TBevel;
-    Bevel148: TBevel;
-    Bevel149: TBevel;
-    Bevel15: TBevel;
-    Bevel150: TBevel;
-    Bevel151: TBevel;
-    Bevel152: TBevel;
-    Bevel153: TBevel;
-    Bevel154: TBevel;
-    Bevel155: TBevel;
-    Bevel156: TBevel;
-    Bevel157: TBevel;
-    Bevel158: TBevel;
-    Bevel159: TBevel;
-    Bevel16: TBevel;
-    Bevel160: TBevel;
-    Bevel161: TBevel;
-    Bevel162: TBevel;
-    Bevel163: TBevel;
-    Bevel164: TBevel;
-    Bevel165: TBevel;
-    Bevel166: TBevel;
-    Bevel167: TBevel;
-    Bevel17: TBevel;
-    Bevel18: TBevel;
-    Bevel19: TBevel;
-    Bevel20: TBevel;
-    Bevel21: TBevel;
-    Bevel22: TBevel;
-    Bevel23: TBevel;
-    Bevel24: TBevel;
-    Bevel25: TBevel;
-    Bevel26: TBevel;
-    Bevel27: TBevel;
-    Bevel28: TBevel;
-    Bevel29: TBevel;
-    Bevel3: TBevel;
-    Bevel30: TBevel;
-    Bevel31: TBevel;
-    Bevel32: TBevel;
-    Bevel33: TBevel;
-    Bevel34: TBevel;
-    Bevel35: TBevel;
-    Bevel36: TBevel;
-    Bevel37: TBevel;
-    Bevel38: TBevel;
-    Bevel4: TBevel;
-    Bevel5: TBevel;
-    Bevel6: TBevel;
-    Bevel7: TBevel;
     Bevel75: TBevel;
     Bevel76: TBevel;
     Bevel77: TBevel;
     Bevel78: TBevel;
     Bevel79: TBevel;
-    Bevel8: TBevel;
     Bevel80: TBevel;
     Bevel84: TBevel;
     Bevel85: TBevel;
@@ -121,7 +45,6 @@ type
     Bevel87: TBevel;
     Bevel88: TBevel;
     Bevel89: TBevel;
-    Bevel9: TBevel;
     Bevel90: TBevel;
     Bevel91: TBevel;
     Bevel92: TBevel;
@@ -131,36 +54,17 @@ type
     Bevel96: TBevel;
     Bevel97: TBevel;
     Bevel98: TBevel;
-    GroupBox10: TGroupBox;
-    GroupBox11: TGroupBox;
-    GroupBox6: TGroupBox;
     GroupBox9: TGroupBox;
-    Label16: TLabel;
-    Label17: TLabel;
     Label18: TLabel;
     Label19: TLabel;
-    Label20: TLabel;
-    Label23: TLabel;
-    Label26: TLabel;
-    Label29: TLabel;
-    Label34: TLabel;
-    Label35: TLabel;
-    Label36: TLabel;
+    Label21: TLabel;
+    Label24: TLabel;
+    Label28: TLabel;
+    Label30: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
     Label41: TLabel;
-    Label42: TLabel;
-    LDescripcion00: TLabel;
-    LDescripcion01: TLabel;
-    LDescripcion02: TLabel;
-    LDescripcion03: TLabel;
-    LDescripcion04: TLabel;
-    LDescripcion05: TLabel;
-    LDescripcion06: TLabel;
-    LDescripcion07: TLabel;
-    LDescripcion08: TLabel;
     LDescripcion1: TLabel;
-    LDescripcion16: TLabel;
-    LDescripcion17: TLabel;
-    LDescripcion18: TLabel;
     LDescripcion2: TLabel;
     LDescripcion3: TLabel;
     LDescripcion4: TLabel;
@@ -169,38 +73,7 @@ type
     LDescripcion7: TLabel;
     LDescripcion8: TLabel;
     LDescripcion9: TLabel;
-    LDescripcionParam1: TLabel;
-    LDescripcionParam2: TLabel;
-    LDescripcionParam3: TLabel;
-    LDescripcionParam4: TLabel;
-    LDescripcionParam5: TLabel;
-    LNombreCanal09: TLabel;
-    LNombreCanal10: TLabel;
-    LNombreCanal11: TLabel;
-    LNombreCanal12: TLabel;
-    LNombreCanal13: TLabel;
-    LNombreCanal14: TLabel;
-    LNombreCanal15: TLabel;
-    LNombreCanal16: TLabel;
-    LNombreCanal17: TLabel;
-    LNombreCanal18: TLabel;
-    LNombreCanal19: TLabel;
-    LNombreCanal20: TLabel;
-    LNombreCanal21: TLabel;
-    LNombreCanal22: TLabel;
-    LUnidad00: TLabel;
-    LUnidad01: TLabel;
-    LUnidad02: TLabel;
-    LUnidad03: TLabel;
-    LUnidad04: TLabel;
-    LUnidad05: TLabel;
-    LUnidad06: TLabel;
-    LUnidad07: TLabel;
-    LUnidad08: TLabel;
     LUnidad1: TLabel;
-    LUnidad16: TLabel;
-    LUnidad17: TLabel;
-    LUnidad18: TLabel;
     LUnidad2: TLabel;
     LUnidad3: TLabel;
     LUnidad4: TLabel;
@@ -209,43 +82,15 @@ type
     LUnidad7: TLabel;
     LUnidad8: TLabel;
     LUnidad9: TLabel;
-    LUnidadParam1: TLabel;
-    LUnidadParam2: TLabel;
-    LUnidadParam3: TLabel;
-    LUnidadParam4: TLabel;
-    LUnidadParam5: TLabel;
-    LValor00: TLabel;
-    LValor01: TLabel;
-    LValor02: TLabel;
-    LValor03: TLabel;
-    LValor04: TLabel;
-    LValor05: TLabel;
-    LValor06: TLabel;
-    LValor07: TLabel;
-    LValor08: TLabel;
-    LValor09: TLabel;
-    LValor10: TLabel;
-    LValor11: TLabel;
-    LValor12: TLabel;
-    LValor13: TLabel;
-    LValor14: TLabel;
-    LValor15: TLabel;
-    LValor16: TLabel;
-    LValor17: TLabel;
-    LValor18: TLabel;
-    LValor19: TLabel;
-    LValor20: TLabel;
-    LValor21: TLabel;
-    LValor22: TLabel;
+    LValor1: TLabel;
+    LValor2: TLabel;
+    LValor3: TLabel;
     LValor4: TLabel;
     LValor5: TLabel;
     LValor6: TLabel;
     LValor7: TLabel;
-    LValorParam1: TLabel;
-    LValorParam2: TLabel;
-    LValorParam3: TLabel;
-    LValorParam4: TLabel;
-    LValorParam5: TLabel;
+    LValor8: TLabel;
+    LValor9: TLabel;
     MenuPrincipal: TMainMenu;
     Archivo1: TMenuItem;
     mEquipo: TMenuItem;
@@ -255,20 +100,7 @@ type
     N1: TMenuItem;
     mSalir: TMenuItem;
     N2: TMenuItem;
-    PageControl1: TPageControl;
-    sbComentario00: TSpeedButton;
-    sbComentario01: TSpeedButton;
-    sbComentario02: TSpeedButton;
-    sbComentario03: TSpeedButton;
-    sbComentario04: TSpeedButton;
-    sbComentario05: TSpeedButton;
-    sbComentario06: TSpeedButton;
-    sbComentario07: TSpeedButton;
-    sbComentario08: TSpeedButton;
     sbComentario1: TSpeedButton;
-    sbComentario16: TSpeedButton;
-    sbComentario17: TSpeedButton;
-    sbComentario18: TSpeedButton;
     sbComentario2: TSpeedButton;
     sbComentario3: TSpeedButton;
     sbComentario4: TSpeedButton;
@@ -277,39 +109,17 @@ type
     sbComentario7: TSpeedButton;
     sbComentario8: TSpeedButton;
     sbComentario9: TSpeedButton;
-    sbGrafico00: TSpeedButton;
-    sbGrafico01: TSpeedButton;
-    sbGrafico02: TSpeedButton;
-    sbGrafico03: TSpeedButton;
-    sbGrafico04: TSpeedButton;
-    sbGrafico05: TSpeedButton;
-    sbGrafico06: TSpeedButton;
-    sbGrafico07: TSpeedButton;
-    sbGrafico08: TSpeedButton;
     sbGrafico08_Dup: TSpeedButton;
-    sbGrafico08_Dup1: TSpeedButton;
-    sbGrafico09: TSpeedButton;
     sbGrafico09_Dup: TSpeedButton;
-    sbGrafico09_Dup1: TSpeedButton;
-    sbGrafico10: TSpeedButton;
-    sbGrafico11: TSpeedButton;
-    sbGrafico12: TSpeedButton;
-    sbGrafico13: TSpeedButton;
-    sbGrafico14: TSpeedButton;
-    sbGrafico15: TSpeedButton;
-    sbGrafico16: TSpeedButton;
-    sbGrafico17: TSpeedButton;
-    sbGrafico18: TSpeedButton;
-    sbGrafico19: TSpeedButton;
-    sbGrafico20: TSpeedButton;
-    sbGrafico21: TSpeedButton;
-    sbGrafico22: TSpeedButton;
-    sbGraficoParam1: TSpeedButton;
-    sbGraficoParam2: TSpeedButton;
-    sbGraficoParam3: TSpeedButton;
-    sbGraficoParam4: TSpeedButton;
-    sbGraficoParam5: TSpeedButton;
-    ScrollBox1: TScrollBox;
+    sbGrafico1: TSpeedButton;
+    sbGrafico2: TSpeedButton;
+    sbGrafico3: TSpeedButton;
+    sbGrafico4: TSpeedButton;
+    sbGrafico5: TSpeedButton;
+    sbGrafico6: TSpeedButton;
+    sbGrafico7: TSpeedButton;
+    sbGrafico8: TSpeedButton;
+    sbGrafico9: TSpeedButton;
     StatusBar: TStatusBar;
     mIraSystemtray: TMenuItem;
     PopupMenuST: TPopupMenu;
@@ -318,8 +128,6 @@ type
     Restaurar: TMenuItem;
     N4: TMenuItem;
     CoolBar1: TCoolBar;
-    tsMon: TTabSheet;
-    tsExp0: TTabSheet;
     tbPreferencias1: TToolButton;
     ToolBar1: TToolBar;
     PageControl: TPageControl;
@@ -467,6 +275,46 @@ type
     mDensidad: TMenuItem;
     mVelocidaddelSonido: TMenuItem;
     ScrollBox: TScrollBox;
+    GroupBox6: TGroupBox;
+    LValor08: TLabel;
+    LValor07: TLabel;
+    LValor06: TLabel;
+    LValor05: TLabel;
+    // Nuevas etiquetas de valores para canales 09-15
+    LValor09: TLabel;
+    LValor10: TLabel;
+    LValor11: TLabel;
+    LValor12: TLabel;
+    LValor13: TLabel;
+    LValor14: TLabel;
+    LValor15: TLabel;
+    LDescripcion00: TLabel;
+    LUnidad00: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    LDescripcion01: TLabel;
+    LUnidad01: TLabel;
+    Label20: TLabel;
+    LDescripcion02: TLabel;
+    LUnidad02: TLabel;
+    Label23: TLabel;
+    LDescripcion03: TLabel;
+    LUnidad03: TLabel;
+    Label26: TLabel;
+    LDescripcion04: TLabel;
+    LUnidad04: TLabel;
+    Label29: TLabel;
+    LDescripcion05: TLabel;
+    LUnidad05: TLabel;
+    LUnidad06: TLabel;
+    LDescripcion06: TLabel;
+    Label34: TLabel;
+    Label35: TLabel;
+    Label36: TLabel;
+    LDescripcion08: TLabel;
+    LDescripcion07: TLabel;
+    LUnidad08: TLabel;
+    LUnidad07: TLabel;
     // Nuevos canales visuales (09-15)
     LDescripcion09: TLabel;
     LDescripcion10: TLabel;
@@ -482,6 +330,32 @@ type
     LUnidad13: TLabel;
     LUnidad14: TLabel;
     LUnidad15: TLabel;
+    sbGrafico00: TSpeedButton;
+    sbGrafico01: TSpeedButton;
+    sbGrafico02: TSpeedButton;
+    sbGrafico03: TSpeedButton;
+    sbGrafico04: TSpeedButton;
+    sbGrafico05: TSpeedButton;
+    sbGrafico06: TSpeedButton;
+    sbGrafico07: TSpeedButton;
+    sbGrafico08: TSpeedButton;
+    // Nuevos SpeedButtons gráficos para canales 09-15
+    sbGrafico09: TSpeedButton;
+    sbGrafico10: TSpeedButton;
+    sbGrafico11: TSpeedButton;
+    sbGrafico12: TSpeedButton;
+    sbGrafico13: TSpeedButton;
+    sbGrafico14: TSpeedButton;
+    sbGrafico15: TSpeedButton;
+    sbComentario00: TSpeedButton;
+    sbComentario01: TSpeedButton;
+    sbComentario02: TSpeedButton;
+    sbComentario03: TSpeedButton;
+    sbComentario04: TSpeedButton;
+    sbComentario05: TSpeedButton;
+    sbComentario06: TSpeedButton;
+    sbComentario07: TSpeedButton;
+    sbComentario08: TSpeedButton;
     // Nuevos SpeedButtons comentarios para canales 09-15
     sbComentario09: TSpeedButton;
     sbComentario10: TSpeedButton;
@@ -490,6 +364,47 @@ type
     sbComentario13: TSpeedButton;
     sbComentario14: TSpeedButton;
     sbComentario15: TSpeedButton;
+    LValor00: TLabel;
+    Bevel3: TBevel;
+    LValor01: TLabel;
+    LValor02: TLabel;
+    LValor03: TLabel;
+    LValor04: TLabel;
+    Bevel4: TBevel;
+    Bevel5: TBevel;
+    Bevel6: TBevel;
+    Bevel7: TBevel;
+    Bevel8: TBevel;
+    Bevel9: TBevel;
+    Bevel10: TBevel;
+    Bevel11: TBevel;
+    Bevel12: TBevel;
+    Bevel13: TBevel;
+    Bevel14: TBevel;
+    Bevel15: TBevel;
+    Bevel16: TBevel;
+    Bevel17: TBevel;
+    Bevel18: TBevel;
+    Bevel19: TBevel;
+    Bevel20: TBevel;
+    Bevel21: TBevel;
+    Bevel22: TBevel;
+    Bevel23: TBevel;
+    Bevel24: TBevel;
+    Bevel25: TBevel;
+    Bevel26: TBevel;
+    Bevel27: TBevel;
+    Bevel28: TBevel;
+    Bevel29: TBevel;
+    Bevel30: TBevel;
+    Bevel31: TBevel;
+    Bevel32: TBevel;
+    Bevel33: TBevel;
+    Bevel34: TBevel;
+    Bevel35: TBevel;
+    Bevel36: TBevel;
+    Bevel37: TBevel;
+    Bevel38: TBevel;
     GroupBox8: TGroupBox;
     LDescripcionParam00: TLabel;
     LUnidadParam00: TLabel;
@@ -559,12 +474,10 @@ type
     Bevel74: TBevel;
     procedure Bevel102ChangeBounds(Sender: TObject);
     procedure Bevel107ChangeBounds(Sender: TObject);
-    procedure Bevel17ChangeBounds(Sender: TObject);
     procedure Bevel27ChangeBounds(Sender: TObject);
     procedure Bevel28ChangeBounds(Sender: TObject);
     procedure Bevel29ChangeBounds(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure GroupBox1Click(Sender: TObject);
     procedure GroupBox6Click(Sender: TObject);
     procedure GroupBox9Click(Sender: TObject);
     procedure mSalirClick(Sender: TObject);
@@ -659,7 +572,7 @@ var
   Creando       : boolean;
   ActualizarCHs : boolean;                  // Carga los sensores al Equipo
   Equipo        : TEquipo;                  // Objeto que realiza toda la intefaze con el equipo fisico
-  //Server        : TServer;                  // Objeto que administra la conexin por Internet
+  //Server        : TServer;                  // Objeto que administra la conexi�n por Internet
   NCanal        : integer;                  // Numero del Canal Activo por el ComboBox de Config
   TagOLD        : integer;
   OnCambio      : boolean;
@@ -805,10 +718,6 @@ begin
   Creando                       := false;
 
 
-  // Estado inicial: 8 Canales (ocultar canales 08-15)
-  InstanciarComponentesFaltantes;
-  ActualizarVisibilidadCanales(False);
-
   // Manera de iniciar la ventana Principal Inicio
   if UpCase(Mercury.IniciarMinimizado)='S' then begin
     Fprincipal.WindowState := wsMinimized;
@@ -825,11 +734,10 @@ begin
 
   // Prueba de Ocultar la primera solapa
   //PageControl.Pages[0].TabVisible := false;
-end;
 
-procedure TFprincipal.GroupBox1Click(Sender: TObject);
-begin
-
+  // Estado inicial: 8 Canales (ocultar canales 08-15)
+  InstanciarComponentesFaltantes;
+  ActualizarVisibilidadCanales(False);
 end;
 
 procedure TFprincipal.GroupBox6Click(Sender: TObject);
@@ -848,11 +756,6 @@ begin
 end;
 
 procedure TFprincipal.Bevel107ChangeBounds(Sender: TObject);
-begin
-
-end;
-
-procedure TFprincipal.Bevel17ChangeBounds(Sender: TObject);
 begin
 
 end;
@@ -1439,8 +1342,6 @@ begin
      sbComentario09.Width := sbComentario00.Width; sbComentario09.Height := sbComentario00.Height;
      sbComentario09.NumGlyphs := sbComentario00.NumGlyphs; sbComentario09.Flat := sbComentario00.Flat;
 
-     sbComentario09.NumGlyphs := sbComentario00.NumGlyphs; sbComentario09.Flat := sbComentario00.Flat;
-
      // Canal 10
      LValor10 := TLabel.Create(Self); LValor10.Parent := LValor00.Parent;
      LValor10.Left := LValor00.Left; LValor10.Top := TopBase + DeltaY*2;
@@ -1464,9 +1365,6 @@ begin
 
      sbComentario10 := TSpeedButton.Create(Self); sbComentario10.Parent := sbComentario00.Parent;
      sbComentario10.Left := sbComentario00.Left; sbComentario10.Top := TopBase + DeltaY*2;
-     sbComentario10.Width := sbComentario00.Width; sbComentario10.Height := sbComentario00.Height;
-     sbComentario10.Flat := sbComentario00.Flat;
-
      sbComentario10.Width := sbComentario00.Width; sbComentario10.Height := sbComentario00.Height;
      sbComentario10.Flat := sbComentario00.Flat;
 
@@ -1494,8 +1392,6 @@ begin
      sbComentario11.Left := sbComentario00.Left; sbComentario11.Top := TopBase + DeltaY*3;
      sbComentario11.Width := sbComentario00.Width; sbComentario11.Height := sbComentario00.Height; sbComentario11.Flat := sbComentario00.Flat;
 
-     sbComentario11.Width := sbComentario00.Width; sbComentario11.Height := sbComentario00.Height; sbComentario11.Flat := sbComentario00.Flat;
-
      // Canal 12
      LValor12 := TLabel.Create(Self); LValor12.Parent := LValor00.Parent;
      LValor12.Left := LValor00.Left; LValor12.Top := TopBase + DeltaY*4;
@@ -1518,8 +1414,6 @@ begin
 
      sbComentario12 := TSpeedButton.Create(Self); sbComentario12.Parent := sbComentario00.Parent;
      sbComentario12.Left := sbComentario00.Left; sbComentario12.Top := TopBase + DeltaY*4;
-     sbComentario12.Width := sbComentario00.Width; sbComentario12.Height := sbComentario00.Height; sbComentario12.Flat := sbComentario00.Flat;
-
      sbComentario12.Width := sbComentario00.Width; sbComentario12.Height := sbComentario00.Height; sbComentario12.Flat := sbComentario00.Flat;
 
      // Canal 13
@@ -1546,8 +1440,6 @@ begin
      sbComentario13.Left := sbComentario00.Left; sbComentario13.Top := TopBase + DeltaY*5;
      sbComentario13.Width := sbComentario00.Width; sbComentario13.Height := sbComentario00.Height; sbComentario13.Flat := sbComentario00.Flat;
 
-     sbComentario13.Width := sbComentario00.Width; sbComentario13.Height := sbComentario00.Height; sbComentario13.Flat := sbComentario00.Flat;
-
      // Canal 14
      LValor14 := TLabel.Create(Self); LValor14.Parent := LValor00.Parent;
      LValor14.Left := LValor00.Left; LValor14.Top := TopBase + DeltaY*6;
@@ -1570,8 +1462,6 @@ begin
 
      sbComentario14 := TSpeedButton.Create(Self); sbComentario14.Parent := sbComentario00.Parent;
      sbComentario14.Left := sbComentario00.Left; sbComentario14.Top := TopBase + DeltaY*6;
-     sbComentario14.Width := sbComentario00.Width; sbComentario14.Height := sbComentario00.Height; sbComentario14.Flat := sbComentario00.Flat;
-
      sbComentario14.Width := sbComentario00.Width; sbComentario14.Height := sbComentario00.Height; sbComentario14.Flat := sbComentario00.Flat;
 
      // Canal 15
@@ -1598,8 +1488,6 @@ begin
      sbComentario15.Left := sbComentario00.Left; sbComentario15.Top := TopBase + DeltaY*7;
      sbComentario15.Width := sbComentario00.Width; sbComentario15.Height := sbComentario00.Height; sbComentario15.Flat := sbComentario00.Flat;
 
-     sbComentario15.Width := sbComentario00.Width; sbComentario15.Height := sbComentario00.Height; sbComentario15.Flat := sbComentario00.Flat;
-
      // Force hide all new components by default
      LConfig09.Visible := False; LDescConfig09.Visible := False;
      LConfig10.Visible := False; LDescConfig10.Visible := False;
@@ -1609,13 +1497,14 @@ begin
      LConfig14.Visible := False; LDescConfig14.Visible := False;
      LConfig15.Visible := False; LDescConfig15.Visible := False;
      
-     LValor15.Visible := False; LUnidad15.Visible := False; LDescripcion15.Visible := False; sbGrafico15.Visible := False; sbComentario15.Visible := False; LNombreCanal15.Visible := False;
-     // Hide new LFM labels by default
-     LNombreCanal09.Visible := False; LNombreCanal10.Visible := False; LNombreCanal11.Visible := False;
-     LNombreCanal12.Visible := False; LNombreCanal13.Visible := False; LNombreCanal14.Visible := False;
+     LValor09.Visible := False; LUnidad09.Visible := False; LDescripcion09.Visible := False; sbGrafico09.Visible := False; sbComentario09.Visible := False;
+     LValor10.Visible := False; LUnidad10.Visible := False; LDescripcion10.Visible := False; sbGrafico10.Visible := False; sbComentario10.Visible := False;
+     LValor11.Visible := False; LUnidad11.Visible := False; LDescripcion11.Visible := False; sbGrafico11.Visible := False; sbComentario11.Visible := False;
+     LValor12.Visible := False; LUnidad12.Visible := False; LDescripcion12.Visible := False; sbGrafico12.Visible := False; sbComentario12.Visible := False;
+     LValor13.Visible := False; LUnidad13.Visible := False; LDescripcion13.Visible := False; sbGrafico13.Visible := False; sbComentario13.Visible := False;
+     LValor14.Visible := False; LUnidad14.Visible := False; LDescripcion14.Visible := False; sbGrafico14.Visible := False; sbComentario14.Visible := False;
+     LValor15.Visible := False; LUnidad15.Visible := False; LDescripcion15.Visible := False; sbGrafico15.Visible := False; sbComentario15.Visible := False;
   end;
-
-  // GHOST BUSTERS: Eliminado porque ahora los labels son legítimos (LNombreCanalXX)
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1632,43 +1521,27 @@ begin
   LConfig14.Visible := Es16Canales; LDescConfig14.Visible := Es16Canales;
   LConfig15.Visible := Es16Canales; LDescConfig15.Visible := Es16Canales;
 
-  // Visualizacion (Valores, Unidades, Descripciones, Graficos, Comentarios, Nombres)
+  // Visualizacion (Valores, Unidades, Descripciones, Graficos, Comentarios)
   LValor09.Visible := Es16Canales; LUnidad09.Visible := Es16Canales; LDescripcion09.Visible := Es16Canales;
-  sbGrafico09.Visible := Es16Canales; sbComentario09.Visible := Es16Canales; LNombreCanal09.Visible := Es16Canales;
+  sbGrafico09.Visible := Es16Canales; sbComentario09.Visible := Es16Canales;
 
   LValor10.Visible := Es16Canales; LUnidad10.Visible := Es16Canales; LDescripcion10.Visible := Es16Canales;
-  sbGrafico10.Visible := Es16Canales; sbComentario10.Visible := Es16Canales; LNombreCanal10.Visible := Es16Canales;
+  sbGrafico10.Visible := Es16Canales; sbComentario10.Visible := Es16Canales;
 
   LValor11.Visible := Es16Canales; LUnidad11.Visible := Es16Canales; LDescripcion11.Visible := Es16Canales;
-  sbGrafico11.Visible := Es16Canales; sbComentario11.Visible := Es16Canales; LNombreCanal11.Visible := Es16Canales;
+  sbGrafico11.Visible := Es16Canales; sbComentario11.Visible := Es16Canales;
 
   LValor12.Visible := Es16Canales; LUnidad12.Visible := Es16Canales; LDescripcion12.Visible := Es16Canales;
-  sbGrafico12.Visible := Es16Canales; sbComentario12.Visible := Es16Canales; LNombreCanal12.Visible := Es16Canales;
+  sbGrafico12.Visible := Es16Canales; sbComentario12.Visible := Es16Canales;
 
   LValor13.Visible := Es16Canales; LUnidad13.Visible := Es16Canales; LDescripcion13.Visible := Es16Canales;
-  sbGrafico13.Visible := Es16Canales; sbComentario13.Visible := Es16Canales; LNombreCanal13.Visible := Es16Canales;
+  sbGrafico13.Visible := Es16Canales; sbComentario13.Visible := Es16Canales;
 
   LValor14.Visible := Es16Canales; LUnidad14.Visible := Es16Canales; LDescripcion14.Visible := Es16Canales;
-  sbGrafico14.Visible := Es16Canales; sbComentario14.Visible := Es16Canales; LNombreCanal14.Visible := Es16Canales;
+  sbGrafico14.Visible := Es16Canales; sbComentario14.Visible := Es16Canales;
 
   LValor15.Visible := Es16Canales; LUnidad15.Visible := Es16Canales; LDescripcion15.Visible := Es16Canales;
-  sbGrafico15.Visible := Es16Canales; sbComentario15.Visible := Es16Canales; LNombreCanal15.Visible := Es16Canales;
-  
-  // Controlar la visibilidad del contenedor de los canales adicionales (GroupBox9)
-  if GroupBox9 <> nil then
-     GroupBox9.Visible := Es16Canales;
-
-  // Ajustar la posición del módulo "Parámetros Calculados" (GroupBox8) para ocupar el espacio vacío
-  // FIX: Usamos GroupBox9 y GroupBox6 como referencias para evitar coordenadas relativas incorrectas.
-  if GroupBox8 <> nil then begin
-     if Es16Canales then begin
-        if GroupBox9 <> nil then
-           GroupBox8.Top := GroupBox9.Top + GroupBox9.Height + 50;
-     end else begin
-        if GroupBox6 <> nil then
-           GroupBox8.Top := GroupBox6.Top + GroupBox6.Height + 50;
-     end;
-  end;
+  sbGrafico15.Visible := Es16Canales; sbComentario15.Visible := Es16Canales;
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -2800,34 +2673,17 @@ begin
              PChar(Caption), MB_OK or MB_ICONINFORMATION);
 end;
 
-// Implementación del menú de expansión
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 procedure TFprincipal.tbExpansionClick(Sender: TObject);
-var
-  FExpansion: TFExpansion;
 begin
-  FExpansion := TFExpansion.Create(self);
-  try
-    // Check current state. Assuming Mercury.NumCanales holds the total channels (8 or 16).
-    // Note: Mercury object defined in Uprincipal implementation or interface seems to be TUtiles.Mercury? 
-    // Or just a global TEquipo. Let's assume Mercury.NumCanales is correct based on TEquipo definition.
-    // However, the error said "identifier idents no member CantCanales", so we use NumCanales.
-    
-    // Logic: If we are currently showing 16 channels, pre-select RadioButton2.
-    // How do we know if we are showing 16 channels?
-    // We can check GroupBox9.Visible or Equipo.NumCanales (if that's what tracks it)
-    // or just default to 8 if unsure. The user's request implies we are toggling.
-    // Let's use the local visibility state or the global config if available.
-    
-    // Given we just set visibility, let's check one of the extended components
-    if (GroupBox9 <> nil) and GroupBox9.Visible then
-       FExpansion.RadioButton2.Checked := true // 16 Canales
-    else
-       FExpansion.RadioButton1.Checked := true; // 8 Canales
-
-    FExpansion.ShowModal;
-  finally
-    FExpansion.Free;
-  end;
+  if not Assigned(FExpansion) then
+    FExpansion := TFExpansion.Create(Application);
+  
+  // Set radio button state based on current visibility?
+  // Ideally FExpansion should know current state.
+  // For now, just show it.
+  FExpansion.ShowModal;
 end;
 
 end.
