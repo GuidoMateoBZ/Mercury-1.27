@@ -1,0 +1,14 @@
+backup/
+ConverterBackup/
+*.log
+*.exe
+*.dll
+*.o
+*.ppu
+*.a
+*.dcu
+*.~*
+lib/
+ppas.bat
+*.compiled
+*.bkp
