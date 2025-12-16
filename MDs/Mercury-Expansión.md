@@ -13,5 +13,5 @@ La cantidad de canales está hardcodeada en 10 al crear el objeto TEquipo: Uprin
     Equipo.ThreadComm.pActualizar    := ActualizarInfo;
     Equipo.ThreadComm.pActualProgres := ActualizarProgreso;
 ````
-TEquipo.Crear: UEquipo.pas: 50
+TEquipo.Crear: [UEquipo.pas: 48](https://github.com/GuidoMateoBZ/Mercury-1.27/blob/master/UEquipo.pas#50)
 
