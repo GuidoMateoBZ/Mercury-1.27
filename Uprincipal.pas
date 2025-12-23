@@ -700,6 +700,7 @@ begin
   IniLine                          := 0;
   Creando                          := true;
   ActualizarCHs                    := true;
+  //SE CREA EL OBJETO ADMINISTRATIVO GLOBAL
   Mercury                          := TMercury.Crear;
   Equipo                           := nil;
   //Server                           := nil;
@@ -707,6 +708,8 @@ begin
   // Cargo la configuraci�n del programa guardada en el Archivo INI
   FPresentacion.LMensaje.Caption := 'Cargando Configuraci�n...';
   FPresentacion.Repaint;
+
+  //ACA EL PROGRAMA LEE EL ARCHIVO MERCURY.INI Y SACA EL STRING "COM1" QUE SE VA A USAR MAS ADELANTE
   Mercury.CargarConfig;
   Retardo(200);
 
@@ -778,7 +781,12 @@ begin
   Retardo(200);
 
   // Creo y Configuro el Equipo con 10 canales si es necesario por el tipo de Comunicaci�n
+  //VERIFICA SI VALE LA PENA CREAR EL OBJETO FISICO
+  //SI TipoDeComm FUESE (SOLO Internet/TCP-IP) SE SALTA TODO ESTO Y NO TOCA LOS PUERTOS SERIE
+  //SI ES 0 (CABLE SERIE DIRECTO) O  1 (MODEM) ENTRA 
   if (Mercury.TipoDeComm <> 2) then begin
+  //TEquipo.crear, 1O ES LA CANTIDAD DE CANALES BASE, Mercury.PuertoSerie EL STRING "COM1"
+  //Y TIPO DE COM, EL TIPO DE COMUNICACION
     Equipo                           := TEquipo.crear(10,Mercury.PuertoSerie, Mercury.TipoDeComm);
     Equipo.ThreadComm.pProgreso      := @statusbar.Tag;
     Equipo.ThreadComm.pActualizar    := ActualizarInfo;
