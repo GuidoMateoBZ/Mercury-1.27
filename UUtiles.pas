@@ -269,7 +269,7 @@ begin
 
   // Creo el objeto de la conexión automática
   ConexAuto := TConexAuto.Crear;
-
+//POR DEFECTO ES 'COM1'
   // Dirección de los distintos puertos de comunicación
   PuertoSerie        := 'COM1';
   Puerto             := 40000;
@@ -312,7 +312,7 @@ begin
   DirServer          := '168.96.131.178';
   GuardarRegistro    := 'N';
   IndexTConect       := 1; 
-
+//POR DEFECTO ES 0
   // Variables que para el tipo de Comunicación (Serie o Telefonica)
   TipoDeComm         := 0; // CABLE SERIE
 

@@ -8,42 +8,76 @@
       <Unit>
         <Filename Value="Mercury.lpr"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <CursorPos X="34" Y="13"/>
         <UsageCount Value="22"/>
+=======
+        <CursorPos X="44" Y="3"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Uprincipal.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="Fprincipal"/>
         <HasResources Value="True"/>
+<<<<<<< HEAD
         <EditorIndex Value="4"/>
         <CursorPos X="96" Y="26"/>
         <UsageCount Value="22"/>
+=======
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="830"/>
+        <CursorPos X="3" Y="832"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="UEquipo.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <EditorIndex Value="5"/>
         <TopLine Value="177"/>
         <CursorPos Y="186"/>
         <UsageCount Value="22"/>
+=======
+        <EditorIndex Value="6"/>
+        <TopLine Value="10"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="PuertoSerie.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <EditorIndex Value="6"/>
         <TopLine Value="25"/>
         <CursorPos X="3" Y="43"/>
         <UsageCount Value="22"/>
+=======
+        <EditorIndex Value="7"/>
+        <TopLine Value="825"/>
+        <CursorPos X="23" Y="835"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="UUtiles.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <EditorIndex Value="8"/>
         <UsageCount Value="22"/>
+=======
+        <EditorIndex Value="9"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -52,15 +86,25 @@
         <ComponentName Value="FPresentacion"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+<<<<<<< HEAD
         <EditorIndex Value="9"/>
         <UsageCount Value="22"/>
+=======
+        <EditorIndex Value="10"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="USensor.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <EditorIndex Value="10"/>
         <UsageCount Value="22"/>
+=======
+        <EditorIndex Value="11"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -69,19 +113,27 @@
         <ComponentName Value="FPreferencias"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+<<<<<<< HEAD
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="11"/>
         <UsageCount Value="22"/>
+=======
+        <EditorIndex Value="12"/>
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="UGrafico.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="10"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -92,7 +144,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -103,7 +159,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -112,11 +172,20 @@
         <ComponentName Value="DataModule1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
+<<<<<<< HEAD
         <EditorIndex Value="1"/>
         <CursorPos X="10" Y="25"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
+=======
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="39"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
       </Unit>
       <Unit>
         <Filename Value="UFormulas.pas"/>
@@ -125,7 +194,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -136,7 +209,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -147,7 +224,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -157,7 +238,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -168,7 +253,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -179,7 +268,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -189,7 +282,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -199,7 +296,11 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -209,77 +310,211 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
+<<<<<<< HEAD
         <UsageCount Value="22"/>
+=======
+        <UsageCount Value="39"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
+        <Filename Value="UExpansion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="17"/>
+        <CursorPos X="18" Y="54"/>
+        <UsageCount Value="37"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
         <Filename Value="UGrafico.lfm"/>
+<<<<<<< HEAD
         <EditorIndex Value="12"/>
         <UsageCount Value="11"/>
+=======
+        <EditorIndex Value="13"/>
+        <UsageCount Value="20"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\win\wininc\redef.inc"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="443"/>
         <CursorPos X="10" Y="462"/>
+<<<<<<< HEAD
         <UsageCount Value="11"/>
+=======
+        <UsageCount Value="20"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="1"/>
         <TopLine Value="3991"/>
         <CursorPos Y="4010"/>
+<<<<<<< HEAD
         <UsageCount Value="11"/>
+=======
+        <UsageCount Value="20"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Uprincipal.lfm"/>
+<<<<<<< HEAD
         <HasResources Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="145"/>
         <UsageCount Value="11"/>
+=======
+        <EditorIndex Value="5"/>
+        <TopLine Value="163"/>
+        <CursorPos X="53" Y="170"/>
+        <UsageCount Value="19"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="UExpansion.lfm"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="19"/>
+        <UsageCount Value="18"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="9">
+    <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="Mercury.lpr"/>
-      </Position>
-      <Position>
-        <Filename Value="UGrafico.lfm"/>
-      </Position>
-      <Position>
-        <Filename Value="Mercury.lpr"/>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="793" Column="109" TopLine="787"/>
       </Position>
       <Position>
         <Filename Value="Uprincipal.pas"/>
-        <Caret Line="7" Column="39"/>
+        <Caret Line="792" Column="109" TopLine="786"/>
       </Position>
       <Position>
-        <Filename Value="Mercury.lpr"/>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="791" Column="109" TopLine="785"/>
       </Position>
       <Position>
-        <Filename Value="PuertoSerie.pas"/>
-        <Caret Line="271" Column="35" TopLine="268"/>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="790" Column="109" TopLine="784"/>
       </Position>
       <Position>
-        <Filename Value="Mercury.lpr"/>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="789" Column="109" TopLine="783"/>
       </Position>
       <Position>
-        <Filename Value="Mercury.lpr"/>
-        <Caret Line="25" Column="98"/>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="788" Column="109" TopLine="782"/>
       </Position>
       <Position>
-        <Filename Value="Mercury.lpr"/>
-        <Caret Line="10" Column="152"/>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="787" Column="109" TopLine="781"/>
       </Position>
       <Position>
+<<<<<<< HEAD
         <Filename Value="Mercury.lpr"/>
         <Caret Line="13" Column="34"/>
+=======
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="786" Column="109" TopLine="780"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="785" Column="109" TopLine="779"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="784" Column="109" TopLine="778"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="783" Column="109" TopLine="777"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="782" Column="109" TopLine="776"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="781" Column="109" TopLine="775"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="780" Column="109" TopLine="774"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="779" Column="109" TopLine="773"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="778" Column="109" TopLine="772"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="777" Column="109" TopLine="771"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="776" Column="109" TopLine="770"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="775" Column="109" TopLine="769"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="774" Column="109" TopLine="768"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="772" Column="109" TopLine="766"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="771" Column="109" TopLine="765"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="770" Column="109" TopLine="764"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="769" Column="109" TopLine="763"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="768" Column="109" TopLine="762"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="767" Column="109" TopLine="761"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="766" Column="109" TopLine="760"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="764" Column="109" TopLine="758"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="763" Column="109" TopLine="757"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="861" Column="119" TopLine="854"/>
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
       </Position>
     </JumpHistory>
     <RunParams>
@@ -287,4 +522,15 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Uprincipal.pas"/>
+        <Line Value="2777"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

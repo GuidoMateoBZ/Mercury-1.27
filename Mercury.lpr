@@ -23,7 +23,8 @@ uses
   UConfiguracionInternet in 'UConfiguracionInternet.pas' {FConfiguracionInternet},
   // UServerSocket in 'UServerSocket.pas', // Temporarily disabled - requires socket implementation
   // UEquipoInternet in 'UEquipoInternet.pas', // Temporarily disabled - requires socket implementation
-  UDiaJuliano in 'UDiaJuliano.pas';
+  UDiaJuliano in 'UDiaJuliano.pas',
+  UExpansion in 'UExpansion.pas' {FExpansion};
 
 {$R *.res}
 
@@ -31,5 +32,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFprincipal, Fprincipal);
   Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TFExpansion, FExpansion);
   Application.Run;
 end.

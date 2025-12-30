@@ -53,22 +53,24 @@ var
 
 begin
   // Inicializo las variables mas importantes
+  //SE ESTABLECEN VALORES POR DEFECTO PARA EVITAR VALORES BASURA
   Nombre      := '    ';
   Memoria     := 0;
   Hora        := now;
   HoraPC      := now;
   iniMuestr   := now;
   Tmuestreo   := 60;
-  PuertoSerie := COMM;
-  NumCanales  := NCanales;
+  PuertoSerie := COMM; //SE GUARDA EL COM1 QUE VINO DE DE UPRINCIPAL
+  NumCanales  := NCanales; //SE GUARDA EL 10
   Hora_Base   := '01/01/2000 12:00 am';
   Vref        := 5.03;
   BitsAD      := 1024;
   CantMemory  := 32768;  
   Escala      := Vref/BitsAD;
   UsarCH9     := false;
-
   // Creo los canales
+  //SE CREA UN ARREGLO DINAMICO DE OBJETOS TSENSOR 
+  //T SENSOR ES EL OBJETO QUE CONVIERTE VALORES CRUDOS A MEDICIONES REALES
   SetLength(Canales,NumCanales);
   for i:=0 to NumCanales-1 do Canales[i] := TSensor.Crear;
 
@@ -76,13 +78,24 @@ begin
   SetLength(ListaSenDir,0);
 
   // Creo el objeto TCalcParam
+  //ESTE ES UN OBEJTO MATEMATICO PARA CALCULOS 
   CalcParam := TCalculoParam.Crear; 
-
+  //TThradComm ES EL ENCARGADO DE REALIZAR LA COMUNICACION POR PUERTO SERIE EN BACKGROUND
+// SE CREA EL HILO DORMIDO PORQUE TODAVIA NO SE LE DIJO QUE PUERTO NI QUE PARAMETROS USAR
   // Creo el Thread suspendido (true)  y lo inicializo
   ThreadComm := TThreadComm.crear(True,NumCanales);
-
+// 
   // Configuro los canales
   for i:=0 to NumCanales-1 do begin
+  //EL HILO EN BACKGORUND TIENE UNA LA VARIABLE pvalorCH, QUE NO GUARDA UN VALOR, SI NO LA DIRECCION..
+  //EN LA MEMORIA RAM (EL PUNTERO). 
+  //TEquipo COMPARTE ESA MISMA DIRECCION PARA EL VALOR Y CONFIGURACION DE LOS CANALES
+  //EL SIMBOLO @ INDICA QUE DE EL PUNTERO DE ESE VALOR, Y NO EL VALOR DIRECTO, ENTONCES CREA UNA ESPECIE DE "PUENTE".
+  //ENTONCES AL TENER UN PUNTERO, SI ThreadComm RECIBE DATOS DEL PUERTO, LOS GUARDA DIRECTAMENTE EN ESA DIRECCION DE MEMORIA
+  //COMO TEQUIPO MIRA A ESA MISMA DIRECCION, SE VA A ACTUALIZAR AUTOMATICAMENTE
+  //EN pvalorCH SE GUARDA EL VALOR CRUDO DEL SENSOR
+  //EN pCH_conf SE GUARDA LA CONFIGURACION DEL CANAL, QUE PUEDE SER:
+  //0 (DESACTIVADO), 1 (CANAL MIDIENDO VOLTAJE), 2 (CANAL MIDIENDO CORRIENTA)
     ThreadComm.pvalorCH[i] := @Canales[i].ValorSensor;
     ThreadComm.pCH_conf[i] := @Canales[i].Config;
   end;
@@ -108,6 +121,9 @@ begin
     PSerie.Baud := '19200';
 
     // Seteo los parámetros para el tipo de Comunicación
+    //ACA SE CONFIGURA LA VELOCIDAD DE LA CONEXION
+    //SI TipoCom es 0 (CABLE SERIE), LA VELOCIDAD DE TRANSMISION ES DE 19200 BIT/S
+    //ESTA VARIABLE LUEGO SE USA EN PUERTOSERIE.PAS PARA ENVIARSELO A LA API DE WINDOWS QUE SE COMUNICA CON EL PUERTO SERIE
     case TipoCom of
       0 : PSerie.Baud := '19200'; // CABLE SERIE
       //0 : PSerie.Baud := '9600'; // CABLE SERIE
@@ -115,15 +131,21 @@ begin
     else
       PSerie.Baud := '19200'; // CABLE SERIE  
     end;
-
+//ESTOS SON LOS PARAMETROS ESTANDAR PARA COMUNICACION POR PROTOCOLO RD232
+//PSerie.Data = 8 CANTIDAD DE BITS POR LETRA/NUMERO
     PSerie.Data      := '8';
+    //PSerie.Partiry = n SIN BIT DE PARIDAD
     PSerie.Parity    := 'n';
+    //PSerie.Stop := 1 1 BIT DE PARADA/SILENCIO (PARA INDICAR QUE TERMINA UNA LETRA/NUMERO)
     PSerie.Stop      := '1';
+//SI SE NO SE LEE NADA DURANTE 0.75 SEGUNDOS, WINDOWS DEJA DE ESPERAR Y PASA EL CONTROL AL PROGRAMA
+//ES PARA QUE EL PROGRAMA NO SE CONGELE
     PSerie.RxTimeout := 750;//650;
+    // NO HAY TIEMPO DE ESPERA PARA LA ESCRITURA
     PSerie.TxTimeout := 0;
     PSerie.AbrirPuertoSerie(PuertoSerie);
     if not PSerie.ConfigPuertoSerie then exit;
-
+//A PARTIR DE ACA EMPIEZA A CORRER EL HILO
     Resume; // Arranco el thread para la comunicación con el equipo
   end;
 end;

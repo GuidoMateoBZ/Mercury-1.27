@@ -1,27 +1,22 @@
-# Artefactos de compilación Delphi/Lazarus
-*.dcu
-*.ppu
-*.o
+backup/
+ConverterBackup/
+*.log
 *.exe
-
-# Diagramas / IDE (Delphi Diagram Portfolio)
-*.ddp
-
-# Opciones del proyecto Delphi
-*.dof
-
-# Backups temporales / autoguardados del IDE
-*~
-*.~pas
-*.~dfm
-*.~ddp
-*.~dpr
-
-# Carpetas de build/compilación
-Output/
+*.dll
+*.o
+*.ppu
+*.a
+*.dcu
+*.~*
 lib/
+<<<<<<< HEAD
 TEST/*
 
 # Otros artefactos
 *.stackdump
 *.res
+=======
+ppas.bat
+*.compiled
+*.bkp
+>>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
