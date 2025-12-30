@@ -9,14 +9,11 @@ ConverterBackup/
 *.dcu
 *.~*
 lib/
-<<<<<<< HEAD
 TEST/*
 
 # Otros artefactos
 *.stackdump
 *.res
-=======
 ppas.bat
 *.compiled
 *.bkp
->>>>>>> c90542cb62263bdfbb477d06af4439065257cd45
