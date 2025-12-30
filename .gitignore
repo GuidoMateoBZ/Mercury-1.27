@@ -20,6 +20,7 @@
 # Carpetas de build/compilación
 Output/
 lib/
+TEST/*
 
 # Otros artefactos
 *.stackdump
