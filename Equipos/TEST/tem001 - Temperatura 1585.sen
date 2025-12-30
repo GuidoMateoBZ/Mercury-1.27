@@ -1,0 +1,11 @@
+[tem001 - Temperatura 1585]
+ID=3
+Descripcion=Sensor de Temperatura
+Unidad=ºC
+Decimales=1
+Entrada=TENSION
+Modo=CICLO
+Salida=NUMERO
+X=0;0.75;5;
+Y=-15;0;85;
+--=--

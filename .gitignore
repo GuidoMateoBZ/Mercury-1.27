@@ -9,6 +9,11 @@ ConverterBackup/
 *.dcu
 *.~*
 lib/
+TEST/*
+
+# Otros artefactos
+*.stackdump
+*.res
 ppas.bat
 *.compiled
 *.bkp
