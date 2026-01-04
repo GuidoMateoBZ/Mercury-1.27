@@ -12,7 +12,7 @@ object Fprincipal: TFprincipal
   DesignTimePPI = 120
   Font.CharSet = ANSI_CHARSET
   Font.Color = clWindowText
-  Font.Height = -173
+  Font.Height = -216
   Font.Name = 'Tahoma'
   Menu = MenuPrincipal
   Position = poScreenCenter
@@ -3410,8 +3410,8 @@ object Fprincipal: TFprincipal
           Height = 280
           Top = 0
           Width = 610
-          ActivePage = tsMon
-          TabIndex = 0
+          ActivePage = tsExp2
+          TabIndex = 3
           TabOrder = 2
           object tsMon: TTabSheet
             Caption = 'Monitoreo '
@@ -3547,7 +3547,7 @@ object Fprincipal: TFprincipal
                 Height = 16
                 Top = 48
                 Width = 47
-                Caption = 'Canal 8'
+                Caption = 'Canal 1'
                 Font.CharSet = ANSI_CHARSET
                 Font.Color = 14648845
                 Font.Height = -13
@@ -5207,7 +5207,7 @@ object Fprincipal: TFprincipal
             end
           end
           object tsExp0: TTabSheet
-            Caption = 'Expansion 0'
+            Caption = 'Expansion 1'
             ClientHeight = 254
             ClientWidth = 602
             object GroupBox9: TGroupBox
@@ -5227,23 +5227,6 @@ object Fprincipal: TFprincipal
               ParentFont = False
               TabOrder = 0
               OnClick = GroupBox9Click
-              object LValor09: TLabel
-                Tag = 8
-                Left = 344
-                Height = 20
-                Top = 214
-                Width = 100
-                Alignment = taCenter
-                AutoSize = False
-                Color = 10939374
-                Font.CharSet = ANSI_CHARSET
-                Font.Color = clBlack
-                Font.Height = -13
-                Font.Name = 'Tahoma'
-                Font.Style = [fsBold]
-                ParentColor = False
-                ParentFont = False
-              end
               object LValor10: TLabel
                 Tag = 7
                 Left = 344
@@ -5607,55 +5590,12 @@ object Fprincipal: TFprincipal
                 Font.Style = [fsBold]
                 ParentFont = False
               end
-              object Label41: TLabel
-                Left = 41
-                Height = 16
-                Top = 216
-                Width = 62
-                Caption = 'Canal D-1'
-                Font.CharSet = ANSI_CHARSET
-                Font.Color = 14648845
-                Font.Height = -13
-                Font.Name = 'Tahoma'
-                Font.Style = [fsBold]
-                ParentFont = False
-              end
-              object LDescripcion9: TLabel
-                Tag = 8
-                Left = 122
-                Height = 16
-                Top = 216
-                Width = 211
-                Alignment = taCenter
-                AutoSize = False
-                Font.CharSet = ANSI_CHARSET
-                Font.Color = 14648845
-                Font.Height = -13
-                Font.Name = 'Tahoma'
-                Font.Style = [fsBold]
-                ParentFont = False
-              end
               object LDescripcion8: TLabel
                 Tag = 7
                 Left = 122
                 Height = 16
                 Top = 192
                 Width = 211
-                Alignment = taCenter
-                AutoSize = False
-                Font.CharSet = ANSI_CHARSET
-                Font.Color = 14648845
-                Font.Height = -13
-                Font.Name = 'Tahoma'
-                Font.Style = [fsBold]
-                ParentFont = False
-              end
-              object LUnidad9: TLabel
-                Tag = 8
-                Left = 456
-                Height = 16
-                Top = 216
-                Width = 60
                 Alignment = taCenter
                 AutoSize = False
                 Font.CharSet = ANSI_CHARSET
@@ -6042,57 +5982,6 @@ object Fprincipal: TFprincipal
                 Height = 22
                 Hint = 'Gráfico del valor del Canal'
                 Top = 189
-                Width = 23
-                Enabled = False
-                Flat = True
-                Glyph.Data = {
-                  5E040000424D5E04000000000000F60200002800000012000000120000000100
-                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
-                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
-                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
-                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
-                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
-                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
-                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
-                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
-                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
-                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
-                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
-                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
-                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
-                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
-                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
-                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
-                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
-                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
-                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
-                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
-                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
-                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
-                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
-                  0101010101010101019A010100000101010101010101010101010101A3A79D01
-                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
-                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
-                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
-                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
-                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
-                  000001884E41222232322222332331595391010100000193524B453548484836
-                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
-                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
-                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
-                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
-                  0000
-                }
-                ShowHint = True
-                ParentShowHint = False
-                OnClick = BotonGraficoCanalClick
-              end
-              object sbGrafico09_Dup: TSpeedButton
-                Tag = 8
-                Left = 528
-                Height = 22
-                Hint = 'Gráfico del valor del Canal'
-                Top = 213
                 Width = 23
                 Enabled = False
                 Flat = True
@@ -6601,64 +6490,6 @@ object Fprincipal: TFprincipal
                 ParentShowHint = False
                 OnClick = sbComentarioClick
               end
-              object sbComentario9: TSpeedButton
-                Tag = 8
-                Left = 560
-                Height = 22
-                Hint = 'Modificar la Descripción del Canal'
-                Top = 213
-                Width = 23
-                Enabled = False
-                Flat = True
-                Glyph.Data = {
-                  56050000424D5605000000000000EE0300002800000012000000120000000100
-                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
-                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
-                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
-                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
-                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
-                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
-                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
-                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
-                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
-                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
-                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
-                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
-                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
-                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
-                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
-                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
-                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
-                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
-                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
-                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
-                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
-                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
-                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
-                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
-                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
-                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
-                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
-                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
-                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
-                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
-                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
-                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
-                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
-                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
-                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
-                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
-                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
-                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
-                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
-                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
-                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
-                  010101010000010101010101030D7B797C020101010101010000
-                }
-                ShowHint = True
-                ParentShowHint = False
-                OnClick = sbComentarioClick
-              end
               object LValor13: TLabel
                 Left = 344
                 Height = 20
@@ -6799,20 +6630,6 @@ object Fprincipal: TFprincipal
                 Width = 101
                 Shape = bsFrame
               end
-              object Bevel86: TBevel
-                Left = 344
-                Height = 21
-                Top = 214
-                Width = 101
-                Shape = bsFrame
-              end
-              object Bevel87: TBevel
-                Left = 119
-                Height = 21
-                Top = 214
-                Width = 216
-                Shape = bsFrame
-              end
               object Bevel88: TBevel
                 Left = 119
                 Height = 21
@@ -6867,13 +6684,6 @@ object Fprincipal: TFprincipal
                 Height = 21
                 Top = 22
                 Width = 216
-                Shape = bsFrame
-              end
-              object Bevel96: TBevel
-                Left = 20
-                Height = 21
-                Top = 214
-                Width = 89
                 Shape = bsFrame
               end
               object Bevel97: TBevel
@@ -6934,13 +6744,6 @@ object Fprincipal: TFprincipal
                 Shape = bsFrame
                 OnChangeBounds = Bevel107ChangeBounds
               end
-              object Bevel108: TBevel
-                Left = 454
-                Height = 21
-                Top = 214
-                Width = 63
-                Shape = bsFrame
-              end
               object Bevel109: TBevel
                 Left = 454
                 Height = 21
@@ -6991,6 +6794,3198 @@ object Fprincipal: TFprincipal
                 Shape = bsFrame
               end
               object Bevel116: TBevel
+                Left = 454
+                Height = 21
+                Top = 22
+                Width = 63
+                Shape = bsFrame
+              end
+            end
+          end
+          object tsExp1: TTabSheet
+            Caption = 'Expansion 2'
+            ClientHeight = 254
+            ClientWidth = 602
+            object GroupBox12: TGroupBox
+              Left = 0
+              Height = 255
+              Top = 0
+              Width = 593
+              Caption = ' Valor de los Canales '
+              ClientHeight = 237
+              ClientWidth = 589
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'Tahoma'
+              Font.Style = [fsBold]
+              ParentBackground = False
+              ParentFont = False
+              TabOrder = 0
+              OnClick = GroupBox9Click
+              object LValor23: TLabel
+                Tag = 7
+                Left = 344
+                Height = 20
+                Top = 190
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor24: TLabel
+                Tag = 6
+                Left = 344
+                Height = 20
+                Top = 166
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor25: TLabel
+                Tag = 5
+                Left = 344
+                Height = 20
+                Top = 142
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LDescripcion9: TLabel
+                Left = 122
+                Height = 16
+                Top = 24
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad9: TLabel
+                Left = 456
+                Height = 16
+                Top = 24
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object Label21: TLabel
+                Left = 41
+                Height = 16
+                Top = 24
+                Width = 55
+                Caption = 'Canal 16'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal23: TLabel
+                Left = 41
+                Height = 16
+                Top = 48
+                Width = 55
+                Caption = 'Canal 17'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion19: TLabel
+                Tag = 1
+                Left = 122
+                Height = 16
+                Top = 48
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad19: TLabel
+                Tag = 1
+                Left = 456
+                Height = 16
+                Top = 48
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal24: TLabel
+                Left = 41
+                Height = 16
+                Top = 72
+                Width = 55
+                Caption = 'Canal 18'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion20: TLabel
+                Tag = 2
+                Left = 122
+                Height = 16
+                Top = 72
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad20: TLabel
+                Tag = 2
+                Left = 456
+                Height = 16
+                Top = 72
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal25: TLabel
+                Left = 41
+                Height = 16
+                Top = 96
+                Width = 55
+                Caption = 'Canal 19'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion21: TLabel
+                Tag = 3
+                Left = 122
+                Height = 16
+                Top = 96
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad21: TLabel
+                Tag = 3
+                Left = 456
+                Height = 16
+                Top = 96
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal26: TLabel
+                Left = 41
+                Height = 16
+                Top = 120
+                Width = 55
+                Caption = 'Canal 20'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion22: TLabel
+                Tag = 4
+                Left = 122
+                Height = 16
+                Top = 120
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad22: TLabel
+                Tag = 4
+                Left = 456
+                Height = 16
+                Top = 120
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal27: TLabel
+                Left = 41
+                Height = 16
+                Top = 144
+                Width = 55
+                Caption = 'Canal 21'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion23: TLabel
+                Tag = 5
+                Left = 122
+                Height = 16
+                Top = 144
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad23: TLabel
+                Tag = 5
+                Left = 456
+                Height = 16
+                Top = 144
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad24: TLabel
+                Tag = 6
+                Left = 456
+                Height = 16
+                Top = 168
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion24: TLabel
+                Tag = 6
+                Left = 122
+                Height = 16
+                Top = 166
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal28: TLabel
+                Left = 41
+                Height = 16
+                Top = 168
+                Width = 55
+                Caption = 'Canal 22'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal29: TLabel
+                Left = 41
+                Height = 16
+                Top = 192
+                Width = 55
+                Caption = 'Canal 23'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion25: TLabel
+                Tag = 7
+                Left = 122
+                Height = 16
+                Top = 192
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad25: TLabel
+                Tag = 7
+                Left = 456
+                Height = 16
+                Top = 192
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object sbGrafico23: TSpeedButton
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 21
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico24: TSpeedButton
+                Tag = 1
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 45
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico25: TSpeedButton
+                Tag = 2
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 69
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico26: TSpeedButton
+                Tag = 3
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 93
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico27: TSpeedButton
+                Tag = 4
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 117
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico28: TSpeedButton
+                Tag = 5
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 141
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico29: TSpeedButton
+                Tag = 6
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 165
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico08_Dup2: TSpeedButton
+                Tag = 7
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 189
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbComentario9: TSpeedButton
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 21
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario19: TSpeedButton
+                Tag = 1
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 45
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario20: TSpeedButton
+                Tag = 2
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 69
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario21: TSpeedButton
+                Tag = 3
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 93
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario22: TSpeedButton
+                Tag = 4
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 117
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario23: TSpeedButton
+                Tag = 5
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 141
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario24: TSpeedButton
+                Tag = 6
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 165
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario25: TSpeedButton
+                Tag = 7
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 189
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object LValor26: TLabel
+                Left = 344
+                Height = 20
+                Top = 22
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object Bevel86: TBevel
+                Left = 344
+                Height = 21
+                Top = 22
+                Width = 101
+                Shape = bsFrame
+              end
+              object LValor27: TLabel
+                Tag = 1
+                Left = 344
+                Height = 20
+                Top = 46
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor28: TLabel
+                Tag = 2
+                Left = 344
+                Height = 20
+                Top = 70
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor8: TLabel
+                Tag = 3
+                Left = 344
+                Height = 20
+                Top = 94
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor9: TLabel
+                Tag = 4
+                Left = 344
+                Height = 20
+                Top = 118
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object Bevel87: TBevel
+                Left = 344
+                Height = 21
+                Top = 46
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel96: TBevel
+                Left = 344
+                Height = 21
+                Top = 70
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel108: TBevel
+                Left = 344
+                Height = 21
+                Top = 94
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel168: TBevel
+                Left = 344
+                Height = 21
+                Top = 118
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel169: TBevel
+                Left = 344
+                Height = 21
+                Top = 142
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel170: TBevel
+                Left = 344
+                Height = 21
+                Top = 166
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel171: TBevel
+                Left = 344
+                Height = 21
+                Top = 190
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel172: TBevel
+                Left = 119
+                Height = 21
+                Top = 190
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel173: TBevel
+                Left = 119
+                Height = 21
+                Top = 166
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel174: TBevel
+                Left = 119
+                Height = 21
+                Top = 142
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel175: TBevel
+                Left = 119
+                Height = 21
+                Top = 118
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel176: TBevel
+                Left = 119
+                Height = 21
+                Top = 94
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel177: TBevel
+                Left = 119
+                Height = 21
+                Top = 70
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel178: TBevel
+                Left = 119
+                Height = 21
+                Top = 46
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel179: TBevel
+                Left = 119
+                Height = 21
+                Top = 22
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel180: TBevel
+                Left = 20
+                Height = 21
+                Top = 190
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel181: TBevel
+                Left = 20
+                Height = 21
+                Top = 166
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel182: TBevel
+                Left = 20
+                Height = 21
+                Top = 142
+                Width = 89
+                Shape = bsFrame
+                OnChangeBounds = Bevel102ChangeBounds
+              end
+              object Bevel183: TBevel
+                Left = 20
+                Height = 21
+                Top = 118
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel184: TBevel
+                Left = 20
+                Height = 21
+                Top = 94
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel185: TBevel
+                Left = 20
+                Height = 21
+                Top = 70
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel186: TBevel
+                Left = 20
+                Height = 21
+                Top = 46
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel187: TBevel
+                Left = 20
+                Height = 21
+                Top = 22
+                Width = 89
+                Shape = bsFrame
+                OnChangeBounds = Bevel107ChangeBounds
+              end
+              object Bevel188: TBevel
+                Left = 454
+                Height = 21
+                Top = 190
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel189: TBevel
+                Left = 454
+                Height = 21
+                Top = 166
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel190: TBevel
+                Left = 454
+                Height = 21
+                Top = 142
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel191: TBevel
+                Left = 454
+                Height = 21
+                Top = 118
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel192: TBevel
+                Left = 454
+                Height = 21
+                Top = 94
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel193: TBevel
+                Left = 454
+                Height = 21
+                Top = 70
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel194: TBevel
+                Left = 454
+                Height = 21
+                Top = 46
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel195: TBevel
+                Left = 454
+                Height = 21
+                Top = 22
+                Width = 63
+                Shape = bsFrame
+              end
+            end
+          end
+          object tsExp2: TTabSheet
+            Caption = 'Expansion 3'
+            ClientHeight = 254
+            ClientWidth = 602
+            object GroupBox13: TGroupBox
+              Left = 0
+              Height = 255
+              Top = 0
+              Width = 593
+              Caption = ' Valor de los Canales '
+              ClientHeight = 237
+              ClientWidth = 589
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'Tahoma'
+              Font.Style = [fsBold]
+              ParentBackground = False
+              ParentFont = False
+              TabOrder = 0
+              OnClick = GroupBox9Click
+              object LValor29: TLabel
+                Tag = 7
+                Left = 344
+                Height = 20
+                Top = 190
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor30: TLabel
+                Tag = 6
+                Left = 344
+                Height = 20
+                Top = 166
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor31: TLabel
+                Tag = 5
+                Left = 344
+                Height = 20
+                Top = 142
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LDescripcion26: TLabel
+                Left = 122
+                Height = 16
+                Top = 24
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad26: TLabel
+                Left = 456
+                Height = 16
+                Top = 24
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object Label22: TLabel
+                Left = 41
+                Height = 16
+                Top = 24
+                Width = 55
+                Caption = 'Canal 24'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal30: TLabel
+                Left = 41
+                Height = 16
+                Top = 48
+                Width = 55
+                Caption = 'Canal 25'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion27: TLabel
+                Tag = 1
+                Left = 122
+                Height = 16
+                Top = 48
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad27: TLabel
+                Tag = 1
+                Left = 456
+                Height = 16
+                Top = 48
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal31: TLabel
+                Left = 41
+                Height = 16
+                Top = 72
+                Width = 55
+                Caption = 'Canal 26'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion28: TLabel
+                Tag = 2
+                Left = 122
+                Height = 16
+                Top = 72
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad28: TLabel
+                Tag = 2
+                Left = 456
+                Height = 16
+                Top = 72
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal32: TLabel
+                Left = 41
+                Height = 16
+                Top = 96
+                Width = 55
+                Caption = 'Canal 27'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion29: TLabel
+                Tag = 3
+                Left = 122
+                Height = 16
+                Top = 96
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad29: TLabel
+                Tag = 3
+                Left = 456
+                Height = 16
+                Top = 96
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal33: TLabel
+                Left = 41
+                Height = 16
+                Top = 120
+                Width = 55
+                Caption = 'Canal 28'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion30: TLabel
+                Tag = 4
+                Left = 122
+                Height = 16
+                Top = 120
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad30: TLabel
+                Tag = 4
+                Left = 456
+                Height = 16
+                Top = 120
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal34: TLabel
+                Left = 41
+                Height = 16
+                Top = 144
+                Width = 55
+                Caption = 'Canal 29'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion31: TLabel
+                Tag = 5
+                Left = 122
+                Height = 16
+                Top = 144
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad31: TLabel
+                Tag = 5
+                Left = 456
+                Height = 16
+                Top = 144
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad32: TLabel
+                Tag = 6
+                Left = 456
+                Height = 16
+                Top = 168
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion32: TLabel
+                Tag = 6
+                Left = 122
+                Height = 16
+                Top = 166
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal35: TLabel
+                Left = 41
+                Height = 16
+                Top = 168
+                Width = 55
+                Caption = 'Canal 30'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LNombreCanal36: TLabel
+                Left = 41
+                Height = 16
+                Top = 192
+                Width = 55
+                Caption = 'Canal 31'
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LDescripcion33: TLabel
+                Tag = 7
+                Left = 122
+                Height = 16
+                Top = 192
+                Width = 211
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object LUnidad33: TLabel
+                Tag = 7
+                Left = 456
+                Height = 16
+                Top = 192
+                Width = 60
+                Alignment = taCenter
+                AutoSize = False
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = 14648845
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentFont = False
+              end
+              object sbGrafico30: TSpeedButton
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 21
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico31: TSpeedButton
+                Tag = 1
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 45
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico32: TSpeedButton
+                Tag = 2
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 69
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico33: TSpeedButton
+                Tag = 3
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 93
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico34: TSpeedButton
+                Tag = 4
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 117
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico35: TSpeedButton
+                Tag = 5
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 141
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico36: TSpeedButton
+                Tag = 6
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 165
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbGrafico08_Dup3: TSpeedButton
+                Tag = 7
+                Left = 528
+                Height = 22
+                Hint = 'Gráfico del valor del Canal'
+                Top = 189
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  5E040000424D5E04000000000000F60200002800000012000000120000000100
+                  08000000000068010000120B0000120B0000B0000000B000000000000000FFFF
+                  FF007A7979008685850090857B0091877D006A666200666360009B9895006D6B
+                  6900CCCBCA00F3D4B100F1D8BC00CEBDAA00BB9E7C00BEA38200AA937800ECCD
+                  A900F6D7B300F5D7B300F4D7B300F3D5B300F7DAB700F6D8B600F3D6B400F2D5
+                  B300EBD0B000F1D5B500F1D6B700F4D9BA00EFD7BB00EFD8BC00F2DCC100CEBB
+                  A500EDD8C000ECD7BF00E1CFBA0095897B00E1D0BB00E0CFBA00E1D0BC00EBDB
+                  C800B9B4AE009A84670081705A0082746100F7DDBB00F7DEBE00F4DEC100EEDA
+                  C100EDD9C000ECD8BF00EAD9C200EBDAC400EAD9C300E0D0BB00E8DAC700ECE1
+                  D200E7DCCD00BCB4AA0064605B0068645F00736F6A00CAB5980072675700D7C5
+                  AC00E7D5BA00D0C0A800BEAF9900E8D7BF00E7D6BE00E9D9C200EADAC400C2B6
+                  A500E2D5C200DFD2C000E6DAC80098908500A8A09400D7CDBF00B5ADA100A49D
+                  9300B5AFA60067656200A2958100D9C8AE00D6C6AC00B2A5900093887700C3B5
+                  9F00DED1BD00E9DCC700E9DCC800E8DBC700E7DAC600E6DBC900E4D9C700C2AD
+                  8700D5C2A2006D665A00E1D5C000E6DBC8005B575000E4DCCE00E5DED200E4DD
+                  D100D5CFC4008B888300BAB7B200C1BEB900E5DBC800C0BEB90067666300C3C3
+                  C100F8F9F900F7F8F800EBECEC0095969600818282008F90910081828300F0F1
+                  F200EFF0F100EEEFF000E2E3E400E0E1E200DDDEDF00C4C5C600AEAFB0004F50
+                  520066676900B6B7B900DFE0E200D9DADC00C0C1C300BEBFC100D6D6D800FDFD
+                  FE00F9F9FA00F6F6F700F3F3F400F0F0F100ECECED00E8E8E900E6E6E700E5E5
+                  E600E4E4E500DEDEDF00DBDBDC0080808100FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00FAFAFA00F4F4F400EAEAEA00E8E8E800E0E0E000CDCDCD00C9C9C900C6C6
+                  C600C1C1C100B6B6B60093939300919191008888880083838300757575006E6E
+                  6E006B6B6B0068686800646464005F5F5F005E5E5E00FFFFFF00010101010101
+                  0101010101010101019A010100000101010101010101010101010101A3A79D01
+                  0000010101010101010101010101019FAAAC9E010000010101010101737C9492
+                  9A97A1A8A9A201010000010101018B8302063D079577AEABA49A010100000101
+                  018F76402B616243546681ADA0960101000001018C032C0E111312162F556382
+                  9C01010100000101802D0F14171815190B2E563C87010101000001796B101A1D
+                  1C1C1C1C1C1B3058789901010000017E4D3F0C1F1F1F1F1F1E1E204470740101
+                  000001884E41222232322222332331595391010100000193524B453548484836
+                  34344757098E01010000017B6C68645C5D5D5D385E5B5A25A697010100000189
+                  716A674A5F5F656E4C60493E7F010101000001018D6F693A27242628370D0475
+                  980101010000010101906D4F392946422105A59B010101010000010101017B0A
+                  2A3B505108868A010101010100000101010101017A7D85847201010101010101
+                  0000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = BotonGraficoCanalClick
+              end
+              object sbComentario26: TSpeedButton
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 21
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario27: TSpeedButton
+                Tag = 1
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 45
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario28: TSpeedButton
+                Tag = 2
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 69
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario29: TSpeedButton
+                Tag = 3
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 93
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario30: TSpeedButton
+                Tag = 4
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 117
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario31: TSpeedButton
+                Tag = 5
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 141
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario32: TSpeedButton
+                Tag = 6
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 165
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object sbComentario33: TSpeedButton
+                Tag = 7
+                Left = 560
+                Height = 22
+                Hint = 'Modificar la Descripción del Canal'
+                Top = 189
+                Width = 23
+                Enabled = False
+                Flat = True
+                Glyph.Data = {
+                  56050000424D5605000000000000EE0300002800000012000000120000000100
+                  08000000000068010000120B0000120B0000EE000000EE00000000000000FFFF
+                  FF00E7E5E500EEEDED00ABAAAA0088807E00C0B8B600BFB7B500A09C9B009081
+                  7D00A69F9D0092726800A5959000C9BFBC009B4E3200B15B3C00B25C3D00C767
+                  4500C8694600BD624200BD634200C76846008E4A3200CA6B4800C7694700BC63
+                  4300CD6D4A00CC6C4A00D16E4C00CE6D4B00DD755200D3714E0095503700D775
+                  5200D0725000CD704F00DA795500D9775400D1735100CF725100D5765500DE7D
+                  5A00D97B5800D5785600E07E5B00D5785700D67958009C59400097563E00E481
+                  5F00E9866200E5846000DB7D5C00D97B5B00DA7D5C00DE815F00DC7F5E00DB7E
+                  5E00EA886500E0826100DF82600089503B00ED8A6700EB886600DF826100E889
+                  6600F38F6C00E8896700E4866500E3866500EF8E6B00EE8D6A00E6896700E789
+                  6800E78A6900F6947100F2926F00EF906E00EC8E6C00EF916F00ED906E00EC8F
+                  6D00C6785C0093594400FB987500FB997500FA997600F0927100B46E5500F697
+                  7500F4967400F6987600F5967500F5977500FF9F7B00FE9E7B00FC9D7B00F99B
+                  7900E9917100D7876900FFA07E00FD9F7D00AC6C5500CD826600B1705800AB6C
+                  5500FFA38100FFA48200F49C7C00F29B7B00A26A55009A685700A16F5D008B5F
+                  5000956A5A00A072620074554A00A6807200A07F73007F665D00B2928600B39E
+                  97007F716C00B8A49D00C0B5B100CDC7C500B1AEAD00D8D5D400D7D4D300CA77
+                  5700BF775B00FEA17E00FFA58200FFA58300FFA68400C27F6500FFAA8800FFAB
+                  8800FFAB8900FFAC8A00FFAE8C00F5AA8D00AB7A6600E2A38B00D4A28E00E5B4
+                  A000EABDAB00EEC1AF00ECC3B20080736E00B8AEAA0096918F00C7866900FFB1
+                  8D00D08F7300FFB18F00FFB19000FFB29000FFB29100FFB69400FAB59700F1C5
+                  B200F0C9B800DABBAD0088817E00E7A17E00FFB18C00EEA68300FEB28E00F9B2
+                  8E00F7B18D00FCB59100FFB79500FFB89600FFB99600FFB99700FAB69400FFBC
+                  9900F9BEA000F2B89C00EBB9A000F6C3AA00D9B6A400FFDDCC00FFDFCF00E8CD
+                  C000F3E0D7008F898600FAF2EE00FFBB9700FFBE9B00FDC4A300ECC4AD00DAB9
+                  A700DBBEAE00FDDFCF00F8F1ED00FFC6A300FFCDAD00FFC9A600FFCBA800FFCD
+                  AC00F6CBAF00F7EFE900FAF3EE00FEF4EC00F6F3F000A2A1A000E7E6E500FAF7
+                  F300FDFDF800FEFFFF00FBFCFC00F5FAFB00FEFEFE00FDFDFD00FCFCFC00FBFB
+                  FB00F9F9F900F8F8F800F7F7F700F6F6F600F5F5F500F2F2F200F1F1F100F0F0
+                  F000EEEEEE00EAEAEA00E6E6E600E4E4E400E2E2E200E0E0E000DDDDDD00DADA
+                  DA00CDCDCD00B4B4B400B3B3B300FFFFFF00010101010101D7DCDFE0DED80101
+                  01010101000001010101D8E6ECBB957AA404E9DA010101010000010101DDEB77
+                  301014130F2074CFE101010100000101DC0853181A111115121D171605E10101
+                  000001017E2F1C1B67C2C1B6A39022210E97D901000001E5711F27266394D201
+                  BA8F2B2D243DEA010000010A19282E362938CB01911E4039342309D60000D90B
+                  253537454162C40192324A443C3172E20000E16F2C3B49514C6DBC019342574E
+                  483A69E70000E26E33434F5D566CCC01A155615A504658E80000DD703F4D5B5F
+                  8DB9D4D3A2836A605C4B68E4000001763E596584A0C3B7B8B58B8A6B605473DB
+                  000001062A64858C9EA8B3B4B0AC9C8886470C01000001DA8E5E8B9DADB2CED5
+                  C0BD9F9B8966E30100000101805299AFB1BFCDD1CABEBEAE8107010100000101
+                  017D87A6C5C7C9C6C8C8AB8296010101000001010101D0789AA7A9AAA598757F
+                  010101010000010101010101030D7B797C020101010101010000
+                }
+                ShowHint = True
+                ParentShowHint = False
+                OnClick = sbComentarioClick
+              end
+              object LValor32: TLabel
+                Left = 344
+                Height = 20
+                Top = 22
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object Bevel196: TBevel
+                Left = 344
+                Height = 21
+                Top = 22
+                Width = 101
+                Shape = bsFrame
+              end
+              object LValor33: TLabel
+                Tag = 1
+                Left = 344
+                Height = 20
+                Top = 46
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor34: TLabel
+                Tag = 2
+                Left = 344
+                Height = 20
+                Top = 70
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor35: TLabel
+                Tag = 3
+                Left = 344
+                Height = 20
+                Top = 94
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object LValor36: TLabel
+                Tag = 4
+                Left = 344
+                Height = 20
+                Top = 118
+                Width = 100
+                Alignment = taCenter
+                AutoSize = False
+                Color = 10939374
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clBlack
+                Font.Height = -13
+                Font.Name = 'Tahoma'
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object Bevel197: TBevel
+                Left = 344
+                Height = 21
+                Top = 46
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel198: TBevel
+                Left = 344
+                Height = 21
+                Top = 70
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel199: TBevel
+                Left = 344
+                Height = 21
+                Top = 94
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel200: TBevel
+                Left = 344
+                Height = 21
+                Top = 118
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel201: TBevel
+                Left = 344
+                Height = 21
+                Top = 142
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel202: TBevel
+                Left = 344
+                Height = 21
+                Top = 166
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel203: TBevel
+                Left = 344
+                Height = 21
+                Top = 190
+                Width = 101
+                Shape = bsFrame
+              end
+              object Bevel204: TBevel
+                Left = 119
+                Height = 21
+                Top = 190
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel205: TBevel
+                Left = 119
+                Height = 21
+                Top = 166
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel206: TBevel
+                Left = 119
+                Height = 21
+                Top = 142
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel207: TBevel
+                Left = 119
+                Height = 21
+                Top = 118
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel208: TBevel
+                Left = 119
+                Height = 21
+                Top = 94
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel209: TBevel
+                Left = 119
+                Height = 21
+                Top = 70
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel210: TBevel
+                Left = 119
+                Height = 21
+                Top = 46
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel211: TBevel
+                Left = 119
+                Height = 21
+                Top = 22
+                Width = 216
+                Shape = bsFrame
+              end
+              object Bevel212: TBevel
+                Left = 20
+                Height = 21
+                Top = 190
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel213: TBevel
+                Left = 20
+                Height = 21
+                Top = 166
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel214: TBevel
+                Left = 20
+                Height = 21
+                Top = 142
+                Width = 89
+                Shape = bsFrame
+                OnChangeBounds = Bevel102ChangeBounds
+              end
+              object Bevel215: TBevel
+                Left = 20
+                Height = 21
+                Top = 118
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel216: TBevel
+                Left = 20
+                Height = 21
+                Top = 94
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel217: TBevel
+                Left = 20
+                Height = 21
+                Top = 70
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel218: TBevel
+                Left = 20
+                Height = 21
+                Top = 46
+                Width = 89
+                Shape = bsFrame
+              end
+              object Bevel219: TBevel
+                Left = 20
+                Height = 21
+                Top = 22
+                Width = 89
+                Shape = bsFrame
+                OnChangeBounds = Bevel107ChangeBounds
+              end
+              object Bevel220: TBevel
+                Left = 454
+                Height = 21
+                Top = 190
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel221: TBevel
+                Left = 454
+                Height = 21
+                Top = 166
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel222: TBevel
+                Left = 454
+                Height = 21
+                Top = 142
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel223: TBevel
+                Left = 454
+                Height = 21
+                Top = 118
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel224: TBevel
+                Left = 454
+                Height = 21
+                Top = 94
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel225: TBevel
+                Left = 454
+                Height = 21
+                Top = 70
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel226: TBevel
+                Left = 454
+                Height = 21
+                Top = 46
+                Width = 63
+                Shape = bsFrame
+              end
+              object Bevel227: TBevel
                 Left = 454
                 Height = 21
                 Top = 22

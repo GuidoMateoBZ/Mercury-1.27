@@ -24,6 +24,7 @@ type
     Bevel105: TBevel;
     Bevel106: TBevel;
     Bevel107: TBevel;
+    Bevel108: TBevel;
     Bevel109: TBevel;
     Bevel11: TBevel;
     Bevel110: TBevel;
@@ -120,8 +121,32 @@ type
     Bevel201: TBevel;
     Bevel202: TBevel;
     Bevel203: TBevel;
+    Bevel204: TBevel;
+    Bevel205: TBevel;
+    Bevel206: TBevel;
+    Bevel207: TBevel;
+    Bevel208: TBevel;
+    Bevel209: TBevel;
     Bevel21: TBevel;
+    Bevel210: TBevel;
+    Bevel211: TBevel;
+    Bevel212: TBevel;
+    Bevel213: TBevel;
+    Bevel214: TBevel;
+    Bevel215: TBevel;
+    Bevel216: TBevel;
+    Bevel217: TBevel;
+    Bevel218: TBevel;
+    Bevel219: TBevel;
     Bevel22: TBevel;
+    Bevel220: TBevel;
+    Bevel221: TBevel;
+    Bevel222: TBevel;
+    Bevel223: TBevel;
+    Bevel224: TBevel;
+    Bevel225: TBevel;
+    Bevel226: TBevel;
+    Bevel227: TBevel;
     Bevel23: TBevel;
     Bevel24: TBevel;
     Bevel25: TBevel;
@@ -152,6 +177,8 @@ type
     Bevel80: TBevel;
     Bevel84: TBevel;
     Bevel85: TBevel;
+    Bevel86: TBevel;
+    Bevel87: TBevel;
     Bevel88: TBevel;
     Bevel89: TBevel;
     Bevel9: TBevel;
@@ -161,11 +188,13 @@ type
     Bevel93: TBevel;
     Bevel94: TBevel;
     Bevel95: TBevel;
+    Bevel96: TBevel;
     Bevel97: TBevel;
     Bevel98: TBevel;
     GroupBox10: TGroupBox;
     GroupBox11: TGroupBox;
     GroupBox12: TGroupBox;
+    GroupBox13: TGroupBox;
     GroupBox6: TGroupBox;
     GroupBox9: TGroupBox;
     Label16: TLabel;
@@ -174,6 +203,7 @@ type
     Label19: TLabel;
     Label20: TLabel;
     Label21: TLabel;
+    Label22: TLabel;
     Label23: TLabel;
     Label26: TLabel;
     Label29: TLabel;
@@ -205,7 +235,13 @@ type
     LDescripcion25: TLabel;
     LDescripcion26: TLabel;
     LDescripcion27: TLabel;
+    LDescripcion28: TLabel;
+    LDescripcion29: TLabel;
     LDescripcion3: TLabel;
+    LDescripcion30: TLabel;
+    LDescripcion31: TLabel;
+    LDescripcion32: TLabel;
+    LDescripcion33: TLabel;
     LDescripcion4: TLabel;
     LDescripcion5: TLabel;
     LDescripcion6: TLabel;
@@ -238,6 +274,13 @@ type
     LNombreCanal27: TLabel;
     LNombreCanal28: TLabel;
     LNombreCanal29: TLabel;
+    LNombreCanal30: TLabel;
+    LNombreCanal31: TLabel;
+    LNombreCanal32: TLabel;
+    LNombreCanal33: TLabel;
+    LNombreCanal34: TLabel;
+    LNombreCanal35: TLabel;
+    LNombreCanal36: TLabel;
     LUnidad00: TLabel;
     LUnidad01: TLabel;
     LUnidad02: TLabel;
@@ -261,7 +304,13 @@ type
     LUnidad25: TLabel;
     LUnidad26: TLabel;
     LUnidad27: TLabel;
+    LUnidad28: TLabel;
+    LUnidad29: TLabel;
     LUnidad3: TLabel;
+    LUnidad30: TLabel;
+    LUnidad31: TLabel;
+    LUnidad32: TLabel;
+    LUnidad33: TLabel;
     LUnidad4: TLabel;
     LUnidad5: TLabel;
     LUnidad6: TLabel;
@@ -303,6 +352,13 @@ type
     LValor27: TLabel;
     LValor28: TLabel;
     LValor29: TLabel;
+    LValor30: TLabel;
+    LValor31: TLabel;
+    LValor32: TLabel;
+    LValor33: TLabel;
+    LValor34: TLabel;
+    LValor35: TLabel;
+    LValor36: TLabel;
     LValor4: TLabel;
     LValor5: TLabel;
     LValor6: TLabel;
@@ -347,7 +403,13 @@ type
     sbComentario25: TSpeedButton;
     sbComentario26: TSpeedButton;
     sbComentario27: TSpeedButton;
+    sbComentario28: TSpeedButton;
+    sbComentario29: TSpeedButton;
     sbComentario3: TSpeedButton;
+    sbComentario30: TSpeedButton;
+    sbComentario31: TSpeedButton;
+    sbComentario32: TSpeedButton;
+    sbComentario33: TSpeedButton;
     sbComentario4: TSpeedButton;
     sbComentario5: TSpeedButton;
     sbComentario6: TSpeedButton;
@@ -366,8 +428,8 @@ type
     sbGrafico08_Dup: TSpeedButton;
     sbGrafico08_Dup1: TSpeedButton;
     sbGrafico08_Dup2: TSpeedButton;
+    sbGrafico08_Dup3: TSpeedButton;
     sbGrafico09: TSpeedButton;
-    sbGrafico09_Dup: TSpeedButton;
     sbGrafico09_Dup1: TSpeedButton;
     sbGrafico09_Dup2: TSpeedButton;
     sbGrafico10: TSpeedButton;
@@ -390,6 +452,13 @@ type
     sbGrafico27: TSpeedButton;
     sbGrafico28: TSpeedButton;
     sbGrafico29: TSpeedButton;
+    sbGrafico30: TSpeedButton;
+    sbGrafico31: TSpeedButton;
+    sbGrafico32: TSpeedButton;
+    sbGrafico33: TSpeedButton;
+    sbGrafico34: TSpeedButton;
+    sbGrafico35: TSpeedButton;
+    sbGrafico36: TSpeedButton;
     sbGraficoParam1: TSpeedButton;
     sbGraficoParam2: TSpeedButton;
     sbGraficoParam3: TSpeedButton;
@@ -404,6 +473,7 @@ type
     Restaurar: TMenuItem;
     N4: TMenuItem;
     CoolBar1: TCoolBar;
+    tsExp2: TTabSheet;
     tsExp1: TTabSheet;
     tsMon: TTabSheet;
     tsExp0: TTabSheet;
@@ -733,7 +803,7 @@ type
     { Private declarations }
   public
     procedure TrayMessage(var Msg: TMessage); message WM_ICONTRAY;
-    procedure ActualizarVisibilidadCanales(Es16Canales: Boolean);
+    procedure ActualizarVisibilidadCanales(CantidadCanales: Integer);
     procedure InstanciarComponentesFaltantes;
     { Public declarations }
   end;
@@ -802,6 +872,9 @@ begin
 
   // Cargo la config a la aplicaci�n, a las vantanas, etc
   CargarDatosConfig;
+  
+  // Inicializo la visibilidad de canales (8 por defecto)
+  ActualizarVisibilidadCanales(8);
 
   // Cargo la configuraci�n de las Comuicaciones Telef�nicas guardada en el Archivo INI
   FPresentacion.LMensaje.Caption := 'Cargando conexiones remotas...';
@@ -902,7 +975,7 @@ begin
 
   // Estado inicial: 8 Canales (ocultar canales 08-15)
   InstanciarComponentesFaltantes;
-  ActualizarVisibilidadCanales(False);
+  ActualizarVisibilidadCanales(8);
 
   // Manera de iniciar la ventana Principal Inicio
   if UpCase(Mercury.IniciarMinimizado)='S' then begin
@@ -1408,6 +1481,16 @@ procedure TFprincipal.InstanciarComponentesFaltantes;
 var
   DeltaY, TopBase: Integer;
 begin
+  // Asegurar que las pestañas de expansión existan
+  if (tsExp2 = nil) and (tsMon.PageControl <> nil) then
+  begin
+    tsExp2 := TTabSheet.Create(Self);
+    tsExp2.PageControl := tsMon.PageControl;
+    tsExp2.Name := 'tsExp2';
+    tsExp2.Caption := 'Exp 25-32';
+    tsExp2.TabVisible := False;
+  end;
+
   // Chequeo si faltan los componentes visuales (indicador de que no estan en el LFM)
   if LConfig09 = nil then begin
      // Calculo el espaciado basado en los canales anteriores (07 y 08)
@@ -1714,57 +1797,7 @@ begin
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-procedure TFprincipal.ActualizarVisibilidadCanales(Es16Canales: Boolean);
-begin
-  // Canales 09 a 15 (indices de configuracion y valores visuales) - Canal 08 es Digital 1 y siempre visible
-  
-  // Configuracion (LConfig, LDescConfig)
-  LConfig09.Visible := Es16Canales; LDescConfig09.Visible := Es16Canales;
-  LConfig10.Visible := Es16Canales; LDescConfig10.Visible := Es16Canales;
-  LConfig11.Visible := Es16Canales; LDescConfig11.Visible := Es16Canales;
-  LConfig12.Visible := Es16Canales; LDescConfig12.Visible := Es16Canales;
-  LConfig13.Visible := Es16Canales; LDescConfig13.Visible := Es16Canales;
-  LConfig14.Visible := Es16Canales; LDescConfig14.Visible := Es16Canales;
-  LConfig15.Visible := Es16Canales; LDescConfig15.Visible := Es16Canales;
 
-  // Visualizacion (Valores, Unidades, Descripciones, Graficos, Comentarios, Nombres)
-  LValor09.Visible := Es16Canales; LUnidad09.Visible := Es16Canales; LDescripcion09.Visible := Es16Canales;
-  sbGrafico09.Visible := Es16Canales; sbComentario09.Visible := Es16Canales; LNombreCanal09.Visible := Es16Canales;
-
-  LValor10.Visible := Es16Canales; LUnidad10.Visible := Es16Canales; LDescripcion10.Visible := Es16Canales;
-  sbGrafico10.Visible := Es16Canales; sbComentario10.Visible := Es16Canales; LNombreCanal10.Visible := Es16Canales;
-
-  LValor11.Visible := Es16Canales; LUnidad11.Visible := Es16Canales; LDescripcion11.Visible := Es16Canales;
-  sbGrafico11.Visible := Es16Canales; sbComentario11.Visible := Es16Canales; LNombreCanal11.Visible := Es16Canales;
-
-  LValor12.Visible := Es16Canales; LUnidad12.Visible := Es16Canales; LDescripcion12.Visible := Es16Canales;
-  sbGrafico12.Visible := Es16Canales; sbComentario12.Visible := Es16Canales; LNombreCanal12.Visible := Es16Canales;
-
-  LValor13.Visible := Es16Canales; LUnidad13.Visible := Es16Canales; LDescripcion13.Visible := Es16Canales;
-  sbGrafico13.Visible := Es16Canales; sbComentario13.Visible := Es16Canales; LNombreCanal13.Visible := Es16Canales;
-
-  LValor14.Visible := Es16Canales; LUnidad14.Visible := Es16Canales; LDescripcion14.Visible := Es16Canales;
-  sbGrafico14.Visible := Es16Canales; sbComentario14.Visible := Es16Canales; LNombreCanal14.Visible := Es16Canales;
-
-  LValor15.Visible := Es16Canales; LUnidad15.Visible := Es16Canales; LDescripcion15.Visible := Es16Canales;
-  sbGrafico15.Visible := Es16Canales; sbComentario15.Visible := Es16Canales; LNombreCanal15.Visible := Es16Canales;
-  
-  // Controlar la visibilidad del contenedor de los canales adicionales (GroupBox9)
-  if GroupBox9 <> nil then
-     GroupBox9.Visible := Es16Canales;
-
-  // Ajustar la posición del módulo "Parámetros Calculados" (GroupBox8) para ocupar el espacio vacío
-  // FIX: Usamos GroupBox9 y GroupBox6 como referencias para evitar coordenadas relativas incorrectas.
-  if GroupBox8 <> nil then begin
-     if Es16Canales then begin
-        if GroupBox9 <> nil then
-           GroupBox8.Top := GroupBox9.Top + GroupBox9.Height + 50;
-     end else begin
-        if GroupBox6 <> nil then
-           GroupBox8.Top := GroupBox6.Top + GroupBox6.Height + 50;
-     end;
-  end;
-end;
 
 ////////////////////////////////////////////////////////////////////////////////
 function TFprincipal.CentrarTexto(texto:string; Ancho:integer):string;
@@ -2897,32 +2930,126 @@ end;
 
 // Implementación del menú de expansión
 procedure TFprincipal.tbExpansionClick(Sender: TObject);
-var
-  FExpansion: TFExpansion;
 begin
-  FExpansion := TFExpansion.Create(self);
+  // Usamos la instancia global FExpansion (definida en UExpansion.pas y creada en el .lpr)
+  if not Assigned(UExpansion.FExpansion) then
+     Exit; 
+     
   try
-    // Check current state. Assuming Mercury.NumCanales holds the total channels (8 or 16).
-    // Note: Mercury object defined in Uprincipal implementation or interface seems to be TUtiles.Mercury? 
-    // Or just a global TEquipo. Let's assume Mercury.NumCanales is correct based on TEquipo definition.
-    // However, the error said "identifier idents no member CantCanales", so we use NumCanales.
-    
-    // Logic: If we are currently showing 16 channels, pre-select RadioButton2.
-    // How do we know if we are showing 16 channels?
-    // We can check GroupBox9.Visible or Equipo.NumCanales (if that's what tracks it)
-    // or just default to 8 if unsure. The user's request implies we are toggling.
-    // Let's use the local visibility state or the global config if available.
-    
-    // Given we just set visibility, let's check one of the extended components
-    if (GroupBox9 <> nil) and GroupBox9.Visible then
-       FExpansion.RadioButton2.Checked := true // 16 Canales
+    // Configurar el estado inicial del form de expansión basado en la visibilidad actual
+    if Assigned(tsExp2) and tsExp2.TabVisible then
+       UExpansion.FExpansion.rbCanales32.Checked := true // 32 Canales
+    else if Assigned(tsExp1) and tsExp1.TabVisible then
+       UExpansion.FExpansion.rbCanales24.Checked := true // 24 Canales
+    else if Assigned(tsExp0) and tsExp0.TabVisible then
+       UExpansion.FExpansion.RadioButton2.Checked := true // 16 Canales
     else
-       FExpansion.RadioButton1.Checked := true; // 8 Canales
+       UExpansion.FExpansion.RadioButton1.Checked := true; // 8 Canales
 
-    FExpansion.ShowModal;
-  finally
-    FExpansion.Free;
+    // Mostrar modal y procesar resultado
+    if UExpansion.FExpansion.ShowModal = mrOK then
+    begin
+       if UExpansion.FExpansion.rbCanales32.Checked then
+          ActualizarVisibilidadCanales(32)
+       else if UExpansion.FExpansion.rbCanales24.Checked then
+          ActualizarVisibilidadCanales(24)
+       else if UExpansion.FExpansion.RadioButton2.Checked then
+          ActualizarVisibilidadCanales(16)
+       else
+          ActualizarVisibilidadCanales(8);
+    end;
+  except
+    // Evitar cierres inesperados por errores en la UI
   end;
 end;
+
+procedure TFprincipal.ActualizarVisibilidadCanales(CantidadCanales: Integer);
+var
+  Es16Canales: Boolean;
+begin
+  // Reset active page first to avoid hiding active tab which can cause freezes
+  if Assigned(tsMon) and Assigned(tsMon.PageControl) then
+     tsMon.PageControl.ActivePage := tsMon;
+
+  // Determinar si debemos mostrar los canales extendidos del primer bloque (compatibilidad con lógica anterior)
+  Es16Canales := (CantidadCanales >= 16);
+
+  // --- Lógica Legacy de Componentes (Labels, etc.) ---
+  // Configuracion (LConfig, LDescConfig)
+  if Assigned(LConfig09) then LConfig09.Visible := Es16Canales; if Assigned(LDescConfig09) then LDescConfig09.Visible := Es16Canales;
+  if Assigned(LConfig10) then LConfig10.Visible := Es16Canales; if Assigned(LDescConfig10) then LDescConfig10.Visible := Es16Canales;
+  if Assigned(LConfig11) then LConfig11.Visible := Es16Canales; if Assigned(LDescConfig11) then LDescConfig11.Visible := Es16Canales;
+  if Assigned(LConfig12) then LConfig12.Visible := Es16Canales; if Assigned(LDescConfig12) then LDescConfig12.Visible := Es16Canales;
+  if Assigned(LConfig13) then LConfig13.Visible := Es16Canales; if Assigned(LDescConfig13) then LDescConfig13.Visible := Es16Canales;
+  if Assigned(LConfig14) then LConfig14.Visible := Es16Canales; if Assigned(LDescConfig14) then LDescConfig14.Visible := Es16Canales;
+  if Assigned(LConfig15) then LConfig15.Visible := Es16Canales; if Assigned(LDescConfig15) then LDescConfig15.Visible := Es16Canales;
+
+  // Visualizacion (Valores, Unidades, Descripciones, Graficos, Comentarios, Nombres)
+  if Assigned(LValor09) then LValor09.Visible := Es16Canales; if Assigned(LUnidad09) then LUnidad09.Visible := Es16Canales; if Assigned(LDescripcion09) then LDescripcion09.Visible := Es16Canales;
+  if Assigned(sbGrafico09) then sbGrafico09.Visible := Es16Canales; if Assigned(sbComentario09) then sbComentario09.Visible := Es16Canales; if Assigned(LNombreCanal09) then LNombreCanal09.Visible := Es16Canales;
+
+  if Assigned(LValor10) then LValor10.Visible := Es16Canales; if Assigned(LUnidad10) then LUnidad10.Visible := Es16Canales; if Assigned(LDescripcion10) then LDescripcion10.Visible := Es16Canales;
+  if Assigned(sbGrafico10) then sbGrafico10.Visible := Es16Canales; if Assigned(sbComentario10) then sbComentario10.Visible := Es16Canales; if Assigned(LNombreCanal10) then LNombreCanal10.Visible := Es16Canales;
+
+  if Assigned(LValor11) then LValor11.Visible := Es16Canales; if Assigned(LUnidad11) then LUnidad11.Visible := Es16Canales; if Assigned(LDescripcion11) then LDescripcion11.Visible := Es16Canales;
+  if Assigned(sbGrafico11) then sbGrafico11.Visible := Es16Canales; if Assigned(sbComentario11) then sbComentario11.Visible := Es16Canales; if Assigned(LNombreCanal11) then LNombreCanal11.Visible := Es16Canales;
+
+  if Assigned(LValor12) then LValor12.Visible := Es16Canales; if Assigned(LUnidad12) then LUnidad12.Visible := Es16Canales; if Assigned(LDescripcion12) then LDescripcion12.Visible := Es16Canales;
+  if Assigned(sbGrafico12) then sbGrafico12.Visible := Es16Canales; if Assigned(sbComentario12) then sbComentario12.Visible := Es16Canales; if Assigned(LNombreCanal12) then LNombreCanal12.Visible := Es16Canales;
+
+  if Assigned(LValor13) then LValor13.Visible := Es16Canales; if Assigned(LUnidad13) then LUnidad13.Visible := Es16Canales; if Assigned(LDescripcion13) then LDescripcion13.Visible := Es16Canales;
+  if Assigned(sbGrafico13) then sbGrafico13.Visible := Es16Canales; if Assigned(sbComentario13) then sbComentario13.Visible := Es16Canales; if Assigned(LNombreCanal13) then LNombreCanal13.Visible := Es16Canales;
+
+  if Assigned(LValor14) then LValor14.Visible := Es16Canales; if Assigned(LUnidad14) then LUnidad14.Visible := Es16Canales; if Assigned(LDescripcion14) then LDescripcion14.Visible := Es16Canales;
+  if Assigned(sbGrafico14) then sbGrafico14.Visible := Es16Canales; if Assigned(sbComentario14) then sbComentario14.Visible := Es16Canales; if Assigned(LNombreCanal14) then LNombreCanal14.Visible := Es16Canales;
+
+  if Assigned(LValor15) then LValor15.Visible := Es16Canales; if Assigned(LUnidad15) then LUnidad15.Visible := Es16Canales; if Assigned(LDescripcion15) then LDescripcion15.Visible := Es16Canales;
+  if Assigned(sbGrafico15) then sbGrafico15.Visible := Es16Canales; if Assigned(sbComentario15) then sbComentario15.Visible := Es16Canales; if Assigned(LNombreCanal15) then LNombreCanal15.Visible := Es16Canales;
+  
+  // Controlar la visibilidad del contenedor de los canales adicionales (GroupBox9)
+  if GroupBox9 <> nil then
+     GroupBox9.Visible := Es16Canales;
+
+  // Ajustar la posición de GroupBox8
+  if GroupBox8 <> nil then begin
+     if Es16Canales then begin
+        if GroupBox9 <> nil then
+           GroupBox8.Top := GroupBox9.Top + GroupBox9.Height + 50;
+     end else begin
+        if GroupBox6 <> nil then
+           GroupBox8.Top := GroupBox6.Top + GroupBox6.Height + 50;
+     end;
+  end;
+
+  // --- Lógica de Pestañas (TabSheets) ---
+  // tsMon siempre visible (8 canales base)
+  tsMon.TabVisible := True;
+
+  // tsExp0 visible si 16 o más (nota: coincide con GroupBox9)
+  tsExp0.TabVisible := (CantidadCanales >= 16);
+
+  // tsExp1 visible si 24 o más
+  tsExp1.TabVisible := (CantidadCanales >= 24);
+
+  // tsExp2 visible si 32 o más
+  tsExp2.TabVisible := (CantidadCanales >= 32);
+
+  // Asegurar que la pestaña activa sea válida y visible (Evita freeze y visualización incorrecta al inicio)
+  if tsMon.PageControl <> nil then begin
+     // Si la pestaña activa actual va a ser ocultada, cambiar a tsMon
+     if (not tsExp0.TabVisible and (tsMon.PageControl.ActivePage = tsExp0)) or
+        (not tsExp1.TabVisible and (tsMon.PageControl.ActivePage = tsExp1)) or
+        (not tsExp2.TabVisible and (tsMon.PageControl.ActivePage = tsExp2)) then
+     begin
+       tsMon.PageControl.ActivePage := tsMon;
+     end;
+     
+     // Forzar tsMon al inicio si estamos en modo 8 canales
+     if (CantidadCanales = 8) then
+        tsMon.PageControl.ActivePage := tsMon;
+  end;
+end;
+
+
 
 end.
