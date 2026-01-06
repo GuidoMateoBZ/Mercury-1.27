@@ -2971,6 +2971,10 @@ begin
   if Assigned(tsMon) and Assigned(tsMon.PageControl) then
      tsMon.PageControl.ActivePage := tsMon;
 
+  // Actualizar la lógica del Backend (Equipo y Comunicación)
+  if Assigned(Equipo) then
+     Equipo.ActualizarCantidadCanales(CantidadCanales);
+
   // Determinar si debemos mostrar los canales extendidos del primer bloque (compatibilidad con lógica anterior)
   Es16Canales := (CantidadCanales >= 16);
 

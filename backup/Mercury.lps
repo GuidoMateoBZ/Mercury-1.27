@@ -18,14 +18,13 @@
         <ComponentName Value="Fprincipal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="2929"/>
-        <CursorPos Y="2934"/>
+        <CursorPos X="7" Y="2936"/>
+        <ComponentState Value="1"/>
         <UsageCount Value="44"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UEquipo.pas"/>
@@ -38,11 +37,13 @@
       <Unit>
         <Filename Value="PuertoSerie.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="825"/>
-        <CursorPos X="23" Y="835"/>
+        <TopLine Value="374"/>
+        <CursorPos X="29" Y="385"/>
         <UsageCount Value="44"/>
         <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UUtiles.pas"/>
@@ -227,7 +228,6 @@
         <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="UGrafico.lfm"/>
@@ -272,18 +272,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="UExpansion.pas"/>
-        <Caret Line="57" Column="18" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="Uprincipal.pas"/>
-        <Caret Line="2898" Column="3" TopLine="2892"/>
-      </Position>
-      <Position>
-        <Filename Value="Uprincipal.pas"/>
-        <Caret Line="2899" Column="3" TopLine="2893"/>
-      </Position>
       <Position>
         <Filename Value="Uprincipal.pas"/>
         <Caret Line="2900" Column="3" TopLine="2894"/>
@@ -388,21 +376,22 @@
         <Filename Value="Uprincipal.pas"/>
         <Caret Line="2043" Column="57" TopLine="2032"/>
       </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="2934" TopLine="2929"/>
+      </Position>
+      <Position>
+        <Filename Value="Uprincipal.pas"/>
+        <Caret Line="2936" Column="7" TopLine="2929"/>
+      </Position>
+      <Position>
+        <Filename Value="PuertoSerie.pas"/>
+        <Caret Line="450" Column="27" TopLine="435"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
-  <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="Uprincipal.pas"/>
-        <Line Value="2934"/>
-      </Item>
-    </BreakPoints>
-  </Debugging>
 </CONFIG>

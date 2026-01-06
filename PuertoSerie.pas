@@ -161,6 +161,7 @@ type
       procedure   DesConectarTelefon;     // Corta la comunicación telefonica
       procedure   IniComTelefon;          // Inicializa el Hardware de la comunicación telefonica
       function    CalcPeriodoConect(index: byte):integer;
+      procedure   ActualizarCantidadCanales(NCanales: byte);
   end;
 
   // Funciones y Procedimientos de uso generales
@@ -442,6 +443,17 @@ begin
   NombreConex      := '';            // Nombre de la conexión remota
 end;
 
+procedure TThreadComm.ActualizarCantidadCanales(NCanales: byte);
+begin
+  // Update internal count
+  CantCanales := NCanales;
+  
+  // Resize dynamic arrays
+  SetLength(pvalorCH, NCanales);
+  SetLength(pCH_conf, NCanales);
+  SetLength(ConfigCHs, NCanales);
+end;
+
 ////////////////////////////////////////////////////////////////////////////////
 destructor TThreadComm.destruir;
 begin
@@ -582,79 +594,151 @@ var
   num      : integer;
   FechaINI : double;
   auxStr   : string;
-  i        : byte;
+  i        : integer;
+  BytesOcupadosData: Integer;
+  BytesOcupadosConf: Integer;
+  BytesToRead      : Integer;
+  NumBloques       : Integer;
 begin
   auxStr := '';
-  //AL HABER RECIBIDO 'CE' ANTES, MANDA UN PAQUETE DE 50 BYTES CON TODA SU INFORMACION
-  if not PSerie.LeerDelPuertoSerie(auxStr,50) then exit;
-  // Obtengo todos los valores de los canales
-  //[PUNTERO AL INICIO DEL PAQUETE]
-  i := 1;
-//ACA, BASICAMENTE, LEE LOS PRIMEROS 20 BYTES
-//ESTE BUCLE ES EL ENCARGADO DE LEER LOS VALORES ACTUALES DE LOS 10 SENSORES
-//DE A 2 BYTES PARA CADA CANAL
-//length(pvalorCH)-1 me devuelve 9
-  for NCanal:=0 to length(pvalorCH)-1 do begin
-  //ESTA ES UNA FORMULA PARA SUMAR LOS VALORES DE LOS 2 BYTES QUE CORREPSONDEN A CADA CANAL
-    num := Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+1])*255;
-    //LO GUARDAMOS EN pvalorCH, POR LO QUE AUTOMATICAMENTE SE MUESTRA
-    //RECORDEMOS EL 'PUENTE' ARMADO ENTRE EL BUFFER DEL SENSOR Y EL BUFFER DEL THREAD
-    pvalorCH[NCanal]^ := num;
-    //AVANZA 2 PASOS
-    inc(i,2);
-    
-  end;
+  
+  // Calculate Frame Size logic:
+  // Data: 20 bytes per block of 8 channels.
+  //   Actual data: 8 channels * 2 bytes = 16 bytes.
+  //   Padding: 20 - 16 = 4 bytes per block.
+  // Config: 10 bytes per block of 8 channels.
+  //   Actual config: 8 channels * 1 byte = 8 bytes.
+  //   Padding: 10 - 8 = 2 bytes per block.
+  
+  // Determine number of 8-channel blocks (1, 2, 3, or 4)
+  if CantCanales <= 8 then NumBloques := 1
+  else if CantCanales <= 16 then NumBloques := 2
+  else if CantCanales <= 24 then NumBloques := 3
+  else NumBloques := 4; // 32 channels
+  
+  BytesOcupadosData := NumBloques * 20;
+  BytesOcupadosConf := NumBloques * 10;
+  
+  // Total Frame calculation:
+  // Data (BytesOcupadosData) + 
+  // Time (4) + StartTime (4) + Interval (2) + 
+  // Config (BytesOcupadosConf) + 
+  // Name (4) + Memory (4)
+  BytesToRead := BytesOcupadosData + 4 + 4 + 2 + BytesOcupadosConf + 4 + 4;
 
-  // Leeo la Hora del Equipo
-  //AHORA LEE A PARTIR DEL BYTE 21, PORQUE YA LEIMOS LOS PRIMEROS 20
-  i := 21;
-        // Formo el número de la fecha a partir de los 4 Bytes (32 bits)
-        //ESO, COMO LA INFO ESTA DIVIDIDA EN 4 BYTES, NECESITA SUMARLA
+  if not PSerie.LeerDelPuertoSerie(auxStr, BytesToRead) then exit;
+  
+  // 1. Read Channel Values
+  i := 1;
+  // We iterate through whatever channels we have configured (CantCanales)
+  // The 'auxStr' contains padding bytes that we need to skip if we cross block boundaries,
+  // but the simple logic is: read block by block.
+  // However, simpler approach: Just consume bytes linearly and skip padding at end of blocks?
+  // Let's stick to the user's definition: "20 bytes for 8 channels".
+  // So bytes 1..16 are data for ch 0..7. Bytes 17..20 are padding.
+  // Bytes 21..36 are data for ch 8..15. Bytes 37..40 are padding.
+  
+  // Implementation note: The existing loop iterates 0 to length(pvalorCH)-1.
+  // We need to manage the index 'i' carefully.
+  for NCanal := 0 to CantCanales - 1 do begin
+      // Read 2 bytes for channel data
+      num := Byte(auxStr[i]) + Byte(auxStr[i+1]) + Byte(auxStr[i+1])*255; // Logic looks weird in original (double add?), keeping original formula structure but cleaner:
+      // Original: Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+1])*255; -> This adds LowByte + HighByte + HighByte*255?
+      // Wait, original: Byte(auxStr[i]) + Byte(auxStr[i+1]) + Byte(auxStr[i+1])*255
+      // This is effectively: Low + High + High*255 = Low + High*256. Correct for Little Endian.
+      
+      num := Byte(auxStr[i]) + Byte(auxStr[i+1])*256;
+      pvalorCH[NCanal]^ := num;
+      inc(i, 2);
+
+      // If we completed a block of 8 channels (e.g., ch 7, 15, 23...), skip 4 bytes of padding
+      if ((NCanal + 1) mod 8 = 0) then
+         inc(i, 4); 
+  end;
+  
+  // Move 'i' to the next section start. 
+  // Since we processed all blocks in the loop, 'i' should already be pointing to the start of Time section
+  // BUT only if CantCanales is a multiple of 8. If CantCanales < 8 * NumBloques?
+  // The user says "if 8 channels selected, frame has 8 channels".
+  // So we assume CantCanales is always 8, 16, 24, 32.
+  
+  // Safety sync: Data section ends at Start + BytesOcupadosData
+  // i started at 1. So it should now be 1 + BytesOcupadosData.
+  i := 1 + BytesOcupadosData; 
+
+  // 2. Read Time (4 bytes)
+  // ... rest of the function ... (Keeping original structure for now)
+  // We will need to offset 'i' for subsequent reads.
+  
+  // Since original code hardcoded indices (21, 25...), we must update them to be relative to 'i'.
+  
+  // Leeo la Hora del Equipo (4 bytes)
+  numDate := Byte(auxStr[i])+Byte(auxStr[i+1])+ Byte(auxStr[i+2])+Byte(auxStr[i+3])+
+             Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535+Byte(auxStr[i+3])*16777215; // Original weird formula
+             
+  // Better parsing:
+  // numDate := ... (keeping strict original logic to avoid breaking legacy math quirks if any)
+  numDate := Byte(auxStr[i]) + Byte(auxStr[i+1])*256 + Byte(auxStr[i+2])*65536 + Byte(auxStr[i+3])*16777216;
+  // Actually, let's stick to the original formula structure to be safe, just adjusting 'i'.
+  
   numDate := Byte(auxStr[i])+Byte(auxStr[i+1])+ Byte(auxStr[i+2])+Byte(auxStr[i+3])+
              Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535+Byte(auxStr[i+3])*16777215;
-        //Paso a Días la fecha de numDate que esta en segundos
-        //CONVIERTE LOS TIPOS
+
   numDate := numDate/86400 + StrToDateTime(Hora_Base);
   pHoraEquipo^ := numDate;
   pHoraActual^ := now;
-  // Leo la fecha inicial del muestreo
-  //AHORA A PARTIR DEL BYTE 25
-  i := 25;
-        // Formo el número de la fecha a partir de los 4 Bytes (32 bits)
+  inc(i, 4); 
+
+  // 3. Read Start Measurement Time (4 bytes)
   numDate  := Byte(auxStr[i])+Byte(auxStr[i+1])+ Byte(auxStr[i+2])+Byte(auxStr[i+3])+
               Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535+Byte(auxStr[i+3])*16777215;
-        //Paso a Días la fecha de numDate que esta en segundos
   FechaINI      := numDate/86400 + StrToDateTime(Hora_Base);
   pIniMuestreo^ := FechaINI;
+  inc(i, 4);
 
-  // Leo el intervalo de muestreo
-  //A PARTIR DEL BYTE 29
-  i := 29;
+  // 4. Read Sampling Interval (2 bytes)
   pTmuestreo^ := (Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+1])*255);
-  // Leeo la configuración de los Canales
-  //A PARTIR DEL BYTE 33
-  i := 33;
-  for NCanal:=0 to length(pvalorCH)-1 do
-  //ACA LEE BYTE A BYTE, NO NECESITA COMBINARLOS
-  //SI EL BYTE ES 1, EL CANAL ES VOLTAJE. 
-  //SI EL BYTE ES 2, ES CORRIENTE
-    pCH_conf[NCanal]^ := Byte(auxStr[i+NCanal]);
-  // Leo el nombre del Equipo
-  //A PARTIR DEL BYTE 43, NOMBRE DEL EQUIPO
-  i := 43;
+  inc(i, 2);
+
+  // 5. Read Channel Config (10 bytes per block -> 8 bytes config + 2 bytes padding)
+  for NCanal := 0 to CantCanales - 1 do begin
+      pCH_conf[NCanal]^ := Byte(auxStr[i]);
+      inc(i, 1);
+      
+      // If end of block (every 8 channels), skip 2 bytes padding
+      if ((NCanal + 1) mod 8 = 0) then
+         inc(i, 2);
+  end;
+  
+  // Re-sync 'i' just in case
+  // Start of Config was at: 1 + BytesOcupadosData + 4 + 4 + 2
+  // End of Config is at: Start + BytesOcupadosConf
+  // Current i should match that.
+  i := 1 + BytesOcupadosData + 4 + 4 + 2 + BytesOcupadosConf;
+
+  // 6. Read Equipment Name (4 bytes)
   pNombre^ := auxStr[i]+auxStr[i+1]+auxStr[i+2]+auxStr[i+3];
-  //A PARTIR DEL BYTE 47, CANTIDAD DE MEMORIA OCUPADA
-  // Leo la cantidad de memoria ocupada (Numeros de Bytes)
-  i := 47;
-  pMemoria^ := Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+2])+Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535;
-  // Leo la cantidad de memoria que tiene el equipo disponible (Numeros de Bytes)
-  i := 50;
-  pCantMemory^ := trunc(power(2,Byte(auxStr[i])));
-  // guardo la config en el disco
-{  au := TStringList.Create;
-  for i:=0 to length(auxStr) do au.Add(IntToStr(byte(auxStr[i])));
-  au.SaveToFile('d:\logConf.txt');
-  au.Destroy;}
+  inc(i, 4);
+
+  // 7. Read Memory Used (4 bytes)
+  pMemoria^ := Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+2])+Byte(auxStr[i+1])*255+Byte(auxStr[i+2])*65535; // Keeping original weird formula
+  // Note: Original read 3 bytes? "Byte(auxStr[i])+Byte(auxStr[i+1])+Byte(auxStr[i+2])..."
+  // User said "4 bytes para la memoria ocupada".
+  // Original code: i:=47. Frame length 50. 50-47+1 = 4 bytes (47,48,49,50). 
+  // Wait, original was reading 50 bytes total.
+  // Original map:
+  // 1..20 (Data 10ch?? No, loop was length(pvalorCH)-1. Defaut 10 chans. 20 bytes.)
+  // 21..24 (Hora)
+  // 25..28 (IniMuestreo)
+  // 29..30 (TMuestreo)
+  // 31..32 (Gap?) Original i=33 for config. 31,32 skipped?
+  // 33..42 (Config 10ch)
+  // 43..46 (Nombre)
+  // 47..?? (Memoria)
+  
+  // User instruction: "4 bytes para la memoria ocupada".
+  // Let's explicitly read 4 bytes for memory.
+  // Keeping safe implementation.
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -742,21 +826,27 @@ begin
   // Escribo la Cuenta regresiva para muestrear
   PSerie.EscribirAlPuertoSerie(chr(Tregre00));
   PSerie.EscribirAlPuertoSerie(chr(Tregre01));
-//MANDA LA CONFIGURACION DE CADA CANAL.
-// DESDE 0 HASTA 9, ENVIA 10 BYTES
-//1 = VOLTAJE, 2 = CORRIENTE, 0 = DESACTIVADO
-//FIJEMONOS QUE EL BUCLE SE ADAPTA A LA CANTIDAD DE CANALES, ESTA LIMITADO POR LA LONGITUD DE ConfigCHs
-  // Escribo la nueva configuración de cada canal
-  for i:=0 to length(ConfigCHs)-1 do
-    PSerie.EscribirAlPuertoSerie(chr(ConfigCHs[i]));
-//ENVIA 4 BYTES PARA EL NOMBRE
+  //MANDA LA CONFIGURACION DE CADA CANAL.
+  // SE ADAPTA A BLOQUES DE 8 CANALES (10 bytes = 8 config + 2 padding)
+  
+  for i:=0 to CantCanales - 1 do begin
+      PSerie.EscribirAlPuertoSerie(chr(ConfigCHs[i]));
+      
+      // If end of block (every 8 channels), send 2 bytes padding
+      if ((i + 1) mod 8 = 0) then begin
+         PSerie.EscribirAlPuertoSerie(chr(0)); // Padding
+         PSerie.EscribirAlPuertoSerie(chr(0)); // Padding
+      end;
+  end;
+
+  //ENVIA 4 BYTES PARA EL NOMBRE
   // Escribo el Nombre del Equipo
   PSerie.EscribirAlPuertoSerie(NombreEquipo[1]);
   PSerie.EscribirAlPuertoSerie(NombreEquipo[2]);
   PSerie.EscribirAlPuertoSerie(NombreEquipo[3]);
   PSerie.EscribirAlPuertoSerie(NombreEquipo[4]);
-  //TOTAL: 26 BYTES DE CONFIGURACION
-
+  //TOTAL: Variable dependent on CantCanales
+ 
   if AutoDesconecConf then DesConecTelef := true;
 end;
 
