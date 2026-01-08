@@ -599,6 +599,7 @@ var
   BytesOcupadosConf: Integer;
   BytesToRead      : Integer;
   NumBloques       : Integer;
+  fLog             : TextFile;
 begin
   auxStr := '';
   
@@ -610,14 +611,14 @@ begin
   //   Actual config: 8 channels * 1 byte = 8 bytes.
   //   Padding: 10 - 8 = 2 bytes per block.
   
-  // Determine number of 8-channel blocks (1, 2, 3, or 4)
+  // BORRAR Determine number of 8-channel blocks (1, 2, 3, or 4)
   if CantCanales <= 8 then NumBloques := 1
   else if CantCanales <= 16 then NumBloques := 2
   else if CantCanales <= 24 then NumBloques := 3
   else NumBloques := 4; // 32 channels
   
-  BytesOcupadosData := NumBloques * 20;
-  BytesOcupadosConf := NumBloques * 10;
+  BytesOcupadosData := CantCanales * 2;
+  BytesOcupadosConf := CantCanales * 1;
   
   // Total Frame calculation:
   // Data (BytesOcupadosData) + 
@@ -648,12 +649,17 @@ begin
       // This is effectively: Low + High + High*255 = Low + High*256. Correct for Little Endian.
       
       num := Byte(auxStr[i]) + Byte(auxStr[i+1])*256;
+      // Write to debug file instead of console
+      AssignFile(fLog, 'c:\Users\hotma\Desktop\debug_mercury.txt');
+      if FileExists('c:\Users\hotma\Desktop\debug_mercury.txt') then Append(fLog) else Rewrite(fLog);
+      WriteLn(fLog, 'Canal: ' + IntToStr(NCanal) + ' - Received: ' + IntToStr(num));
+      CloseFile(fLog);
       pvalorCH[NCanal]^ := num;
       inc(i, 2);
 
-      // If we completed a block of 8 channels (e.g., ch 7, 15, 23...), skip 4 bytes of padding
-      if ((NCanal + 1) mod 8 = 0) then
-         inc(i, 4); 
+      // ELIMINADO If we completed a block of 8 channels (e.g., ch 7, 15, 23...), skip 4 bytes of padding
+      //if ((NCanal + 1) mod 8 = 0) then
+      //   inc(i, 4); 
   end;
   
   // Move 'i' to the next section start. 
@@ -705,9 +711,9 @@ begin
       pCH_conf[NCanal]^ := Byte(auxStr[i]);
       inc(i, 1);
       
-      // If end of block (every 8 channels), skip 2 bytes padding
-      if ((NCanal + 1) mod 8 = 0) then
-         inc(i, 2);
+      // ELIMINADO If end of block (every 8 channels), skip 2 bytes padding
+      //if ((NCanal + 1) mod 8 = 0) then
+      //   inc(i, 2);
   end;
   
   // Re-sync 'i' just in case

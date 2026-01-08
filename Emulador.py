@@ -6,26 +6,31 @@ import time
 PORT = 'COM7'
 BAUD = 9600
 NOMBRE_EQUIPO = b'TEST'
-CANALES_CONFIG = [58, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+CANALES_CONFIG = [58, 0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
 INTERVALO_MUESTREO = 60
 
 def generar_respuesta_CE():
-    respuesta = bytearray(50)
-    for i in range(10):
+    pos = 0
+    respuesta = bytearray(len(CANALES_CONFIG)*3+18)
+
+    for i in range(len(CANALES_CONFIG)):
         valor = 1000 + i * 100
         struct.pack_into('<H', respuesta, i*2, valor) 
-    
+    pos+=len(CANALES_CONFIG)*2
+
     hora = int(time.time()) - 946684800
-    struct.pack_into('<I', respuesta, 20, hora)
-    struct.pack_into('<I', respuesta, 24, hora)
-    struct.pack_into('<H', respuesta, 28, INTERVALO_MUESTREO)
+    struct.pack_into('<I', respuesta, pos, hora)
+    struct.pack_into('<I', respuesta, pos+4, hora)
+    struct.pack_into('<H', respuesta, pos+8, INTERVALO_MUESTREO)
     
+    pos+=10 #Los 10 bytes de hora, fecha e intervalo de muestreo
     for i, config in enumerate(CANALES_CONFIG):
-        respuesta[32 + i] = config
+        respuesta[pos + i] = config
+    pos+=len(CANALES_CONFIG)
     
-    respuesta[42:46] = NOMBRE_EQUIPO
-    respuesta[46] = 64 # Memoria ocupada ejemplo
-    respuesta[49] = 16 # Capacidad 2^16
+    respuesta[pos:pos+4] = NOMBRE_EQUIPO
+    respuesta[pos+4] = 64 # Memoria ocupada ejemplo
+    respuesta[pos+5] = 16 # Capacidad 2^16
     return bytes(respuesta)
 
 def generar_datos_muestras():

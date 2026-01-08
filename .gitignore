@@ -17,3 +17,8 @@ TEST/*
 ppas.bat
 *.compiled
 *.bkp
+
+# Archivos que se modifican constantemente
+Mercury.lpi
+Mercury.lps
+
